@@ -1,1 +1,12 @@
-<p>busqueda works!</p>
+
+    <div class="busqueda-container">
+      <h2>Buscar contenido</h2>
+      <form (ngSubmit)="buscar()">
+        <input [formControl]="busquedaControl" placeholder="Escribí tu búsqueda" />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div *ngIf="resultado">
+        <p>Resultado: {{ resultado }}</p>
+      </div>
+    </div>
