@@ -15,13 +15,16 @@ export class Busqueda {
 busquedaControl = new FormControl('');
   resultado: string | null = null;
 
+  constructor(private busquedaService: Busquedaservice) {}
+
   buscar() {
-    const valor = this.busquedaControl.value?.trim();
-    if (valor) {
-      // Simulamos una búsqueda
-      this.resultado = `Buscaste: "${valor}"`;
-    } else {
-      this.resultado = 'No ingresaste ningún término.';
+    const termino = this.busquedaControl.value?.trim();
+    if (termino) {
+      this.busquedaService.buscar(termino).subscribe({
+        next: res => this.resultado = res,
+        error: err => this.resultado = 'Error en la búsqueda'
+      });
     }
   }
+  
 }
