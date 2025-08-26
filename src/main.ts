@@ -5,11 +5,14 @@ import { App } from './app/app';
 import { importProvidersFrom } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-bootstrapApplication(App, appConfig,
+bootstrapApplication(App,
   {
+   ...appConfig,
   providers: [
-    importProvidersFrom(HttpClientModule)
+    importProvidersFrom(HttpClientModule),
+    ...(appConfig.providers || [])
   ]  
+  
   })
   
   .catch((err) => console.error(err));
