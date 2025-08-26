@@ -1,0 +1,16 @@
+    .busqueda-container {
+      max-width: 400px;
+      margin: auto;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem;
+    }
