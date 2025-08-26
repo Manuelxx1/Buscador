@@ -21,3 +21,21 @@ Watch mode enabled. Watching for file changes...
 NOTE: Raw file sizes do not reflect development server per-request transformations.
   ➜  Local:   http://localhost:4200/
   ➜  Network: http://10.88.0.3:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [1.220 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./busqueda"[0m
+
+    src/app/app.routes.ts:1:25:
+[37m      1 │ import { Busqueda } from [32m'./busqueda'[37m;
+        ╵                          [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './busqueda' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:2:24:
+[37m      2 │ import { Busqueda} from [32m'./busqueda'[37m;
+        ╵                         [32m~~~~~~~~~~~~[0m
+
+
