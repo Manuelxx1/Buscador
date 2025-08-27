@@ -14,7 +14,7 @@ export class Busqueda {
   
 busquedaControl = new FormControl('');
   resultado: any='';
-
+terminoBuscado: string = '';
 datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
 
@@ -24,7 +24,7 @@ const termino = this.busquedaControl.value?.trim();
    
     
   
-    this.resultado = termino;
+    this.terminoBuscado = termino || '';
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
         this.resultado =   res;
