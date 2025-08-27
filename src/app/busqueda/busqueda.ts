@@ -20,10 +20,8 @@ datos: string = 'Esto debería verse';
 
   buscar() {
 
-const valor = this.busquedaControl.value;
-  this.terminoBuscado = valor ? valor : 'No llegó ningún valor';
-    
-  
+this.terminoBuscado = this.busquedaControl.value || 'No hay valor';
+
     
     this.busquedaService.buscar(valor).subscribe({
       next: res => {
