@@ -21,7 +21,7 @@ busquedaControl = new FormControl('');
     const termino = this.busquedaControl.value?.trim();
     if (termino) {
       this.busquedaService.buscar(termino).subscribe({
-        next: res => this.resultado = '<a href="https://ejemplo.com" target="_blank">Ver explicación</a>',
+        next: res => this.resultado = res,
         error: err => this.resultado = 'Error en la búsqueda'
       });
     }
