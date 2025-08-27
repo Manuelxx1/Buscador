@@ -23,7 +23,7 @@ datos: string = 'Esto debería verse';
 this.terminoBuscado = this.busquedaControl.value || 'No hay valor';
 
     
-    this.busquedaService.buscar(valor).subscribe({
+    this.busquedaService.buscar(this.terminoBuscado).subscribe({
       next: res => {
         this.resultado =   res;
      
