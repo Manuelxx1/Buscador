@@ -13,7 +13,7 @@ import { Busquedaservice } from '../busquedaservice';
 export class Busqueda {
   
 busquedaControl = new FormControl('');
-  resultado: any = '';
+  resultado: any;
 
 datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
@@ -24,9 +24,11 @@ const termino = this.busquedaControl.value?.trim();
    
     
   if (termino) {
+    this.resultado = 'Buscando...';
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
-        this.resultado = res;
+        this.resultado =  'Respuesta cruda: ' + res;
+     
       },
       error: err => {
         this.resultado = 'Error en la búsqueda';
