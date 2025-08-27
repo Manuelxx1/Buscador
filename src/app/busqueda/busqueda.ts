@@ -14,17 +14,23 @@ export class Busqueda {
   
 busquedaControl = new FormControl('');
   resultado: any;
-
+ter:any;
   constructor(private busquedaService: Busquedaservice) {}
 
   buscar() {
-    const termino = this.busquedaControl.value?.trim();
-    if (termino) {
-      this.busquedaService.buscar(termino).subscribe({
-        next: res => this.resultado = res,
-        error: err => this.resultado = 'Error en la búsqueda'
-      });
-    }
+  const termino = this.busquedaControl.value?.trim();
+    this.ter=termino;
+  if (termino) {
+    this.busquedaService.buscar(termino).subscribe({
+      next: res => {
+        this.resultado = res;
+      },
+      error: err => {
+        this.resultado = 'Error en la búsqueda';
+      }
+    });
   }
+}
+
   
 }
