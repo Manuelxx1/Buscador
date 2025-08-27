@@ -13,7 +13,8 @@ import { Busquedaservice } from '../busquedaservice';
 export class Busqueda {
   
 busquedaControl = new FormControl('');
-  resultado: any;
+  resultado: string = '<p style="color: green;">Esto viene de resultado</p>';
+
 datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
 
