@@ -14,7 +14,7 @@ export class Busqueda {
   
 busquedaControl = new FormControl('');
   resultado: any='';
-terminoBuscado: string = 'termino iniciado';
+terminoBuscado: string = '';
 datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
 
