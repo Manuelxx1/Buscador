@@ -18,7 +18,9 @@ datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
 
   buscar() {
-  const termino = this.busquedaControl.value?.trim();
+
+const termino = this.busquedaControl.value?.trim();
+  this.resultado = `<a href="https://ejemplo.com" target="_blank">Ver explicación para: ${termino}</a>`;
     
   if (termino) {
     this.busquedaService.buscar(termino).subscribe({
