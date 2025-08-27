@@ -3,6 +3,9 @@
       <h2>Buscar contenido</h2>
       <form (ngSubmit)="buscar()">
         <input [formControl]="busquedaControl" placeholder="Escribí tu búsqueda" />
+        <p>Valor actual: {{ busquedaControl.value }}</p>
+
+        
         <button type="submit">Buscar</button>
       </form>
 <div *ngIf="resultado" [innerHTML]="resultado" style="border: 1px solid red;"></div>
