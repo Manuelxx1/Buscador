@@ -16,10 +16,7 @@ private apiUrl = 'http://localhost:8080/html-link';
   constructor(private http: HttpClient) {}
 
   buscar(frase: string): Observable<string> {
-    return this.http.get(this.apiUrl, {
-      params: { frase },
-      responseType: 'text' // Porque el endpoint devuelve HTML como texto
-    });
+    return this.http.get(this.apiUrl);
   }
   
 }
