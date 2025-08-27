@@ -20,11 +20,11 @@ datos: string = 'Esto debería verse';
 
   buscar() {
 
-const termino = this.busquedaControl.value?.trim();
-   
+const valor = this.busquedaControl.value;
+  this.terminoBuscado = valor ? valor : 'No llegó ningún valor';
     
   
-    this.terminoBuscado = termino || '';
+    
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
         this.resultado =   res;
