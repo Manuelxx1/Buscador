@@ -25,7 +25,7 @@ const valor = this.busquedaControl.value;
     
   
     
-    this.busquedaService.buscar(termino).subscribe({
+    this.busquedaService.buscar(valor).subscribe({
       next: res => {
         this.resultado =   res;
      
