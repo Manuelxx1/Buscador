@@ -27,7 +27,7 @@ const termino = this.busquedaControl.value?.trim();
     this.resultado = 'Buscando...';
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
-        this.resultado =  'Respuesta cruda: ' + res;
+        this.resultado =   res;
      
       },
       error: err => {
