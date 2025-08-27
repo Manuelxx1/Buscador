@@ -23,7 +23,7 @@ datos: string = 'Esto debería verse';
 const termino = this.busquedaControl.value?.trim();
    
     
-  if (termino) {
+  
     this.resultado = 'Buscando...';
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
@@ -34,7 +34,7 @@ const termino = this.busquedaControl.value?.trim();
         this.resultado = 'Error en la búsqueda';
       }
     });
-  }
+  
 }
 
   
