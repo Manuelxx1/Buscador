@@ -13,7 +13,7 @@ import { Busquedaservice } from '../busquedaservice';
 export class Busqueda {
   
 busquedaControl = new FormControl('');
-  resultado: string | null = null;
+  resultado: any;
 
   constructor(private busquedaService: Busquedaservice) {}
 
