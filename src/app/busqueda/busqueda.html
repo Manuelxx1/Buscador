@@ -6,7 +6,6 @@
         <button type="submit">Buscar</button>
       </form>
 
-      <div *ngIf="resultado">
-        <p>Resultado: {{ resultado }}</p>
-      </div>
+      <div *ngIf="resultado" [innerHTML]="resultado"></div>
+
     </div>
