@@ -16,7 +16,8 @@ private apiUrl = 'http://localhost:8080/html-link';
   constructor(private http: HttpClient) {}
 
   buscar(frase: any): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}`);
+);
   }
   
 }
