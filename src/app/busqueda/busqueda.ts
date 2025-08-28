@@ -18,22 +18,24 @@ terminoBuscado: string = '';
 datos: string = 'Esto debería verse';
   constructor(private busquedaService: Busquedaservice) {}
 
-  buscar() {
-
-this.terminoBuscado = this.busquedaControl.value || 'No hay valor';
-
-    
-    this.busquedaService.buscar(this.terminoBuscado).subscribe({
+  
+buscar() {
+  const termino = this.busquedaControl.value?.trim();
+  if (termino) {
+    this.busquedaService.buscar(termino).subscribe({
       next: res => {
-        this.resultado =   res;
-     
+        this.resultadoHtml = res;
       },
       error: err => {
-        this.resultado = 'Error en la búsqueda';
+        this.resultadoHtml = 'Error en la búsqueda';
       }
     });
-  
+  }
 }
+
+
+    
+    
 
   
 }
