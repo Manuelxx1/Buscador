@@ -20,7 +20,7 @@ private apiUrl = 'https://api.example.com/search'; // URL de la API
    * @param query La palabra o frase a buscar.
    * @returns Un Observable con la respuesta de la API.
    */
-  buscar(query: string): Observable<any> {
+  buscar(query: string): Observable<string> {
     // Crea parámetros de consulta para la URL
     // En este caso, la URL final podría ser: https://api.example.com/search?q=palabra
     const params = new HttpParams().set('q', query);
