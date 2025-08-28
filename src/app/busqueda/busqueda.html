@@ -8,7 +8,8 @@
         
         <button type="submit">Buscar</button>
       </form>
-<div [innerHTML]="resultado" style="border: 1px solid red;"></div>
+
+<div *ngIf="resultado" [innerHTML]="resultado"></div>
 
 <p>Palabra buscada: {{ terminoBuscado }}</p>
 
