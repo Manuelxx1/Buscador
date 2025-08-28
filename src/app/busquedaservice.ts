@@ -20,7 +20,7 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
    * @param query La palabra o frase a buscar.
    * @returns Un Observable con la respuesta de la API (un string).
    */
-  buscar(query: string): Observable<string> {
+  buscar(query: string): Observable<any> {
     return this.http.get(`${this.backendURL}/${query}`);
   }
 }
