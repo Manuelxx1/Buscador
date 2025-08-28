@@ -26,7 +26,7 @@ busquedaControl = new FormControl('');
     const palabraBuscada = this.busquedaControl.value;
 
     if (!palabraBuscada) {
-      this.resultados = [];
+      this.enlaceDocumento = null;
       return;
     }
 
@@ -35,10 +35,10 @@ busquedaControl = new FormControl('');
 
     // Llama al método del servicio y se suscribe al Observable
     this.Busquedaservice.buscar(palabraBuscada).subscribe({
-      next: (data) => {
-        // 'next' se ejecuta cuando la petición es exitosa
-        console.log('Respuesta de la API:', data);
-        this.resultados = data; // Asume que la respuesta tiene una propiedad 'items'
+      next: (data: string) => {
+        // 'data' ahora es la cadena de texto con el enlace
+        console.log('Enlace de la API:', data);
+        this.enlaceDocumento = data;
         this.isLoading = false;
       },
       error: (err) => {
