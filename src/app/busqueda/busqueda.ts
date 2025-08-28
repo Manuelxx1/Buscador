@@ -16,6 +16,7 @@ export class Busqueda {
 
 busquedaControl = new FormControl('');
   resultados: any[] = []; // Para guardar los resultados de la API
+  enlaceDocumento: string | null = null; // Variable para almacenar el enlace
   isLoading = false;      // Para manejar el estado de carga
   error: string | null = null; // Para manejar errores
 
