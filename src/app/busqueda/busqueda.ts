@@ -12,26 +12,32 @@ import { Busquedaservice } from '../busquedaservice';
 })
 export class Busqueda {
   
-busquedaControl = new FormControl('');
-  resultado: any='';
-terminoBuscado: string = '';
-datos: string = 'Esto debería verse';
-  constructor(private busquedaService: Busquedaservice) {}
 
-  
-buscar() {
-  const termino = this.busquedaControl.value?.trim();
-  if (termino) {
-    this.busquedaService.buscar(termino).subscribe({
-      next: res => {
-        this.resultado= res;
-      },
-      error: err => {
-        this.resultado= 'Error en la búsqueda';
-      }
-    });
+
+  // 1. Define el FormControl
+  // El valor inicial de la caja de texto será un string vacío.
+  busquedaControl = new FormControl('');
+
+  constructor() { }
+
+  // 2. Implementa la función 'buscar()'
+  // Esta función se ejecuta cuando se hace clic en el botón "Buscar".
+  buscar() {
+    // 3. Accede al valor del formulario a través de .value
+    const palabraBuscada = this.busquedaControl.value;
+
+    // Aquí puedes hacer lo que necesites con la palabra,
+    // por ejemplo, mostrarla en la consola, o enviarla a un servicio.
+    console.log('Se envió la palabra:', palabraBuscada);
+
+
+    
+    // Puedes agregar lógica adicional, como enviar la palabra a una API.
+    // Ejemplo: this.servicioDeBusqueda.buscar(palabraBuscada).subscribe(...);
   }
+
 }
+
 
 
     
