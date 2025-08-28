@@ -37,7 +37,7 @@ busquedaControl = new FormControl('');
 
     this.isLoading = true; // Empieza el estado de carga
     this.error = null;     // Limpia el error anterior
-
+/*
     // Llama al método del servicio y se suscribe al Observable
     this.Busquedaservice.buscar(palabraLimpia).subscribe({
       next: (data: string) => {
@@ -53,6 +53,7 @@ busquedaControl = new FormControl('');
         this.isLoading = false;
       }
     });
+    */
   }
 
 
