@@ -27,7 +27,7 @@ busquedaControl = new FormControl('');
     const palabraBuscada = this.busquedaControl.value;
 
     if (!palabraBuscada) {
-      this.enlaceDocumento = null;
+      
       return;
     }
 
