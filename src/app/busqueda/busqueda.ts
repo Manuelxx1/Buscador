@@ -24,7 +24,7 @@ busquedaControl = new FormControl('');
   constructor(private Busquedaservice: Busquedaservice) { }
 
   buscar() {
-    const palabraBuscada = this.busquedaControl.value;
+    const palabraBuscada = this.busquedaControl.value.trim();
 
     if (!palabraBuscada) {
       this.enlaceDocumento = null;
