@@ -26,7 +26,8 @@ private apiUrl = 'https://api.example.com/search'; // URL de la API
     const params = new HttpParams().set('q', query);
 
     // Retorna el Observable de la petición GET
-    return this.http.get(this.apiUrl, { params: params });
+    // Añade el objeto de configuración { responseType: 'text' }
+    return this.http.get(this.apiUrl, { params: params, responseType: 'text' });
   }
     
     // return this.http.get (`${this.apiUrl}/${frase}`);
