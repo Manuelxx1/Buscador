@@ -32,14 +32,14 @@ busquedaControl = new FormControl('');
     }
 
     // CORRECCIÓN: Elimina cualquier espacio en blanco al inicio y final
-    const palabraLimpia = palabraBuscada.trim();
+    //const palabraLimpia = palabraBuscada.trim();
 
 
     this.isLoading = true; // Empieza el estado de carga
     this.error = null;     // Limpia el error anterior
-/*
+
     // Llama al método del servicio y se suscribe al Observable
-    this.Busquedaservice.buscar(palabraLimpia).subscribe({
+    this.Busquedaservice.buscar(palabraBuscada).subscribe({
       next: (data: string) => {
         // 'data' ahora es la cadena de texto con el enlace
         console.log('Enlace de la API:', data);
@@ -53,7 +53,7 @@ busquedaControl = new FormControl('');
         this.isLoading = false;
       }
     });
-    */
+    
   }
 
 
