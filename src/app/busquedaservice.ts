@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class Busquedaservice {
   
-private apiUrl = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/html-link'; // URL de la API
-
+private apiUrl = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/html-link';
+  
   constructor(private http: HttpClient) { }
 
   /**
@@ -20,13 +20,13 @@ private apiUrl = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-eas
    * @param query La palabra o frase a buscar.
    * @returns Un Observable con la respuesta de la API.
    */
-  buscar(query: string): Observable<string> {
-    // Crea parámetros de consulta para la URL
-    // En este caso, la URL final podría ser: https://api.example.com/search?q=palabra
-    const params = new HttpParams().set('q', query);
 
-    // Retorna el Observable de la petición GET
-    // Añade el objeto de configuración { responseType: 'text' }
+
+  buscar(query: string): Observable<string> {
+    // 1. Crea parámetros de consulta, usando 'frase' como nombre de parámetro
+    const params = new HttpParams().set('frase', query);
+
+    // 2. Envía la petición con los parámetros y el responseType correcto
     return this.http.get(this.apiUrl, { params: params, responseType: 'text' });
   }
     
