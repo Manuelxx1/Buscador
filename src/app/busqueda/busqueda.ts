@@ -24,10 +24,10 @@ buscar() {
   if (termino) {
     this.busquedaService.buscar(termino).subscribe({
       next: res => {
-        this.resultadoHtml = res;
+        this.resultado= res;
       },
       error: err => {
-        this.resultadoHtml = 'Error en la búsqueda';
+        this.resultado= 'Error en la búsqueda';
       }
     });
   }
