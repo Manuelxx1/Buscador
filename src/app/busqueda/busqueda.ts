@@ -14,29 +14,42 @@ export class Busqueda {
   
 
 
-  // 1. Define el FormControl
-  // El valor inicial de la caja de texto será un string vacío.
-  busquedaControl = new FormControl('');
+busquedaControl = new FormControl('');
+  resultados: any[] = []; // Para guardar los resultados de la API
+  isLoading = false;      // Para manejar el estado de carga
+  error: string | null = null; // Para manejar errores
 
-  constructor() { }
+  // Inyecta el servicio en el constructor
+  constructor(private Busquedaservice: Busquedaservice) { }
 
-  // 2. Implementa la función 'buscar()'
-  // Esta función se ejecuta cuando se hace clic en el botón "Buscar".
   buscar() {
-    // 3. Accede al valor del formulario a través de .value
     const palabraBuscada = this.busquedaControl.value;
 
-    // Aquí puedes hacer lo que necesites con la palabra,
-    // por ejemplo, mostrarla en la consola, o enviarla a un servicio.
-    console.log('Se envió la palabra:', palabraBuscada);
+    if (!palabraBuscada) {
+      this.resultados = [];
+      return;
+    }
 
+    this.isLoading = true; // Empieza el estado de carga
+    this.error = null;     // Limpia el error anterior
 
-    
-    // Puedes agregar lógica adicional, como enviar la palabra a una API.
-    // Ejemplo: this.servicioDeBusqueda.buscar(palabraBuscada).subscribe(...);
+    // Llama al método del servicio y se suscribe al Observable
+    this.Busquedaservice.buscar(palabraBuscada).subscribe({
+      next: (data) => {
+        // 'next' se ejecuta cuando la petición es exitosa
+        console.log('Respuesta de la API:', data);
+        this.resultados = data; // Asume que la respuesta tiene una propiedad 'items'
+        this.isLoading = false;
+      },
+      error: (err) => {
+        // 'error' se ejecuta si hay un problema con la petición
+        console.error('Error al buscar:', err);
+        this.error = 'Ocurrió un error al buscar. Por favor, inténtalo de nuevo.';
+        this.isLoading = false;
+      }
+    });
   }
 
-}
 
 
 
