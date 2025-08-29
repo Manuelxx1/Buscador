@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Busquedaservice {
-
+/*
   // URL de tu API. Asegúrate de que no tenga una barra al final (trailing slash).
   // Por ejemplo, termina en ...dev/html-link, no ...dev/html-link/
 //  private apiUrl = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/html-link';
@@ -20,8 +20,24 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
    * @param query La palabra o frase a buscar.
    * @returns Un Observable con la respuesta de la API (un string).
    */
+  /*
   buscar(query: string): Observable<any> {
     return this.http.get(`${this.backendURL}/${query}`);
   }
+  */
+
+
+
+   //Endpoint del Backend
+  //traer por ID
+  //con esto traemos los campos por id o dni
+  //que luego en la vista decidimos que campo mostrar
+  // //para el imput text a editar
+        //sin usar un ngfor
+  private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
+  obtenerPorId(dni: number): Observable<any>{
+    return this.http.get<any>(`${this.backendURL}/${dni}`);
+  } 
+
 }
   
