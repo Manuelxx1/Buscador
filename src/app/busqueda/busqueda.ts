@@ -41,7 +41,7 @@ this.palabradni=palabraBuscada;
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(palabradni).
+    this.Busquedaservice.obtenerPorId(this.palabradni).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion});
   }
