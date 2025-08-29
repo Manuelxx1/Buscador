@@ -24,20 +24,27 @@ campoinformaciondatabase:any;
   // Inyecta el servicio en el constructor
   constructor(private Busquedaservice: Busquedaservice) { }
 
+this.palabradni=this.busquedaControl.value;
+  
   buscar() {
-    const palabraBuscada = this.busquedaControl.value;
+    
+
+
+
+    
+    
 
     
     // CORRECCIÓN: Elimina cualquier espacio en blanco al inicio y final
     //const palabraLimpia = palabraBuscada.trim();
 
-this.palabradni=palabraBuscada;
+
     this.isLoading = true; // Empieza el estado de carga
     this.error = null;     // Limpia el error anterior
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(this.palabradni).
+    this.Busquedaservice.obtenerPorId(this.busquedaControl.value).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion});
   }
