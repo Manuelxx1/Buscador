@@ -34,7 +34,7 @@ campoinformaciondatabase:any;
   
   buscar(){
 
-
+this.palabradni = this.busquedaControl.value; // Captura el valor actual del input
     // Llama al método del servicio y se suscribe al Observable
     
     this.Busquedaservice.obtenerPorId(this.palabradni).
