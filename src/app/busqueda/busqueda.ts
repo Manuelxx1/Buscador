@@ -31,7 +31,7 @@ campoinformaciondatabase:any;
   }
 
 //this.palabradni=this.busquedaControl.value;
-  
+  servicioEjecutado = false;
   buscar(){
 
 this.palabradni = this.busquedaControl.value; // Captura el valor actual del input
@@ -40,6 +40,7 @@ this.palabradni = this.busquedaControl.value; // Captura el valor actual del inp
     this.Busquedaservice.obtenerPorId(this.palabradni).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion;
+       this.servicioEjecutado = true;
        this.palabradni = respuesta.dniRecibido; 
       });
   }
