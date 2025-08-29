@@ -20,7 +20,7 @@ busquedaControl = new FormControl('');
   isLoading = false;      // Para manejar el estado de carga
   error: string | null = null; // Para manejar errores
 campoinformaciondatabase:any;
-  palabradni!:number;
+  palabradni!:any;
   // Inyecta el servicio en el constructor
   constructor(private Busquedaservice: Busquedaservice) { }
 
@@ -54,4 +54,4 @@ this.palabradni=palabraBuscada;
     
 
   
-}
+
