@@ -26,7 +26,7 @@ campoinformaciondatabase:any;
 
   buscar() {
     const palabraBuscada = this.busquedaControl.value;
-this.palabradni=palabraBuscada;
+
     if (!palabraBuscada) {
       
       return;
@@ -35,7 +35,7 @@ this.palabradni=palabraBuscada;
     // CORRECCIÓN: Elimina cualquier espacio en blanco al inicio y final
     //const palabraLimpia = palabraBuscada.trim();
 
-
+this.palabradni=palabraBuscada;
     this.isLoading = true; // Empieza el estado de carga
     this.error = null;     // Limpia el error anterior
 
