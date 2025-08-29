@@ -46,7 +46,7 @@ obtenerPorId(dni: any): Observable<any> {
   return this.http.get<any>(`${this.backendURL}/${dni}`).pipe(
     map(respuesta => ({
       ...respuesta,
-      dniRecibido: dni //Agregamos el DNI a la respuesta
+      dniRecibido: dni + "dni desde servicio"//Agregamos el DNI a la respuesta
     }))
   );
 }
