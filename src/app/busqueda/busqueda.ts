@@ -19,7 +19,7 @@ busquedaControl = new FormControl('');
   enlaceDocumento: string | null = null; // Variable para almacenar el enlace
   isLoading = false;      // Para manejar el estado de carga
   error: string | null = null; // Para manejar errores
-
+campoinformaciondatabase:any;
   // Inyecta el servicio en el constructor
   constructor(private Busquedaservice: Busquedaservice) { }
 
@@ -39,21 +39,11 @@ busquedaControl = new FormControl('');
     this.error = null;     // Limpia el error anterior
 
     // Llama al método del servicio y se suscribe al Observable
-    this.Busquedaservice.buscar(palabraBuscada).subscribe({
-      next: (data: string) => {
-        // 'data' ahora es la cadena de texto con el enlace
-        console.log('Enlace de la API:', data);
-        this.enlaceDocumento = data;
-        this.isLoading = false;
-      },
-      error: (err) => {
-        // 'error' se ejecuta si hay un problema con la petición
-        console.error('Error al buscar:', err);
-        this.error = 'Ocurrió un error al buscar. Por favor, inténtalo de nuevo.';
-        this.isLoading = false;
-      }
-    });
     
+    this.Busquedaservice.obtenerPorId(palabraBuscada).
+    subscribe(respuesta=>
+      {this.campoinformaciondatabase=respuesta.informacion});
+  }
   }
 
 
