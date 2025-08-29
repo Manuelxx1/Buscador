@@ -20,12 +20,13 @@ busquedaControl = new FormControl('');
   isLoading = false;      // Para manejar el estado de carga
   error: string | null = null; // Para manejar errores
 campoinformaciondatabase:any;
+  palabradni:number;
   // Inyecta el servicio en el constructor
   constructor(private Busquedaservice: Busquedaservice) { }
 
   buscar() {
     const palabraBuscada = this.busquedaControl.value;
-
+this.palabradni=palabraBuscada;
     if (!palabraBuscada) {
       
       return;
@@ -40,7 +41,7 @@ campoinformaciondatabase:any;
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(palabraBuscada).
+    this.Busquedaservice.obtenerPorId(palabradni).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion});
   }
