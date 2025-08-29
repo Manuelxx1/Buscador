@@ -27,6 +27,7 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
   */
 
 
+constructor(private http: HttpClient) { }
 
    //Endpoint del Backend
   //traer por ID
