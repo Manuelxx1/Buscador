@@ -2,7 +2,7 @@
   <h2>Buscar contenido</h2>
 
   <form (ngSubmit)="buscar()">
-    <input [formControl]="busquedaControl" placeholder="Escribí tu búsqueda" />
+    <input type="text" [formControl]="busquedaControl" placeholder="Escribí tu búsqueda" />
     <button type="submit" >Buscar</button>
   </form>
 
