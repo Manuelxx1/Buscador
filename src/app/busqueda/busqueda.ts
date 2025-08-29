@@ -27,11 +27,7 @@ campoinformaciondatabase:any;
   buscar() {
     const palabraBuscada = this.busquedaControl.value;
 
-    if (!palabraBuscada) {
-      
-      return;
-    }
-
+    
     // CORRECCIÓN: Elimina cualquier espacio en blanco al inicio y final
     //const palabraLimpia = palabraBuscada.trim();
 
