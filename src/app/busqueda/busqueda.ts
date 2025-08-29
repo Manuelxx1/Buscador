@@ -39,8 +39,11 @@ this.palabradni = this.busquedaControl.value; // Captura el valor actual del inp
     
     this.Busquedaservice.obtenerPorId(this.palabradni).
     subscribe(respuesta=>
-      {this.campoinformaciondatabase=respuesta.informacion});
+      {this.campoinformaciondatabase=respuesta.informacion;
+       this.palabradni = respuesta.dniRecibido; 
+      });
   }
+  
   }
 
 
