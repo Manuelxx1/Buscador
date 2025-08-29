@@ -26,21 +26,8 @@ campoinformaciondatabase:any;
 
 this.palabradni=this.busquedaControl.value;
   
-  buscar() {
-    
+  buscar(){
 
-
-
-    
-    
-
-    
-    // CORRECCIÓN: Elimina cualquier espacio en blanco al inicio y final
-    //const palabraLimpia = palabraBuscada.trim();
-
-
-    this.isLoading = true; // Empieza el estado de carga
-    this.error = null;     // Limpia el error anterior
 
     // Llama al método del servicio y se suscribe al Observable
     
