@@ -25,8 +25,9 @@ campoinformaciondatabase:any;
   
   // Inyecta el servicio en el constructor
   constructor(private Busquedaservice: Busquedaservice) {
-    const palabra=this.busquedaControl.value;
-  this.palabradni= palabra;
+    this.busquedaControl.valueChanges.subscribe(valor => {
+    this.palabradni = valor;
+      });
   }
 
 //this.palabradni=this.busquedaControl.value;
