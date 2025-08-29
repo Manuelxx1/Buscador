@@ -6,23 +6,11 @@
     <button type="submit" >Buscar</button>
   </form>
 
-  <hr />
+  
+<p>{{palabradni}}</p>
 
-  <div *ngIf="isLoading" class="mensaje-estado">
-    <p>Buscando...</p>
-  </div>
+  
 
-  <div *ngIf="error" class="mensaje-error">
-    <p>{{ error }}</p>
-  </div>
 
-  <div *ngIf="!isLoading && !error && enlaceDocumento">
-    <h3>Documento encontrado</h3>
-    <a [href]="enlaceDocumento" target="_blank">Abrir documento</a>
-  </div>
-
-  <div *ngIf="!isLoading && !error && busquedaControl.value && !enlaceDocumento">
-    <p>No se encontraron resultados para "{{ busquedaControl.value }}".</p>
-  </div>
 </div>
 <p>{{campoinformaciondatabase}}</p>
