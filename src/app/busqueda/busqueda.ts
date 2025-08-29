@@ -37,7 +37,7 @@ campoinformaciondatabase:any;
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(this.busquedaControl.value).
+    this.Busquedaservice.obtenerPorId(this.palabradni).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion});
   }
