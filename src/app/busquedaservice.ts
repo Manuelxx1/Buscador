@@ -36,7 +36,7 @@ constructor(private http: HttpClient) { }
   // //para el imput text a editar
         //sin usar un ngfor
   private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
-  obtenerPorId(dni: number): Observable<any>{
+  obtenerPorId(dni:any): Observable<any>{
     return this.http.get<any>(`${this.backendURL}/${dni}`);
   } 
 
