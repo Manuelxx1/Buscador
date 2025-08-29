@@ -2,6 +2,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +39,17 @@ constructor(private http: HttpClient) { }
   // //para el imput text a editar
         //sin usar un ngfor
   private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
-  obtenerPorId(dni:any): Observable<any>{
-    return this.http.get<any>(`${this.backendURL}/${dni}`);
-  } 
+  
+obtenerPorId(dni: any): Observable<any> {
+  console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
+
+  return this.http.get<any>(`${this.backendURL}/${dni}`).pipe(
+    map(respuesta => ({
+      ...respuesta,
+      dniRecibido: dni //Agregamos el DNI a la respuesta
+    }))
+  );
+}
 
 }
   
