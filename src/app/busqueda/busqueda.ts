@@ -16,7 +16,7 @@ import { Busquedaservice } from '../busquedaservice';
 export class Busqueda {
   
 
-mensaje: string;
+mensaje!: string;
 busquedaControl = new FormControl('');
   resultados: any[] = []; // Para guardar los resultados de la API
   enlaceDocumento: string | null = null; // Variable para almacenar el enlace
