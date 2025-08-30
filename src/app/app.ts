@@ -30,7 +30,7 @@ dnidefinido!:any;
     
     this.miServicio.obtenerPorId(this.dnidefinido).
     subscribe(respuesta=>
-      {this.campoinformaciondatabase=respuesta.informacion;
+      {this.campoinformaciondatabase=respuesta[0].informacion;
        
         
       });
