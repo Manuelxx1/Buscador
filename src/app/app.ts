@@ -10,7 +10,7 @@ import { Busquedaservice } from './busquedaservice';
 })
 export class App {
   protected readonly title = signal('buscador');
-  mensaje: string;
+  mensaje!: string;
 
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
