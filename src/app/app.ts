@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Busquedaservice } from '../busquedaservice';
+import { Busquedaservice } from './busquedaservice';
 
 @Component({
   selector: 'app-root',
