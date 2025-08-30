@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,11 @@ constructor(private http: HttpClient) { }
 obtenerPorId(dni: any): Observable<any> {
   console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 
-  return this.http.get<any>(`${this.backendURL}/${dni}`);
+ // return this.http.get<any>(`${this.backendURL}/${dni}`);
+  
+return of([{ informacion: 'Datos simulados para DNI ' + dni }]);
+}
+
     
     
   
