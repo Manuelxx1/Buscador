@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Busquedaservice } from '../busquedaservice';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('buscador');
+  mensaje: string;
+
+  constructor(private miServicio: Busquedaservice) {
+    this.mensaje = this.miServicio.getData();
+  }
 }
