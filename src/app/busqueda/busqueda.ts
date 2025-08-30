@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { Busquedaservice } from '../busquedaservice';
 
 @Component({
   selector: 'app-busqueda',
-  imports: [CommonModule, ReactiveFormsModule] ,
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule ] ,
   providers: [
       Busquedaservice 
       ],
