@@ -41,7 +41,7 @@ this.palabradni = this.busquedaControl.value; // Captura el valor actual del inp
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion;
        this.servicioEjecutado = true;
-       this.palabradni = respuesta.dniRecibido; 
+       this.palabradni = respuesta.dniRecibido +"la puta madre"; 
       });
   }
   
