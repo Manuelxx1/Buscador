@@ -11,7 +11,10 @@ import { Busquedaservice } from './busquedaservice';
 export class App {
   protected readonly title = signal('buscador');
   mensaje!: string;
-
+dnidefinido!:any;
+  campoinformaciondatabase:any;
+  
+  
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
   }
@@ -20,6 +23,15 @@ export class App {
 
     this.mensaje = this.miServicio.getData();
 
+    this.dnidefinido=30790186;
+
+    // Llama al método del servicio y se suscribe al Observable
     
+    this.miServicio.obtenerPorId(this.dnidefinido).
+    subscribe(respuesta=>
+      {this.campoinformaciondatabase=respuesta.informacion;
+       
+        
+      });
+  }
   }     
-}
