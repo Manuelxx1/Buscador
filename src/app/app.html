@@ -6,7 +6,10 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<form (ngSubmit)="buscar()">
+    <input type="text" [formControl]="busquedaControl" placeholder="Escribí tu búsqueda" />
+      <button type="submit">Buscar</button>
+  </form>
   <p>Servicio desde app: {{ mensaje }}</p>
 <style>
   :host {
