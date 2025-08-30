@@ -24,6 +24,7 @@ busquedaControl = new FormControl('');
   error: string | null = null; // Para manejar errores
 campoinformaciondatabase:any;
   palabradni!:any;
+  dnidefinido:any;
   
   
   // Inyecta el servicio en el constructor
@@ -36,11 +37,11 @@ campoinformaciondatabase:any;
 //this.palabradni=this.busquedaControl.value;
   servicioEjecutado = false;
   buscar(){
-
+this.dnidefinido=30790186;
 this.palabradni = this.busquedaControl.value; // Captura el valor actual del input
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(this.palabradni).
+    this.Busquedaservice.obtenerPorId(dnidefinido).
     subscribe(respuesta=>
       {this.campoinformaciondatabase=respuesta.informacion;
        this.servicioEjecutado = true;
