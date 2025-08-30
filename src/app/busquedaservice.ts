@@ -57,5 +57,4 @@ return of([{ informacion: 'Datos simulados para DNI ' + dni }]);
   
 }
 
-}
   
