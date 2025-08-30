@@ -13,6 +13,13 @@ export class App {
   mensaje: string;
 
   constructor(private miServicio: Busquedaservice) {
-    this.mensaje = this.miServicio.getData();
+    //this.mensaje = this.miServicio.getData();
   }
+
+         buscar(){
+
+    this.mensaje = this.Busquedaservice.getData();
+
+    
+  }     
 }
