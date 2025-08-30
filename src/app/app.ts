@@ -18,7 +18,7 @@ export class App {
 
          buscar(){
 
-    this.mensaje = this.Busquedaservice.getData();
+    this.mensaje = this.miServicio.getData();
 
     
   }     
