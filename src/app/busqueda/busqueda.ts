@@ -7,6 +7,9 @@ import { Busquedaservice } from '../busquedaservice';
 @Component({
   selector: 'app-busqueda',
   imports: [CommonModule, ReactiveFormsModule] ,
+  providers: [
+        Busquedaservice 
+      ],
   templateUrl: './busqueda.html',
   styleUrl: './busqueda.css'
 })
