@@ -16,7 +16,7 @@ import { Busquedaservice } from '../busquedaservice';
 export class Busqueda {
   
 
-
+mensaje: string;
 busquedaControl = new FormControl('');
   resultados: any[] = []; // Para guardar los resultados de la API
   enlaceDocumento: string | null = null; // Variable para almacenar el enlace
@@ -31,6 +31,8 @@ campoinformaciondatabase:any;
   constructor(private Busquedaservice: Busquedaservice) {
     this.busquedaControl.valueChanges.subscribe(valor => {
     this.palabradni = valor;
+
+      this.mensaje = this.Busquedaservice.getData();
       });
   }
 
