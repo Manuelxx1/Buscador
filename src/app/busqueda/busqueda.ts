@@ -39,6 +39,8 @@ campoinformaciondatabase:any;
 //this.palabradni=this.busquedaControl.value;
   servicioEjecutado = false;
   buscar(){
+
+    this.mensaje = this.Busquedaservice.getData();
 this.dnidefinido=30790186;
 this.palabradni = this.busquedaControl.value; // Captura el valor actual del input
     // Llama al método del servicio y se suscribe al Observable
