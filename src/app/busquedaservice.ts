@@ -1,4 +1,4 @@
-// src/app/busquedaservice.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -31,7 +31,10 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
 
 
 constructor(private http: HttpClient) { }
-
+// Lógica de tu servicio
+  getData() {
+    return 'Datos del servicio';
+  }
    //Endpoint del Backend
   //traer por ID
   //con esto traemos los campos por id o dni
