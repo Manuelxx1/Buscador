@@ -8,7 +8,7 @@ import { Busquedaservice } from '../busquedaservice';
   selector: 'app-busqueda',
   imports: [CommonModule, ReactiveFormsModule] ,
   providers: [
-        Busquedaservice 
+      Busquedaservice 
       ],
   templateUrl: './busqueda.html',
   styleUrl: './busqueda.css'
