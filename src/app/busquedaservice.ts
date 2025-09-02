@@ -55,7 +55,12 @@ obtenerPorId(dni: any): Observable<any> {
 
   //json
   getPost() {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+    
+//mostrar un dato
+   // return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+
+    //traer todos
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 
     
