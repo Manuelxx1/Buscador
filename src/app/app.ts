@@ -30,7 +30,7 @@ dnidefinido!:any;
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.miServicio.obtenerPorId(this.dnidefinido).
+    this.miServicio.obtenerPorId().
     subscribe(respuesta=>
       {this.persona=respuesta;
        
