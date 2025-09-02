@@ -53,6 +53,11 @@ obtenerPorId(dni: any): Observable<any> {
 //return of([{ informacion: 'Datos simulados para DNI ' + dni }]);
 }
 
+  //json
+  getPost() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+  }
+
     
     
   
