@@ -57,6 +57,9 @@ obtenerPorId(dni: any): Observable<any> {
   getPost() {
     
 //mostrar un dato
+    //posts representa al endpoint
+    //se podría utilizar otros endpoint juntos
+    //y mostrar varios endpoint
    // return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
 
     //traer todos
