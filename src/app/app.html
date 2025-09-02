@@ -10,19 +10,19 @@
 
 
 <div *ngIf="post">
-      <h2>{{ post.title }}</h2>
-      <p><strong>ID:</strong> {{ post.id }}</p>
-      <p><strong>User ID:</strong> {{ post.userId }}</p>
-      <p>{{ post.body }}</p>
-    </div>
-    <div *ngIf="!post">Cargando...</div>
-
-<ul>
+  <ul>
   <li *ngFor="let mostrarpost of post">
+   <p><strong>ID:</strong> {{ mostrarpost.id }}</p>
+      <p><strong>User ID:</strong> {{ mostrarpost.userId }}</p>
+    
     <h3>{{ mostrarpost.title }}</h3>
     <p>{{ mostrarpost.body }}</p>
   </li>
 </ul>
+ </div>
+    <div *ngIf="!post">Cargando...</div>
+
+
 
 
   <p>Servicio desde app: {{ mensaje }}</p>
