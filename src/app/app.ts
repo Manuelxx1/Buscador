@@ -15,7 +15,7 @@ export class App {
 dnidefinido!:any;
   campoinformaciondatabase:any;
   
-  
+    post: any;
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
   }
@@ -34,5 +34,10 @@ dnidefinido!:any;
        
         
       });
+
+           this.miServicio.getPost().subscribe(data => {
+      this.post = data;
+    });
   }
+  
   }     
