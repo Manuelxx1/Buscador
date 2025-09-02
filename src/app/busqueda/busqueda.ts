@@ -45,12 +45,7 @@ this.dnidefinido=30790186;
 this.palabradni = this.busquedaControl.value; // Captura el valor actual del input
     // Llama al método del servicio y se suscribe al Observable
     
-    this.Busquedaservice.obtenerPorId(this.dnidefinido).
-    subscribe(respuesta=>
-      {this.campoinformaciondatabase=respuesta.informacion;
-       this.servicioEjecutado = true;
-       this.palabradni = respuesta.dniRecibido +"la puta madre"; 
-      });
+    
   }
   
   }
