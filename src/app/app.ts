@@ -3,9 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule ],
+  imports: [RouterOutlet, HttpClientModule,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
