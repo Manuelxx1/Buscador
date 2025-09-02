@@ -16,7 +16,7 @@ export class App {
   mensaje!: string;
 dnidefinido!:any;
   campoinformaciondatabase:any;
-  
+  persona: any;
     post: any;
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
@@ -32,7 +32,7 @@ dnidefinido!:any;
     
     this.miServicio.obtenerPorId(this.dnidefinido).
     subscribe(respuesta=>
-      {this.campoinformaciondatabase=respuesta[0].informacion;
+      {this.persona=respuesta;
        
         
       });
