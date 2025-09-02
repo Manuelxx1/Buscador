@@ -17,6 +17,14 @@
     </div>
     <div *ngIf="!post">Cargando...</div>
 
+<ul>
+  <li *ngFor="let mostrarpost of post">
+    <h3>{{ mostrarpost.title }}</h3>
+    <p>{{ mostrarpost.body }}</p>
+  </li>
+</ul>
+
+
   <p>Servicio desde app: {{ mensaje }}</p>
 <p> infodatabase: {{campoinformaciondatabase}} </p>
 <style>
