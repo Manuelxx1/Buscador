@@ -9,6 +9,14 @@
 <button (click)="buscar()">Buscar</button>
 
 
+<div *ngIf="post">
+      <h2>{{ post.title }}</h2>
+      <p><strong>ID:</strong> {{ post.id }}</p>
+      <p><strong>User ID:</strong> {{ post.userId }}</p>
+      <p>{{ post.body }}</p>
+    </div>
+    <div *ngIf="!post">Cargando...</div>
+
   <p>Servicio desde app: {{ mensaje }}</p>
 <p> infodatabase: {{campoinformaciondatabase}} </p>
 <style>
