@@ -30,10 +30,23 @@ dnidefinido!:any;
 
     // Llama al método del servicio y se suscribe al Observable
     
-    this.miServicio.obtenerPorId().
-    subscribe(respuesta=>
-      {this.persona=respuesta;
+    
        
+
+  this.miServicio.obtenerPorId().subscribe({
+    next: (data: any) => { // <-- aquí la data es de tipo `any` para evitar errores
+      // Verifica que los datos sean un array antes de asignarlos
+      if (Array.isArray(data)) {
+        this.persona = data;
+      } else {
+        // Si no es un array (por ejemplo, es un solo objeto), puedes envolverlo en uno
+        this.persona = [data]; 
+      }
+      console.log('Datos recibidos:', this.persona);
+    },
+    error: (error) => {
+      console.error('Ocurrió un error al obtener las personas:', error);
+    }
         
       });
 
