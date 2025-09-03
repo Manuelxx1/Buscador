@@ -33,22 +33,15 @@ dnidefinido!:any;
     
        
 
-  this.miServicio.obtenerPorId().subscribe({
-    next: (data: any) => { // <-- aquí la data es de tipo `any` para evitar errores
-      // Verifica que los datos sean un array antes de asignarlos
-      if (Array.isArray(data)) {
-        this.persona = data;
-      } else {
+  this.miServicio.obtenerPorId().subscribe(data => {
+    
         // Si no es un array (por ejemplo, es un solo objeto), puedes envolverlo en uno
         this.persona = [data]; 
-      }
-      console.log('Datos recibidos:', this.persona);
-    },
-    error: (error) => {
-      console.error('Ocurrió un error al obtener las personas:', error);
-    }
-        
       });
+      
+    
+        
+      
 
            this.miServicio.getPost().subscribe(data => {
       this.post = data;
