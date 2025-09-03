@@ -22,7 +22,7 @@
  </div>
     <div *ngIf="!post">Cargando...</div>
 
-
+<p>datos del backend </p>
   <ul>
   <li *ngFor="let mostrarpersona of datos">
 <h2>{{ mostrarpersona.nombre }} {{ mostrarpersona.apellido }}</h2>
@@ -35,6 +35,8 @@
     
   </li>
 </ul>
+<p> json crudo </p>
+<pre>{{ datos | json }}</pre>
 
 
   <p>Servicio desde app: {{ mensaje }}</p>
