@@ -43,14 +43,17 @@ constructor(private http: HttpClient) { }
   // //para el imput text a editar
         //sin usar un ngfor
  // private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
-  
-obtenerPorId() {
- // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 
 private apiURL = 'https://portfoliowebbackendkoyeb-1.onrender.com/personas/traer';
+  
+obtenerPorId():Observable<any> {
+    return this.http.get<any>(`${this.apiURL}`);
+ // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
+
+
     
 
-    return this.http.get<any>(this.apiURL);
+    
   
   // con of se simula una respuesta para obtener el valor que llega 
   //al método obtenerPorId(dni: any)
