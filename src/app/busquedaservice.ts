@@ -50,7 +50,7 @@ obtenerPorId() {
 private apiURL = 'https://portfoliowebbackendkoyeb-1.onrender.com/personas/traer';
     
 
-    return this.http.get<any[]>(this.apiURL);
+    return this.http.get<any>(this.apiURL);
   
   // con of se simula una respuesta para obtener el valor que llega 
   //al método obtenerPorId(dni: any)
