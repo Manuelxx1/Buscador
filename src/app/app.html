@@ -22,16 +22,6 @@
  </div>
     <div *ngIf="!post">Cargando...</div>
 
-<div *ngIf="persona">
-      
-      <p><strong>DNI:</strong> {{ persona.dni }}</p>
-      <p><strong>Edad:</strong> {{ persona.edad }}</p>
-      <p><strong>Información:</strong> {{ persona.informacion }}</p>
-      <p><strong>Email:</strong> {{ persona.email || 'No disponible' }}</p>
-      <p><strong>Experiencia:</strong> {{ persona.experiencia || 'No disponible' }}</p>
-      <p><strong>Educación:</strong> {{ persona.educacion || 'No disponible' }}</p>
-    </div>
-    <div *ngIf="!persona">Cargando datos...</div>
 
   <ul>
   <li *ngFor="let mostrarpersona of persona">
