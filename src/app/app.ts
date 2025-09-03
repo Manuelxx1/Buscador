@@ -16,7 +16,7 @@ export class App {
   mensaje!: string;
 dnidefinido!:any;
   campoinformaciondatabase:any;
-  persona: any;
+  persona: any[] = []; 
     post: any;
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
