@@ -16,7 +16,7 @@ export class App {
   mensaje!: string;
 dnidefinido!:any;
   campoinformaciondatabase:any;
-  persona: any[] = []; 
+  public datos: any[] = []; 
     post: any;
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
@@ -33,11 +33,10 @@ dnidefinido!:any;
     
        
 
-  this.miServicio.obtenerPorId().subscribe(data => {
-    
-        // Si no es un array (por ejemplo, es un solo objeto), puedes envolverlo en uno
-        this.persona = [data]; 
-      });
+  this.miServicio.obtenerPorId().subscribe((data: any[]) => {
+      this.datos = data; 
+    });
+        
       
     
         
