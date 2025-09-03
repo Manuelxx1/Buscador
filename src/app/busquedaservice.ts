@@ -44,7 +44,9 @@ constructor(private http: HttpClient) { }
         //sin usar un ngfor
  // private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
 
-private apiURL = 'https://portfoliowebbackendkoyeb-1.onrender.com/personas/traer';
+//private apiURL = 'https://portfoliowebbackendkoyeb-1.onrender.com/personas/traer';
+
+private apiURL = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer';
   
 obtenerPorId():Observable<any> {
     return this.http.get<any>(`${this.apiURL}`);
