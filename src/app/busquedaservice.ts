@@ -47,9 +47,10 @@ constructor(private http: HttpClient) { }
 obtenerPorId() {
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 
+private apiURL = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer';
+    
 
-const url = `https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer`;
-    return this.http.get(url);
+    return this.http.get<any[]>(this.apiURL);
   
   // con of se simula una respuesta para obtener el valor que llega 
   //al método obtenerPorId(dni: any)
