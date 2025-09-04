@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
 
 
 import { CommonModule } from '@angular/common';
