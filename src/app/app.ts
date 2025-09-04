@@ -7,6 +7,8 @@ import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/
 
 import { CommonModule } from '@angular/common';
 
+import { ChangeDetectorRef } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule],
@@ -27,7 +29,7 @@ dnidefinido!:any;
 
 formulario: FormGroup;
   
-  constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
+  constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef) {
     //this.mensaje = this.miServicio.getData();
   this.formulario = this.fb.group({
     dni: ['', Validators.required]
@@ -57,11 +59,13 @@ formulario: FormGroup;
 
   this.miServicio.obtenerTodos().subscribe((data: any[]) => {
       this.datos = data; 
+    this.cdRef.detectChanges();
     });
         
       
     this.miServicio.obtenerPorId(this.dnidefinido).subscribe(data => {
       this.datosporid = data;
+      this.cdRef.detectChanges();
     });
     
         
@@ -69,6 +73,7 @@ formulario: FormGroup;
 
            this.miServicio.getPost().subscribe(data => {
       this.post = data;
+             this.cdRef.detectChanges();
     });
   }
 
