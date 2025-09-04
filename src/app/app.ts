@@ -35,6 +35,10 @@ formulario = this.fb.group({
 enviar() {
     if (this.formulario.valid) {
       console.log('Datos enviados:', this.formulario.value);
+
+      this.miServicio.obtenerPorIdform(this.formulario.value).subscribe(data => {
+      this.datosporid = data;
+    });
     } else {
       this.formulario.markAllAsTouched();
     }
