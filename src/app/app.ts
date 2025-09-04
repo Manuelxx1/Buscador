@@ -20,6 +20,7 @@ dnidefinido!:any;
   campoinformaciondatabase:any;
   public datos: any[] = []; 
   datosporid:any;
+  datosporidform:any;
     post: any;
 
 formulario = this.fb.group({
@@ -37,7 +38,7 @@ enviar() {
       console.log('Datos enviados:', this.formulario.value);
 
       this.miServicio.obtenerPorIdform(this.formulario.value).subscribe(data => {
-      this.datosporid = data;
+      this.datosporidform = data;
     });
     } else {
       this.formulario.markAllAsTouched();
