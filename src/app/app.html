@@ -71,6 +71,15 @@
     </form>
 
 
+<p> datosporidform </p>
+<h2>{{ datosporidform.nombre }} {{ datosporidform.apellido }}</h2>
+      <p><strong>DNI:</strong> {{ datosporidform.dni }}</p>
+      <p><strong>Edad:</strong> {{ datosporidform.edad }}</p>
+      <p><strong>Información:</strong> {{ datosporidform.informacion }}</p>
+      
+      <p><strong>Experiencia:</strong> {{ datosporidform.experiencia || 'No disponible' }}</p>
+      <p><strong>Educación:</strong> {{ datosporidform.educacion || 'No disponible' }}</p>
+    
 
 
   <p>Servicio desde app: {{ mensaje }}</p>
