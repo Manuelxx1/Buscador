@@ -59,15 +59,9 @@
         </span>
       </label>
 
-      <label>
-        Email:
-        <input formControlName="email" />
-        <span *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
-          Ingresá un email válido.
-        </span>
-      </label>
+      
 
-      <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
 
 
