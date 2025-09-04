@@ -54,7 +54,7 @@ obtenerTodos():Observable<any> {
 
 }
 obtenerPorId(dni:any):Observable<any> {
-    return this.http.get<any>(`${this.apiURL}/${this.dni}`);
+    return this.http.get<any>(`${this.apiURL}/${dni}`);
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 
 
