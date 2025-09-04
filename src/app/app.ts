@@ -30,7 +30,7 @@ formulario: FormGroup;
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
     //this.mensaje = this.miServicio.getData();
   this.formulario = this.fb.group({
-    nombre: ['', Validators.required]
+    dni: ['', Validators.required]
     //email: ['', [Validators.required, Validators.email]]
   });
   }
@@ -43,7 +43,7 @@ enviar() {
     if (this.formulario.valid) {
       console.log('Datos enviados:', this.formulario.value);
 
-      this.miServicio.obtenerPorIdform(this.formulario.value).subscribe(data => {
+      this.miServicio.obtenerPorIdform(this.formulario.value.dni).subscribe(data => {
       this.datosporidform = data;
     });
     } else {
