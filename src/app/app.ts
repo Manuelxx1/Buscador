@@ -39,17 +39,7 @@ formulario: FormGroup;
 
   
 
-enviar() {
-    if (this.formulario.valid) {
-      console.log('Datos enviados:', this.formulario.value);
 
-      this.miServicio.obtenerPorIdform(this.formulario.value.dni).subscribe(data => {
-      this.datosporidform = data;
-    });
-    } else {
-      this.formulario.markAllAsTouched();
-    }
-  }
 
 
   
@@ -80,6 +70,18 @@ enviar() {
            this.miServicio.getPost().subscribe(data => {
       this.post = data;
     });
+  }
+
+  enviar() {
+    if (this.formulario.valid) {
+      console.log('Datos enviados:', this.formulario.value);
+
+      this.miServicio.obtenerPorIdform(this.formulario.value.dni).subscribe(data => {
+      this.datosporidform = data;
+    });
+    } else {
+      this.formulario.markAllAsTouched();
+    }
   }
   
   }     
