@@ -29,7 +29,7 @@ dnidefinido!:any;
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
     //this.mensaje = this.miServicio.getData();
-formulario = this.fb.group({
+this.formulario = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]]
   });
