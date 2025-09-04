@@ -21,6 +21,7 @@ dnidefinido!:any;
   public datos: any[] = []; 
   datosporid:any;
   datosporidform:any;
+  formulario:any;
     post: any;
 
 
