@@ -38,6 +38,15 @@
 <p> json crudo </p>
 <pre>{{ datos | json }}</pre>
 
+<p> obtenerporid </p>
+<h2>{{ datosporid.nombre }} {{ datosporid.apellido }}</h2>
+      <p><strong>DNI:</strong> {{ datosporid.dni }}</p>
+      <p><strong>Edad:</strong> {{ datosporid.edad }}</p>
+      <p><strong>Información:</strong> {{ datosporid.informacion }}</p>
+      
+      <p><strong>Experiencia:</strong> {{ datosporid.experiencia || 'No disponible' }}</p>
+      <p><strong>Educación:</strong> {{ datosporid.educacion || 'No disponible' }}</p>
+    
 
   <p>Servicio desde app: {{ mensaje }}</p>
 <p> infodatabase: {{campoinformaciondatabase}} </p>
