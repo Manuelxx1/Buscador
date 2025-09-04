@@ -29,7 +29,7 @@ dnidefinido!:any;
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
     //this.mensaje = this.miServicio.getData();
-const  formulario = this.fb.group({
+  formulario = this.fb.group({
     nombre: ['', Validators.required]
     //email: ['', [Validators.required, Validators.email]]
   });
@@ -40,7 +40,7 @@ const  formulario = this.fb.group({
   
 
 enviar() {
-    if (formulario.valid) {
+    if (this.formulario.valid) {
       console.log('Datos enviados:', this.formulario.value);
 
       this.miServicio.obtenerPorIdform(this.formulario.value).subscribe(data => {
