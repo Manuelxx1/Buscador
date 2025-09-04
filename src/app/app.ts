@@ -23,15 +23,20 @@ dnidefinido!:any;
   datosporidform:any;
     post: any;
 
+
+
+  
+  constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
+    //this.mensaje = this.miServicio.getData();
+  }
+
+
 formulario = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]]
   });
 
   
-  constructor(private miServicio: Busquedaservice,private fb: FormBuilder ) {
-    //this.mensaje = this.miServicio.getData();
-  }
 
 enviar() {
     if (this.formulario.valid) {
