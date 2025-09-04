@@ -17,6 +17,7 @@ export class App {
 dnidefinido!:any;
   campoinformaciondatabase:any;
   public datos: any[] = []; 
+  public datosporid:any;
     post: any;
   constructor(private miServicio: Busquedaservice) {
     //this.mensaje = this.miServicio.getData();
