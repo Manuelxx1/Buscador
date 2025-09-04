@@ -33,11 +33,14 @@ dnidefinido!:any;
     
        
 
-  this.miServicio.obtenerPorId().subscribe((data: any[]) => {
+  this.miServicio.obtenerTodos().subscribe((data: any[]) => {
       this.datos = data; 
     });
         
       
+    this.miServicio.obtenerPorId(this.dnidefinido).subscribe(data => {
+      this.datosporid = data;
+    });
     
         
       
