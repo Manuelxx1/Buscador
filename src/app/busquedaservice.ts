@@ -66,13 +66,20 @@ obtenerPorId(dni:any):Observable<any> {
   //al método obtenerPorId(dni: any)
 //return of([{ informacion: 'Datos simulados para DNI ' + dni }]);
 }
-
+/*
 obtenerPorIdform(dni:any):Observable<any> {
     return this.http.get<any>(`${this.apiURL}/${dni}`);
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 }
   
-
+*/
+private apiURLenlace = 'https://portfoliowebbackendkoyeb-1.onrender.com/html-link';
+  
+obtenerEnlace(dni:any):Observable<any> {
+    return this.http.get<any>(`${this.apiURLenlace}/${dni}`);
+ // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
+}
+  
   //json
   getPost() {
     
