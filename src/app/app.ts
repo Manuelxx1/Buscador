@@ -26,7 +26,7 @@ dnidefinido!:any;
   
     post: any;
 
-
+enlace:any;
 formulario: FormGroup;
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef) {
@@ -76,17 +76,32 @@ formulario: FormGroup;
              this.cdRef.detectChanges();
     });
   }
-
+/*
   enviar() {
     if (this.formulario.valid) {
       console.log('Datos enviados:', this.formulario.value);
 
-      this.miServicio.obtenerPorIdform(this.formulario.value.dni).subscribe(data => {
+      this.miServicio.obtenerPorId(this.formulario.value.dni).subscribe(data => {
       this.datosporidform = data;
     });
     } else {
       this.formulario.markAllAsTouched();
     }
   }
+  */
+
+  
+enviar() {
+    if (this.formulario.valid) {
+      console.log('Datos enviados:', this.formulario.value);
+
+      this.miServicio.obtenerEnlace(this.formulario.value.dni).subscribe(data => {
+      this.enlace = data;
+    });
+    } else {
+      this.formulario.markAllAsTouched();
+    }
+  }
+      
   
   }     
