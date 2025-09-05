@@ -76,7 +76,8 @@ obtenerPorIdform(dni:any):Observable<any> {
 private apiURLenlace = 'https://portfoliowebbackendkoyeb-1.onrender.com/html-link';
   
 obtenerEnlace(dni:any):Observable<any> {
-    return this.http.get<any>(`${this.apiURLenlace}?frase=${dni}`);
+    return this.http.get(`${this.apiURLenlace}?frase=${dni}`, { responseType: 'text' });
+
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 }
   
