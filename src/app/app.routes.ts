@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Busqueda} from './busqueda/busqueda';
 
-import { NotFound} from './Not-Found/not-Found';
+import { NotFound} from './not-found/not-found';
 
 export const routes: Routes = [
   { path: 'buscar', component: Busqueda },
