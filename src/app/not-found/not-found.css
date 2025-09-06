@@ -1,0 +1,19 @@
+.not-found-container {
+  text-align: center;
+  padding: 50px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.not-found-container img {
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
