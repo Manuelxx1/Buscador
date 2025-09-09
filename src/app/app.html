@@ -76,7 +76,18 @@
 -->
 
 
-  
+  <!-- Botón para abrir el modal -->
+<button (click)="mostrarModal = true">Abrir Modal</button>
+
+<!-- Modal -->
+<div class="modal-backdrop" *ngIf="mostrarModal" (click)="cerrarModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h2>Este es un modal</h2>
+    <p>Contenido del modal aquí</p>
+    <button (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
 
 
 
