@@ -102,6 +102,13 @@ enviar() {
       this.formulario.markAllAsTouched();
     }
   }
+
+
+  mostrarModal = false;
+
+  cerrarModal() {
+    this.mostrarModal = false;
+  }
       
   
   }     
