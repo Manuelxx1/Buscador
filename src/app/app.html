@@ -1,10 +1,10 @@
 
 <form [formGroup]="formulario" (ngSubmit)="enviar()">
       <label>
-        Nombre:
+          <h2>Buscar contenido</h2>
         <input formControlName="dni" />
         <span *ngIf="formulario.get('dni')?.invalid && formulario.get('dni')?.touched">
-          El nombre es obligatorio.
+          Debería escribir algo es obligatorio.
         </span>
       </label>
 
