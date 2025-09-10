@@ -1,4 +1,35 @@
 
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">NoticiasHoy</div>
+
+  <div class="weather-time">
+    <span id="weather">🌤️ 22°C</span>
+    <span id="clock">🕒 05:33</span>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/politica">Política</a></li>
+    <li><a href="/economia">Economía</a></li>
+    <li><a href="/deportes">Deportes</a></li>
+    <li><a href="/cultura">Cultura</a></li>
+    <li><a href="/tecnologia">Tecnología</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+
+  <div class="search-login">
+    <input type="text" placeholder="Buscar..." class="search-box">
+    <button class="login-btn">👤 Iniciar sesión</button>
+  </div>
+
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+
+
+
 <form [formGroup]="formulario" (ngSubmit)="enviar()">
       <label>
           <h2>Buscar contenido</h2>
