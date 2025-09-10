@@ -1,33 +1,15 @@
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('active');
-  }
-
-  // Reloj en tiempo real
-  function updateClock() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const mins = now.getMinutes().toString().padStart(2, '0');
-    document.getElementById('clock').textContent = `🕒 ${hours}:${mins}`;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-</script>
 
 
-
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">NoticiasHoy</div>
 
   <div class="weather-time">
     <span id="weather">🌤️ 22°C</span>
-    <span id="clock">🕒 05:33</span>
+    <span id="clock">{{ clock }}</span>
   </div>
 
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links" [class.active]="menuActivo" id="navLinks">
     <li><a href="/">Inicio</a></li>
     <li><a href="/politica">Política</a></li>
     <li><a href="/economia">Economía</a></li>
@@ -42,8 +24,9 @@
     <button class="login-btn">👤 Iniciar sesión</button>
   </div>
 
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <button class="hamburger" (click)="toggleMenu()">☰</button>
 </nav>
+
 
 
 
