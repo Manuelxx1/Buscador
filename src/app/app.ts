@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +15,7 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit   {
   protected readonly title = signal('buscador');
   mensaje!: string;
 dnidefinido!:any;
@@ -28,6 +28,26 @@ dnidefinido!:any;
 
 enlace:any;
 formulario: FormGroup;
+
+menuActivo = false;
+  clock: string = '';
+
+  toggleMenu() {
+    this.menuActivo = !this.menuActivo;
+  }
+
+  ngOnInit() {
+    this.actualizarReloj();
+    setInterval(() => this.actualizarReloj(), 1000);
+  }
+
+  actualizarReloj() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const mins = now.getMinutes().toString().padStart(2, '0');
+    this.clock = `🕒 ${hours}:${mins}`;
+  }
+  
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef) {
     //this.mensaje = this.miServicio.getData();
