@@ -4,7 +4,7 @@ import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
 
-import { ThemeToggleComponent } from './theme-toggle.component'
+import { ThemeToggleComponent } from './theme-toggle-component/theme-toggle-component';
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
