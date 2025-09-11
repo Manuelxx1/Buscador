@@ -20,7 +20,21 @@
   </ul>
 
   <div class="search-login">
-    <input type="text" placeholder="Buscar..." class="search-box">
+
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+      <label>
+          <h2>Buscar contenido</h2>
+        <input formControlName="dni"  placeholder="Buscar..." class="search-box" />
+        <span *ngIf="formulario.get('dni')?.invalid && formulario.get('dni')?.touched">
+          Debería escribir algo es obligatorio.
+        </span>
+      </label>
+
+      
+
+      <button type="submit">Enviar</button>
+    </form>
+    
     <button class="login-btn">👤 Iniciar sesión</button>
   </div>
 
@@ -31,19 +45,7 @@
 
 
 
-<form [formGroup]="formulario" (ngSubmit)="enviar()">
-      <label>
-          <h2>Buscar contenido</h2>
-        <input formControlName="dni" />
-        <span *ngIf="formulario.get('dni')?.invalid && formulario.get('dni')?.touched">
-          Debería escribir algo es obligatorio.
-        </span>
-      </label>
 
-      
-
-      <button type="submit">Enviar</button>
-    </form>
 <h2 [innerHTML]="enlace"></h2>
 <img src="img/descarga.jpeg" alt="Logo">
 
