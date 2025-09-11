@@ -11,7 +11,7 @@ import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink ],
+  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink,ThemeToggleComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
