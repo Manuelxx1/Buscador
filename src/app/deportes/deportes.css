@@ -1,0 +1,28 @@
+/* deportes.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaf6ff;
+  margin: 0;
+}
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+article {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
