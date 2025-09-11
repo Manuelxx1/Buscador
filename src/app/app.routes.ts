@@ -2,6 +2,14 @@ import { Routes } from '@angular/router';
 import { Busqueda} from './busqueda/busqueda';
 import { Politica} from './politica/politica';
 
+import { Economia } from './economia/economia';
+import { Deportes } from './deportes/deportes';
+import { Cultura } from './cultura/cultura';
+
+import { Tecnologia } from './tecnologia/tecnologia';
+
+
+
 
 import { NotFound} from './not-found/not-found';
 import { App} from './app';
@@ -14,6 +22,10 @@ export const routes: Routes = [
   // sólo para que funcione el 404
       { path: '', component:Busqueda },
     { path: 'politica', component: Politica },
+  { path: 'economia', component: Economia },
+    { path: 'deportes', component: Deportes },
+    { path: 'cultura', component: Cultura },
+    { path: 'tecnologia', component: Tecnologia },
   { path: 'buscar', component: Busqueda },
   { path: '**', component: NotFound }
 
