@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,RouterLink } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
@@ -11,7 +11,7 @@ import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule],
+  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
