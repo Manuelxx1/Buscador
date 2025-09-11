@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { Busqueda} from './busqueda/busqueda';
+import { Politica} from './politica/politica';
+
 
 import { NotFound} from './not-found/not-found';
 import { App} from './app';
@@ -11,6 +13,7 @@ export const routes: Routes = [
   // un component como home no planeado para rellenar ese path
   // sólo para que funcione el 404
       { path: '', component:Busqueda },
+    { path: 'politica', component: Politica },
   { path: 'buscar', component: Busqueda },
   { path: '**', component: NotFound }
 
