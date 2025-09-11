@@ -1,0 +1,34 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --header-bg: #2c3e50;
+  --header-text: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+nav a {
+  color: var(--header-text);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Tema oscuro */
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --header-bg: #111;
+  --header-text: #f0f0f0;
+}
