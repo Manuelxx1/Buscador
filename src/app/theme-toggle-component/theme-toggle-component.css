@@ -4,11 +4,13 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
+  z-index: 1000;
   top: 20px;
   right: 20px;
   color: var(--text-color);
 }
+
 
 
 
