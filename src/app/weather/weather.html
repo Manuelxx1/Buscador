@@ -1,1 +1,5 @@
-<p>weather works!</p>
+<div *ngIf="temperature !== null && iconUrl">
+  <img [src]="iconUrl" alt="Ícono del clima">
+  <span>{{ temperature }}°C</span>
+</div>
+
