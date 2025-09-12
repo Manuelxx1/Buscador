@@ -12,15 +12,13 @@ button {
 
 
 body.dark {
-  background-color: black !important;
-  color: white !important;
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
 }
 
 :root {
-  --bg-color: #f4f4f4;
-  --text-color: #222;
-  --header-bg: #2c3e50;
-  --header-text: #fff;
+  --bg-color: #ffffff;
+  --text-color: #000000;
 }
 
 body {
@@ -50,5 +48,6 @@ body.dark {
   --header-bg: #111;
   --header-text: #f0f0f0;
 }
+
 
 
