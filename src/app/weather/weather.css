@@ -1,0 +1,9 @@
+img {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+}
+span {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
