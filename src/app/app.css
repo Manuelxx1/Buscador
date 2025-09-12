@@ -7,6 +7,8 @@
   background-color: #1a1a1a;
   padding: 10px 20px;
   color: white;
+  position: relative;
+  overflow: visible;
 }
 
 .logo {
@@ -99,3 +101,4 @@
     margin-bottom: 10px;
   }
 }
+
