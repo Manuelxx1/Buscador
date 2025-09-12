@@ -6,10 +6,11 @@ button {
   cursor: pointer;
   position: absolute;
   z-index: 1000;
-  top: 30px;
+  top: 50px;
   right: 20px;
   color: var(--text-color);
 }
+
 
 
 
