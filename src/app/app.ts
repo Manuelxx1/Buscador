@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
 
 import { ThemeToggleComponent } from './theme-toggle-component/theme-toggle-component';
-
+import { Weather } from './weather/weather';
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink,ThemeToggleComponent],
+  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink,ThemeToggleComponent,Weather],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
