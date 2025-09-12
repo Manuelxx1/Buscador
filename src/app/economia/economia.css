@@ -1,27 +1,33 @@
-/* economia.css */
-body {
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: Arial, sans-serif;
-  background-color: #eef2f3;
   margin: 0;
 }
+
 header {
-  background-color: #1abc9c;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   padding: 20px;
   text-align: center;
 }
+
 nav a {
-  color: white;
+  color: var(--header-text);
   margin: 0 10px;
   text-decoration: none;
 }
+
 main {
   max-width: 800px;
   margin: auto;
   padding: 20px;
 }
+
 article {
-  background-color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
