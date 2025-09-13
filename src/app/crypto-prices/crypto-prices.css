@@ -1,3 +1,7 @@
+.cripto{
+  left:500px;
+}
+
 .crypto-container {
   max-width: 500px;
   margin: 20px auto;
@@ -31,3 +35,4 @@ th {
 tr:hover {
   background-color: #f1f1f1;
 }
+
