@@ -2,4 +2,6 @@
 <div *ngIf="temperature !== null">
   <p>🌡️ Temperatura: {{ temperature }}°C</p>
   <p>💨 Viento: {{ windSpeed }} km/h</p>
+  <p>🕒 Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
+  <p>🌤️ Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
 </div>
