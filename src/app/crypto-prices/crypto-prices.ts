@@ -9,13 +9,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './crypto-prices.css'
 })
 export class CryptoPrices {
+
 prices: { [key: string]: number } = {};
 
   constructor(private http: HttpClient) {
     this.getPrices();
-
-    // Actualiza cada 5 minutos
-    setInterval(() => this.getPrices(), 300000);
+    setInterval(() => this.getPrices(), 300000); // Actualiza cada 5 minutos
   }
 
   getPrices(): void {
@@ -37,14 +36,15 @@ prices: { [key: string]: number } = {};
           USDC: data['usd-coin'].usd,
           DAI: data.dai.usd
         };
+        console.log('Precios actualizados:', this.prices); // 👈 Verificá en consola
       },
       error: err => console.error('Error al obtener precios de criptomonedas:', err)
     });
   }
 
-get cryptoKeys(): string[] {
+  get cryptoKeys(): string[] {
     return Object.keys(this.prices);
   }
-  
 
+  
 }
