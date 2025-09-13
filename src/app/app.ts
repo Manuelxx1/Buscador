@@ -6,13 +6,15 @@ import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/
 
 import { ThemeToggleComponent } from './theme-toggle-component/theme-toggle-component';
 import { Weather } from './weather/weather';
+import { CryptoPrices } from './crypto-prices/crypto-prices';
+
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink,ThemeToggleComponent,Weather],
+  imports: [RouterOutlet, HttpClientModule,CommonModule,ReactiveFormsModule,RouterLink,ThemeToggleComponent,Weather,CryptoPrices],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
