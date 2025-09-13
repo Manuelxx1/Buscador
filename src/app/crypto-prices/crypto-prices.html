@@ -1,1 +1,18 @@
-<p>crypto-prices works!</p>
+
+<div class="crypto-container" *ngIf="prices.BTC">
+  <h2>💹 Cotizaciones Cripto en USD</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Criptomoneda</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of Object.keys(prices)">
+        <td>{{ key }}</td>
+        <td>${{ prices[key] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
