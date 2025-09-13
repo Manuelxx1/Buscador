@@ -1,7 +1,21 @@
-
 <div *ngIf="temperature !== null">
-  <p>🌡️ Temperatura: {{ temperature }}°C</p>
-  <p>💨 Viento: {{ windSpeed }} km/h</p>
-  <p>🕒 Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
-  <p>🌤️ Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 2em;">🌡️</span>
+    <p>Temperatura: {{ temperature }}°C</p>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 2em;">💨</span>
+    <p>Viento: {{ windSpeed }} km/h</p>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 2em;">🕒</span>
+    <p>Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 2em;">🌤️</span>
+    <p>Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
+  </div>
 </div>
