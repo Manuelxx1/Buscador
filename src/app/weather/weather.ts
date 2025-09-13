@@ -37,4 +37,21 @@ export class Weather {
     });
   }
 
+getWeatherDescription(code: number | null): string {
+    switch (code) {
+      case 0: return 'Despejado';
+      case 1: return 'Mayormente despejado';
+      case 2: return 'Parcialmente nublado';
+      case 3: return 'Nublado';
+      case 45: return 'Niebla';
+      case 61: return 'Lluvia ligera';
+      case 63: return 'Lluvia moderada';
+      case 65: return 'Lluvia intensa';
+      case 80: return 'Chubascos';
+      case 95: return 'Tormenta';
+      default: return 'Desconocido';
+    }
+  }
+  
+
 }
