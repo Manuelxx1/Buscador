@@ -10,6 +10,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './weather.css'
 })
 export class Weather {
+temperature: number | null = null;
+  windSpeed: number | null = null;
+  
     constructor(private http: HttpClient) {
     this.getWeather();
   }
