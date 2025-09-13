@@ -2,20 +2,14 @@
   <div style="display: inline; align-items: center; gap: 10px;">
     <span style="font-size: 2em;">🌡</span>
     <p>Temperatura: {{ temperature }}°C</p>
-  </div>
-
-  <div style="display: inline; align-items: center; gap: 10px;">
-    <span style="font-size: 2em;">💨</span>
+  
+      <span style="font-size: 2em;">💨</span>
     <p>Viento: {{ windSpeed }} km/h</p>
-  </div>
-
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <span style="font-size: 2em;">🕒</span>
+ 
+  <span style="font-size: 2em;">🕒</span>
     <p>Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
-  </div>
-
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <span style="font-size: 2em;">🌤️</span>
+ <span style="font-size: 2em;">🌤️</span>
     <p>Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
   </div>
+  
 </div>
