@@ -10,26 +10,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './weather.css'
 })
 export class Weather {
-  
-temperature: number | null = null;
-  iconUrl: string | null = null;
-
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {
     this.getWeather();
   }
 
   getWeather(): void {
-    const apiKey = 'TU_API_KEY';
-    const city = 'Posadas';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const lat = -27.3671;
+    const lon = -55.8961;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
 
     this.http.get<any>(url).subscribe({
       next: data => {
-        this.temperature = data.main.temp;
-        const iconCode = data.weather[0].icon;
-        this.iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        this.temperature = data.current_weather.temperature;
+        this.windSpeed = data.current_weather.windspeed;
       },
-      error: err => console.error('Error al obtener el clima:', err)
+      error: err => console.error('Error al obtener datos de Open-Meteo:', err)
     });
   }
+
 }
