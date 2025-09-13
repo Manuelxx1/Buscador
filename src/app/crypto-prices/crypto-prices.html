@@ -1,5 +1,4 @@
-
-<div class="crypto-container"  *ngIf="cryptoKeys.length > 0">
+<div class="crypto-container" *ngIf="cryptoKeys.length > 0">
   <h2>💹 Cotizaciones Cripto en USD</h2>
   <table>
     <thead>
@@ -10,12 +9,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let key of cryptoKeys">
-  <td>{{ key }}</td>
-  <td>${{ prices[key] }}</td>
-</tr>
-
+        <td>{{ key }}</td>
+        <td>${{ prices[key] }}</td>
+      </tr>
     </tbody>
   </table>
 </div>
-
-
