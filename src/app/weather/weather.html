@@ -1,5 +1,5 @@
-<div *ngIf="temperature !== null && iconUrl">
-  <img [src]="iconUrl" alt="Ícono del clima">
-  <span>{{ temperature }}°C</span>
-</div>
 
+<div *ngIf="temperature !== null">
+  <p>🌡️ Temperatura: {{ temperature }}°C</p>
+  <p>💨 Viento: {{ windSpeed }} km/h</p>
+</div>
