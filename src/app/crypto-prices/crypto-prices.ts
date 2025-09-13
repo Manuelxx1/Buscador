@@ -23,22 +23,24 @@ prices: { [key: string]: number } = {};
     this.http.get<any>(url).subscribe({
       next: data => {
         this.prices = {
-          BTC: data.bitcoin.usd,
-          ETH: data.ethereum.usd,
-          SOL: data.solana.usd,
-          ADA: data.cardano.usd,
-          BNB: data.binancecoin.usd,
-          XRP: data.xrp.usd,
-          LTC: data.litecoin.usd,
-          DOGE: data.dogecoin.usd,
-          SHIB: data['shiba-inu'].usd,
-          USDT: data.tether.usd,
-          USDC: data['usd-coin'].usd,
-          DAI: data.dai.usd
+          BTC: data.bitcoin?.usd,
+          ETH: data.ethereum?.usd,
+          SOL: data.solana?.usd,
+          ADA: data.cardano?.usd,
+          BNB: data.binancecoin?.usd,
+          XRP: data.xrp?.usd,
+          LTC: data.litecoin?.usd,
+          DOGE: data.dogecoin?.usd,
+          SHIB: data['shiba-inu']?.usd,
+          USDT: data.tether?.usd,
+          USDC: data['usd-coin']?.usd,
+          DAI: data.dai?.usd
         };
-        console.log('Precios actualizados:', this.prices); // 👈 Verificá en consola
       },
-      error: err => console.error('Error al obtener precios de criptomonedas:', err)
+      error: err => {
+        console.error('Error al obtener precios:', err);
+        this.prices = {}; // Vacía en caso de error
+      }
     });
   }
 
