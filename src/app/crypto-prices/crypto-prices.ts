@@ -41,6 +41,10 @@ prices: { [key: string]: number } = {};
       error: err => console.error('Error al obtener precios de criptomonedas:', err)
     });
   }
+
+get cryptoKeys(): string[] {
+    return Object.keys(this.prices);
+  }
   
 
 }
