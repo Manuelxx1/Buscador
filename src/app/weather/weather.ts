@@ -18,6 +18,12 @@ export class Weather {
 
   constructor(private http: HttpClient) {
     this.getWeather();
+
+      // Actualiza cada 10 minutos (600,000 ms)
+  setInterval(() => {
+    this.getWeather();
+  }, 600000);
+ 
   }
 
   getWeather(): void {
