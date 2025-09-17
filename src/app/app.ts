@@ -157,7 +157,7 @@ nodemailer() {
 
   this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
     next: res => {
-      this.emailenviado = res.message;
+      this.emailenviado = res.message + " a " + this.formularionodemailer.value.email ;
       this.cargando = false;
     },
     error: err => {
