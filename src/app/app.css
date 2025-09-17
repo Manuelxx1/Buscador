@@ -73,6 +73,13 @@
   cursor: pointer;
 }
 
+.confirmacion {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
   .nav-links {
@@ -101,4 +108,5 @@
     margin-bottom: 10px;
   }
 }
+
 
