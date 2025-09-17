@@ -74,6 +74,11 @@
   ✅ {{emailenviado}}
 </p>
 
+      <p *ngIf="emailError" class="error">
+  {{emailError}}
+</p>
+
+
   </div>
 
   <button class="hamburger" (click)="toggleMenu()">☰</button>
