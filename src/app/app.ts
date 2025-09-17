@@ -30,8 +30,12 @@ dnidefinido!:any;
     post: any;
 
 enlace!:any;
-  emailenviado:any;
-  emailError: string | null = null;
+ // emailenviado:any;
+  cargando = false;
+emailenviado: string | null = null;
+emailError: string | null = null;
+
+  
 formulario: FormGroup;
   formularionodemailer: FormGroup;
 
@@ -146,15 +150,23 @@ enviar() {
   
 
 nodemailer() {
-this.emailError = null; // Reinicia el error cada vez que se envía
-  this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
-  next: res => this.emailenviado = res.message,
-  error: err => {
-      console.error('Error:', err);
-      this.emailError = '❌ No se pudo enviar el correo. Intenta más tarde.';
-    }
-});
+nodemailer() {
+  this.emailenviado = null;
+  this.emailError = null;
+  this.cargando = true;
 
-}   
+  this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
+    next: res => {
+      this.emailenviado = res.message;
+      this.cargando = false;
+    },
+    error: err => {
+      console.error('Error al enviar correo:', err);
+      this.emailError = '❌ No se pudo enviar el correo. Intenta más tarde.';
+      this.cargando = false;
+    }
+  });
+}
+
   
   }     
