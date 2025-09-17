@@ -79,6 +79,12 @@
   margin-top: 10px;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
@@ -108,5 +114,6 @@
     margin-bottom: 10px;
   }
 }
+
 
 
