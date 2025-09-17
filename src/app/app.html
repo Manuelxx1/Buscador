@@ -49,6 +49,26 @@
     <button class="login-btn">👤 Iniciar sesión</button>
   </div>
 
+
+    <div class="nodemailer">
+
+    <form [formGroup]="formularionodemailer " (ngSubmit)="nodemailer()">
+      <label>
+          <h2>Enviar email</h2>
+        <input formControlName="email"  placeholder="tu e-mail aquí" class="emailbox" />
+        <span *ngIf="formularionodemailer.get('dni')?.invalid && formulario.get('dni')?.touched">
+          Debería escribir algo es obligatorio.
+        </span>
+      </label>
+
+      
+
+      <button type="submit">Enviar</button>
+    </form>
+    
+    
+  </div>
+
   <button class="hamburger" (click)="toggleMenu()">☰</button>
 <app-theme-toggle-component></app-theme-toggle-component>
 <app-weather></app-weather>
