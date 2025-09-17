@@ -97,7 +97,7 @@ obtenerEnlace(dni:any):Observable<any> {
   //nodemailer
   // email.service.ts
 sendEmail(email: string): Observable<any> {
-  return this.http.post('http://localhost:3000/send-news', { email });
+  return this.http.post('https://3000-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/', { email });
 }
 
     
