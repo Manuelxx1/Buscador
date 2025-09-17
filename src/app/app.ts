@@ -29,7 +29,7 @@ dnidefinido!:any;
   
     post: any;
 
-enlace:any;
+enlace!:any;
   emailenviado:any;
 formulario: FormGroup;
   formularionodemailer: FormGroup;
@@ -76,7 +76,7 @@ menuActivo = false;
 
 
   
-
+/*
          buscar(){
 
     this.mensaje = this.miServicio.getData();
@@ -107,6 +107,8 @@ menuActivo = false;
              this.cdRef.detectChanges();
     });
   }
+
+  */
 /*
   enviar() {
     if (this.formulario.valid) {
@@ -119,7 +121,7 @@ menuActivo = false;
       this.formulario.markAllAsTouched();
     }
   }
-  */
+  
 
   
 enviar() {
@@ -134,7 +136,7 @@ enviar() {
     }
   }
 
-
+*/
   mostrarModal = false;
 
   cerrarModal() {
