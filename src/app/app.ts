@@ -132,6 +132,12 @@ enviar() {
   cerrarModal() {
     this.mostrarModal = false;
   }
+
+  this.miServicio.sendEmail('usuario@email.com').subscribe({
+  next: res => console.log('Correo enviado:', res),
+  error: err => console.error('Error:', err)
+});
+
       
   
   }     
