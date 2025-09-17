@@ -70,7 +70,10 @@
       <button type="submit">Enviar</button>
     </form>
     
-    <p> correo enviado: {{emailenviado}}</p>
+    <p *ngIf="emailenviado" class="confirmacion">
+  ✅ {{emailenviado}}
+</p>
+
   </div>
 
   <button class="hamburger" (click)="toggleMenu()">☰</button>
