@@ -97,7 +97,7 @@ obtenerEnlace(dni:any):Observable<any> {
   //nodemailer
   // email.service.ts
 sendEmail(email: string): Observable<any> {
-  return this.http.post('https://backend-news.onrender.com/send-news', { email });
+  return this.http.post('https://backend-news-tk56.onrender.com/send-news', { email });
 }
 
 
