@@ -67,14 +67,21 @@
 
       
 
-      <button type="submit">Enviar</button>
+      <button type="submit" [disabled]="cargando">
+  {{ cargando ? 'Enviando...' : 'Enviar' }}
+</button>
+
+<div *ngIf="cargando" class="spinner"></div>
+
+
     </form>
     
-    <p *ngIf="emailenviado" class="confirmacion">
+    
+<p *ngIf="emailenviado" class="confirmacion">
   ✅ {{emailenviado}}
 </p>
 
-      <p *ngIf="emailError" class="error">
+<p *ngIf="emailError" class="error">
   {{emailError}}
 </p>
 
