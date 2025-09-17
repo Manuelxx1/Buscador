@@ -94,6 +94,12 @@ obtenerEnlace(dni:any):Observable<any> {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 
+  //nodemailer
+  // email.service.ts
+sendEmail(email: string): Observable<any> {
+  return this.http.post('http://localhost:3000/send-news', { email });
+}
+
     
     
   
