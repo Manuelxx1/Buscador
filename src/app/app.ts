@@ -145,7 +145,7 @@ enviar() {
 nodemailer() {
 
   this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
-  next: res => this.emailenviado = res;,
+  next: res => this.emailenviado = res,
   error: err => console.error('Error:', err)
 });
 
