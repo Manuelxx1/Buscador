@@ -30,7 +30,9 @@ dnidefinido!:any;
     post: any;
 
 enlace:any;
+  emailenviado:any;
 formulario: FormGroup;
+  formularionodemailer: FormGroup;
 
 menuActivo = false;
   clock: string = '';
@@ -58,6 +60,12 @@ menuActivo = false;
     dni: ['', Validators.required]
     //email: ['', [Validators.required, Validators.email]]
   });
+
+    //formularionodemailer
+    this.formularionodemailer = this.fb.group({
+    email: ['', [Validators.required, Validators.email]]
+  });
+  
   }
 
 
@@ -132,12 +140,15 @@ enviar() {
   cerrarModal() {
     this.mostrarModal = false;
   }
+  
 
-  this.miServicio.sendEmail('usuario@email.com').subscribe({
-  next: res => console.log('Correo enviado:', res),
+nodemailer() {
+
+  this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
+  next: res => this.emailenviado = res;,
   error: err => console.error('Error:', err)
 });
 
-      
+}   
   
   }     
