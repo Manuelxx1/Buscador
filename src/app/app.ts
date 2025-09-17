@@ -149,7 +149,7 @@ enviar() {
   }
   
 
-nodemailer() {
+
 nodemailer() {
   this.emailenviado = null;
   this.emailError = null;
