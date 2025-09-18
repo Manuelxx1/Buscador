@@ -39,7 +39,7 @@ emailError: string | null = null;
   
   
 formulario: FormGroup;
-  formularionodemailer: FormGroup;
+  
 formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
   
@@ -70,10 +70,7 @@ menuActivo = false;
     //email: ['', [Validators.required, Validators.email]]
   });
 
-    //formularionodemailer
-    this.formularionodemailer = this.fb.group({
-    email: ['', [Validators.required, Validators.email]]
-  });
+
 
 
   //formulario intereses
