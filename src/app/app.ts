@@ -96,12 +96,16 @@ this.emailenviado = null;
   const email = valores.email;
 
   this.miServicio.enviarCorreoPersonalizado({ email, intereses }).subscribe({
-    next: res => this.mensajeConfirmacion = res.message,
+  next: res => {
+    this.mensajeConfirmacion = res.message;
     this.cargando = false;
-    error: err => this.mensajeConfirmacion = '❌ Error al enviar el correo'
-    
-      this.cargando = false;
-  });
+  },
+  error: err => {
+    this.mensajeConfirmacion = '❌ Error al enviar el correo';
+    this.cargando = false;
+  }
+});
+
 
 
   
