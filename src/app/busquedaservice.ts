@@ -101,8 +101,12 @@ sendEmail(email: string): Observable<any> {
 }
 
 
-    
-    
+    //formulario intereses
+  
+    enviarIntereses(data: { email: string, intereses: string[] }): Observable<any> {
+  return this.http.post('https://backend-news.onrender.com/intereses', data);
+}
+
   
 }
 
