@@ -86,13 +86,21 @@ menuActivo = false;
 
 
   enviarPreferencias() {
+this.emailenviado = null;
+  this.emailError = null;
+  this.cargando = true;
+
+    
   const valores = this.formularioIntereses.value;
   const intereses = Object.keys(valores).filter(key => valores[key] === true && key !== 'email');
   const email = valores.email;
 
   this.miServicio.enviarCorreoPersonalizado({ email, intereses }).subscribe({
     next: res => this.mensajeConfirmacion = res.message,
+    this.cargando = false;
     error: err => this.mensajeConfirmacion = '❌ Error al enviar el correo'
+    
+      this.cargando = false;
   });
 }
 
@@ -171,23 +179,6 @@ enviar() {
   
 
 
-nodemailer() {
-  this.emailenviado = null;
-  this.emailError = null;
-  this.cargando = true;
-
-  this.miServicio.sendEmail(this.formularionodemailer.value.email).subscribe({
-    next: res => {
-      this.emailenviado = res.message + " a " + this.formularionodemailer.value.email ;
-      this.cargando = false;
-    },
-    error: err => {
-      console.error('Error al enviar correo:', err);
-      this.emailError = '❌ No se pudo enviar el correo. Intenta más tarde.';
-      this.cargando = false;
-    }
-  });
-}
 
   
   }     
