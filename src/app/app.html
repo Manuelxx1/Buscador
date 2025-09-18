@@ -48,6 +48,39 @@
   </div>
 
   -->
+
+<form [formGroup]="formularioIntereses" (ngSubmit)="guardarIntereses()">
+  <h3>¿Qué noticias querés recibir?</h3>
+
+  <label>
+    <input type="checkbox" formControlName="cripto" />
+    Criptomonedas
+  </label><br>
+
+  <label>
+    <input type="checkbox" formControlName="tecnologia" />
+    Tecnología
+  </label><br>
+
+  <label>
+    <input type="checkbox" formControlName="politica" />
+    Política
+  </label><br>
+
+  <label>
+    <input type="checkbox" formControlName="deportes" />
+    Deportes
+  </label><br>
+
+  <button type="submit">Guardar preferencias</button>
+</form>
+
+<p *ngIf="interesesGuardados" class="confirmacion">
+  ✅ Preferencias guardadas: {{interesesGuardados.join(', ')}}
+</p>
+
+
+  
     <div class="nodemailer">
 
     <form [formGroup]="formularionodemailer" (ngSubmit)="nodemailer()">
