@@ -41,8 +41,7 @@ emailError: string | null = null;
 formulario: FormGroup;
   formularionodemailer: FormGroup;
 formularioIntereses: FormGroup;
-interesesGuardados: string[] = [];
-
+mensajeConfirmacion: string | null = null;
   
 menuActivo = false;
   clock: string = '';
@@ -82,26 +81,23 @@ menuActivo = false;
     cripto: [false],
     tecnologia: [false],
     politica: [false],
-    deportes: [false]
+    deportes: [false],
+    email: ['', [Validators.required, Validators.email]]
   });
   
   }
 
 
-  guardarIntereses() {
+  enviarPreferencias() {
   const valores = this.formularioIntereses.value;
-  const seleccionados = Object.keys(valores).filter(key => valores[key]);
+  const intereses = Object.keys(valores).filter(key => valores[key] === true && key !== 'email');
+  const email = valores.email;
 
-  this.interesesGuardados = seleccionados;
-
-  const email = this.formularionodemailer.value.email || 'anonimo@demo.com';
-
-  this.miServicio.enviarIntereses({ email, intereses: seleccionados }).subscribe({
-    next: res => console.log('Intereses enviados:', res),
-    error: err => console.error('Error al enviar intereses:', err)
+  this.miServicio.enviarCorreoPersonalizado({ email, intereses }).subscribe({
+    next: res => this.mensajeConfirmacion = res.message,
+    error: err => this.mensajeConfirmacion = '❌ Error al enviar el correo'
   });
 }
-
 
   
 
