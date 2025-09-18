@@ -48,7 +48,7 @@
   </div>
 
   -->
-
+<div class="nodemailer">
 
 <form [formGroup]="formularioIntereses" (ngSubmit)="enviarPreferencias()">
   <h3>¿Qué noticias querés recibir?</h3>
@@ -60,6 +60,10 @@
 
   <input formControlName="email" placeholder="Tu email" /><br><br>
 
+<span *ngIf="formularioIntereses.get('email')?.invalid && formularioIntereses.get('email')?.touched">
+  El email es obligatorio y debe ser válido.
+</span>
+  
   <button type="submit" [disabled]="cargando">
   {{ cargando ? 'Enviando...' : 'Enviar' }}
 </button>
@@ -72,44 +76,19 @@
   ✅ {{mensajeConfirmacion}}
 </p>
 
-
-  
-    <div class="nodemailer">
-
-    <form [formGroup]="formularionodemailer" (ngSubmit)="nodemailer()">
-
-      <label>
-          <h2>Enviar email</h2>
-        <input formControlName="email"  placeholder="tu e-mail aquí" class="emailbox" />
-        <span *ngIf="formularionodemailer.get('email')?.invalid && formularionodemailer.get('email')?.touched">
-  El email es obligatorio y debe ser válido.
-</span>
-
-          
-      </label>
-
-      
-
-      <button type="submit" [disabled]="cargando">
-  {{ cargando ? 'Enviando...' : 'Enviar' }}
-</button>
-
-<div *ngIf="cargando" class="spinner"></div>
-
-
-    </form>
-    
-    
-<p *ngIf="emailenviado" class="confirmacion">
-  ✅ {{emailenviado}}
-</p>
-
 <p *ngIf="emailError" class="error">
   {{emailError}}
 </p>
 
+  
+    
+</div>
+    
 
-  </div>
+
+
+
+
 
   <button class="hamburger" (click)="toggleMenu()">☰</button>
 <app-theme-toggle-component></app-theme-toggle-component>
