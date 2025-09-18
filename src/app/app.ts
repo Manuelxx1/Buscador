@@ -175,13 +175,14 @@ enviar() {
   }
 
 */
-  mostrarModal = false;
+ /*
+    mostrarModal = false;
 
   cerrarModal() {
     this.mostrarModal = false;
   }
   
-
+*/
 
 
   
