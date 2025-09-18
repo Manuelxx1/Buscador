@@ -35,10 +35,15 @@ enlace!:any;
 emailenviado: string | null = null;
 emailError: string | null = null;
 
+
+  
   
 formulario: FormGroup;
   formularionodemailer: FormGroup;
+formularioIntereses: FormGroup;
+interesesGuardados: string[] = [];
 
+  
 menuActivo = false;
   clock: string = '';
 
@@ -70,9 +75,32 @@ menuActivo = false;
     this.formularionodemailer = this.fb.group({
     email: ['', [Validators.required, Validators.email]]
   });
+
+
+  //formulario intereses
+    this.formularioIntereses = this.fb.group({
+    cripto: [false],
+    tecnologia: [false],
+    politica: [false],
+    deportes: [false]
+  });
   
   }
 
+
+  guardarIntereses() {
+  const valores = this.formularioIntereses.value;
+  const seleccionados = Object.keys(valores).filter(key => valores[key]);
+
+  this.interesesGuardados = seleccionados;
+
+  const email = this.formularionodemailer.value.email || 'anonimo@demo.com';
+
+  this.miServicio.enviarIntereses({ email, intereses: seleccionados }).subscribe({
+    next: res => console.log('Intereses enviados:', res),
+    error: err => console.error('Error al enviar intereses:', err)
+  });
+}
 
 
   
