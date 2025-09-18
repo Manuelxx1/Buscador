@@ -102,7 +102,7 @@ this.emailenviado = null;
     
       this.cargando = false;
   });
-}
+
 
   
 
