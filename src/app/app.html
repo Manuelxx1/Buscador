@@ -60,7 +60,12 @@
 
   <input formControlName="email" placeholder="Tu email" /><br><br>
 
-  <button type="submit">Guardar y enviar correo</button>
+  <button type="submit" [disabled]="cargando">
+  {{ cargando ? 'Enviando...' : 'Enviar' }}
+</button>
+
+<div *ngIf="cargando" class="spinner"></div>
+
 </form>
 
 <p *ngIf="mensajeConfirmacion" class="confirmacion">
