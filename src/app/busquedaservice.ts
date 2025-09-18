@@ -94,14 +94,10 @@ obtenerEnlace(dni:any):Observable<any> {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 
-  //nodemailer
-  // email.service.ts
-sendEmail(email: string): Observable<any> {
-  return this.http.post('https://backend-news-tk56.onrender.com/send-news', { email });
-}
+  
 
 
-    //formulario intereses
+    //formulario intereses nodemailer
   
     enviarCorreoPersonalizado(data: { email: string, intereses: string[] }): Observable<any> {
   return this.http.post('https://backend-news-tk56.onrender.com/enviar-correo', data);
