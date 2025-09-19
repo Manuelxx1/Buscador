@@ -26,14 +26,14 @@
     <li><a routerLink="/tecnologia">Tecnología</a></li>
     <li><a routerLink="/contacto">Contacto</a></li>
   </ul>
-<!--
-  <div class="search-login">
 
-    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+  <div class="buscarcontenido">
+
+    <form [formGroup]="formulario" (ngSubmit)="buscarcontenido()">
       <label>
           <h2>Buscar contenido</h2>
-        <input formControlName="dni"  placeholder="Buscar..." class="search-box" />
-        <span *ngIf="formulario.get('dni')?.invalid && formulario.get('dni')?.touched">
+        <input formControlName="palabraclave"  placeholder="Buscar..." class="search-box" />
+        <span *ngIf="formulario.get('palabraclave')?.invalid && formulario.get('palabraclave')?.touched">
           Debería escribir algo es obligatorio.
         </span>
       </label>
@@ -43,7 +43,7 @@
       <button type="submit">Enviar</button>
     </form>
 
-
+<!--
     <button class="login-btn">👤 Iniciar sesión</button>
   </div>
 
