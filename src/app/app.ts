@@ -66,7 +66,7 @@ menuActivo = false;
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef) {
     //this.mensaje = this.miServicio.getData();
   this.formulario = this.fb.group({
-    dni: ['', Validators.required]
+    palabraclave: ['', Validators.required]
     //email: ['', [Validators.required, Validators.email]]
   });
 
@@ -160,13 +160,13 @@ this.emailenviado = null;
     }
   }
   
-
+*/
   
-enviar() {
+buscarcontenido() {
     if (this.formulario.valid) {
       console.log('Datos enviados:', this.formulario.value);
 
-      this.miServicio.obtenerEnlace(this.formulario.value.dni).subscribe(data => {
+      this.miServicio.obtenerEnlace(this.formulario.value.palabraclave).subscribe(data => {
       this.enlace = data;
     });
     } else {
@@ -174,7 +174,7 @@ enviar() {
     }
   }
 
-*/
+
  /*
     mostrarModal = false;
 
