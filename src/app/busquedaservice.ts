@@ -100,7 +100,7 @@ obtenerEnlace(dni:any):Observable<any> {
     //formulario intereses nodemailer
   
     enviarCorreoPersonalizado(data: { email: string, intereses: string[] }): Observable<any> {
-  return this.http.post('https://backend-news-tk56.onrender.com/enviar-correo', data);
+  return this.http.post('https://backend-news-tk56.onrender.com/guardar-preferencias', data);
 }
 
   
