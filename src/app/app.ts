@@ -98,10 +98,12 @@ this.emailenviado = null;
   this.miServicio.enviarCorreoPersonalizado({ email, intereses }).subscribe({
   next: res => {
     this.mensajeConfirmacion = res.message;
+    alert('Éxito: ' + JSON.stringify(res));
     this.cargando = false;
   },
   error: err => {
     this.mensajeConfirmacion = '❌ Error al enviar el correo';
+    alert('Error: ' + JSON.stringify(err));
     this.cargando = false;
   }
 });
