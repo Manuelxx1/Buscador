@@ -102,8 +102,8 @@ this.emailenviado = null;
     this.cargando = false;
   },
   error: err => {
-    this.mensajeConfirmacion = '❌ Error al enviar el correo';
-    alert('Error: ' + JSON.stringify(err));
+    this.mensajeConfirmacion = 'Error: ' + JSON.stringify(err);
+    //alert('Error: ' + JSON.stringify(err));
     this.cargando = false;
   }
 });
