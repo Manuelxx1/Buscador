@@ -39,9 +39,12 @@ emailError: string | null = null;
   
   
 formulario: FormGroup;
+  formulariologin: FormGroup;
   
 formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
+
+datosdesesion:any;
   
 menuActivo = false;
   clock: string = '';
@@ -82,7 +85,32 @@ menuActivo = false;
     email: ['', [Validators.required, Validators.email]]
   });
   
+ 
+  //formulario login
+    this.formulariologin = this.fb.group({
+    nombre: ['', Validators.required],
+      password: ['', Validators.required]
+    //email: ['', [Validators.required, Validators.email]]
+  });
+    
+  
+  
   }
+
+    formulariologin() {
+if (this.formulariologin.valid) {
+      console.log('Datos enviados:', this.formulariologin.value);
+
+      this.miServicio.iniciarSesion(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe(data => {
+      this.datosdesesion = data;
+    });
+    } else {
+      this.formulariologin.markAllAsTouched();
+    }
+      
+    }
+
+      
 
 
   enviarPreferencias() {
