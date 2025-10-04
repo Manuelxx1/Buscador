@@ -40,7 +40,7 @@ emailError: string | null = null;
   
 formulario: FormGroup;
   formulariologin: FormGroup;
-  
+  formularioregistro:FormGroup;
 formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
 
@@ -92,10 +92,41 @@ menuActivo = false;
       password: ['', Validators.required]
     //email: ['', [Validators.required, Validators.email]]
   });
+
+
+    //formulario registro
+    this.formularioregistro = this.fb.group({
+    nombre: ['', Validators.required],
+      password: ['', Validators.required]
+    //email: ['', [Validators.required, Validators.email]]
+  });
     
   
   
+  }//constructor
+
+
+  formularioregistrodatos() {
+if (this.formularioregistro.valid) {
+      this.miServicio.registrarDatos(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe({
+      next: res => {
+    // Login exitoso
+    console.log('Login OK:', res);
+   this.datosdesesion = res;
+        alert("datos registrados"); //mensaje del.backend por ejemplo: "Login exitoso"
+    this.router.navigate(['/']); // redirige al perfil
+  },
+  error: err => {
+    // Login fallido
+    console.error('Error de login:', err);
+    alert('Nombre o contraseña ya existen');
   }
+});
+  } else {
+    alert('Por favor completá todos los campos');
+  }
+      
+    }
 
     formulariologindatos() {
 if (this.formulariologin.valid) {
