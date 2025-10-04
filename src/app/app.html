@@ -53,6 +53,7 @@
         <input formControlName="password"  placeholder="Ingresar password" class="search-box" />
         <span *ngIf="formulariologin.get('nombre')?.invalid && formulariologin.get('nombre')?.touched">
           Debería escribir algo es obligatorio.
+          </span>
         <span *ngIf="formulariologin.get('password')?.invalid && formulariologin.get('password')?.touched">
        Debería escribir una contraseña
         
