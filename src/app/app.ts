@@ -108,7 +108,7 @@ menuActivo = false;
 
   formularioregistrodatos() {
 if (this.formularioregistro.valid) {
-      this.miServicio.registrarDatos(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe({
+      this.miServicio.registrarDatos(this.formularioregistro.value.nombre,this.formularioregistro.value.password).subscribe({
       next: res => {
     // Login exitoso
     console.log('Login OK:', res);
