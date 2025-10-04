@@ -43,6 +43,28 @@
     </form>
     
   </div>
+
+            <div class="formulariologin">
+
+    <form [formGroup]="formulariologin" (ngSubmit)="formulariologin()">
+      <label>
+          <h2>INICIAR SESIÓN</h2>
+        <input formControlName="nombre"  placeholder="Ingresar Nombre" class="search-box" />
+        <input formControlName="password"  placeholder="Ingresar password" class="search-box" />
+        <span *ngIf="formulariologin.get('nombre')?.invalid && formulariologin.get('nombre')?.touched">
+          Debería escribir algo es obligatorio.
+        <span *ngIf="formulariologin.get('password')?.invalid && formulariologin.get('password')?.touched">
+       Debería escribir una contraseña
+        
+        </span>
+      </label>
+
+      
+
+      <button type="submit">Enviar</button>
+    </form>
+    
+  </div>
 <!--
     <button class="login-btn">👤 Iniciar sesión</button>
   </div>
