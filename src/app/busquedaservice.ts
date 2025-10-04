@@ -89,6 +89,15 @@ iniciarSesion(nombre: string, password: string): Observable<any> {
   return this.http.post(this.apiURLogin, datosdesesion);
 }
 
+  //formulario registro método
+  private apiURLRegistro = 'https://portfoliowebbackendkoyeb-1.onrender.com/register';
+
+registrarDatos(nombre: string, password: string): Observable<any> {
+  const datosderegistro = { nombre, password };
+  return this.http.post(this.apiURLRegistro, datosderegistro);
+}
+
+  
 
   
   //json
