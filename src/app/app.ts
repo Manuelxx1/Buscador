@@ -3,7 +3,7 @@ import { RouterOutlet,RouterLink } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import { ThemeToggleComponent } from './theme-toggle-component/theme-toggle-component';
 import { Weather } from './weather/weather';
 import { CryptoPrices } from './crypto-prices/crypto-prices';
@@ -66,7 +66,7 @@ menuActivo = false;
   }
   
   
-  constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef) {
+  constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router) {
     //this.mensaje = this.miServicio.getData();
   this.formulario = this.fb.group({
     palabraclave: ['', Validators.required]
