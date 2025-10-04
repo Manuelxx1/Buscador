@@ -97,13 +97,14 @@ menuActivo = false;
   
   }
 
-    formulariologin() {
-
+    formulariologindatos() {
+if (this.formulariologin.valid) {
       this.miServicio.iniciarSesion(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe({
       next: res => {
     // Login exitoso
     console.log('Login OK:', res);
-    alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
+   this.datosdesesion = res.usuario;
+        alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
     this.router.navigate(['/']); // redirige al perfil
   },
   error: err => {
@@ -112,6 +113,9 @@ menuActivo = false;
     alert('Nombre o contraseña incorrectos');
   }
 });
+  } else {
+    alert('Por favor completá todos los campos');
+  }
       
     }
 
