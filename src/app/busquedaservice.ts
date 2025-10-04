@@ -80,6 +80,16 @@ obtenerEnlace(dni:any):Observable<any> {
 
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 }
+
+  //formulario login método
+  private apiURLogin = 'https://portfoliowebbackendkoyeb-1.onrender.com/loginsinjwt';
+
+iniciarSesion(nombre: string, password: string): Observable<any> {
+  const datosdesesion = { nombre, password };
+  return this.http.post(this.apiURLogin, datosdesesion);
+}
+
+
   
   //json
   getPost() {
