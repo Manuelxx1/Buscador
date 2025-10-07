@@ -88,7 +88,9 @@ button:hover:enabled {
 }
 .formularioregistro{
   border:1px solid ;
+  border-radius: 1px;
   background-color: green;
 }
+
 
 
