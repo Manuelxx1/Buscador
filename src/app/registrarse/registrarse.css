@@ -1,0 +1,15 @@
+.requisitos {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.requisitos li {
+  color: red;
+  margin-bottom: 5px;
+}
+
+.requisitos li.ok {
+  color: green;
+  font-weight: bold;
+}
