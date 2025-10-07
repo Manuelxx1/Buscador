@@ -1,1 +1,23 @@
-<p>registrarse works!</p>
+
+<div class="formularioregistro">
+
+    <form [formGroup]="formularioregistro" (ngSubmit)="formularioregistrodatos()">
+      <label>
+          <h2>REGISTRARSE</h2>
+        <input formControlName="nombre"  placeholder="Ingresar Nombre" class="search-box" />
+        <input formControlName="password"  placeholder="Ingresar password" class="search-box" />
+        <span *ngIf="formularioregistro.get('nombre')?.invalid && formularioregistro.get('nombre')?.touched">
+          Debería escribir algo es obligatorio.
+          </span>
+        <span *ngIf="formularioregistro.get('password')?.invalid && formularioregistro.get('password')?.touched">
+       Debería escribir una contraseña
+        
+        </span>
+      </label>
+
+      
+
+      <button type="submit">Enviar</button>
+    </form>
+    {{datosdesesion}}
+  </div>
