@@ -31,13 +31,8 @@ constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private 
     '',
     [
       Validators.required,
-      Validators.pattern(
-        '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=\\-{}\
+      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=\\-{}\\[\\]:;"\'<>,.?/]).{8,}$')
 
-\[\\]
-
-:;"\'<>,.?/]).{8,}$'
-      )
     ]
   ]
     //email: ['', [Validators.required, Validators.email]]
