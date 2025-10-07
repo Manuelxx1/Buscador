@@ -27,7 +27,18 @@ constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private 
   //formulario registro
     this.formularioregistro = this.fb.group({
     nombre: ['', Validators.required],
-      password: ['', Validators.required, Validators.pattern('^[A-Za-z0-9!@#$%^&*()_+=\\-{}\\[\\]:;"\'<>,.?/]{8,}$')   ]
+      password: ['', Validators.required,  Validators.pattern(
+  '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=\\-{}\
+
+\[\\]
+
+:;"\'<>,.?/])[A-Za-z\\d!@#$%^&*()_+=\\-{}\
+
+\[\\]
+
+:;"\'<>,.?/]{8,}$'
+)
+   ]
     //email: ['', [Validators.required, Validators.email]]
   });
     
