@@ -55,4 +55,36 @@ button:hover:enabled {
 }
 
 
+.barra-fuerza {
+  width: 100%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.nivel {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.nivel.debil {
+  background-color: red;
+}
+
+.nivel.media {
+  background-color: orange;
+}
+
+.nivel.fuerte {
+  background-color: green;
+}
+
+.texto-fuerza {
+  font-size: 0.9em;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
 
