@@ -5,6 +5,8 @@ import { Politica} from './politica/politica';
 import { Economia } from './economia/economia';
 import { Deportes } from './deportes/deportes';
 import { Cultura } from './cultura/cultura';
+import { Registrarse } from './registrarse/registrarse';
+
 
 import { Tecnologia } from './tecnologia/tecnologia';
 
@@ -26,6 +28,7 @@ export const routes: Routes = [
     { path: 'deportes', component: Deportes },
     { path: 'cultura', component: Cultura },
     { path: 'tecnologia', component: Tecnologia },
+  { path: 'registrarse', component: Registrarse },
   { path: 'buscar', component: Busqueda },
   { path: '**', component: NotFound }
 
