@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
-
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-registrarse',
