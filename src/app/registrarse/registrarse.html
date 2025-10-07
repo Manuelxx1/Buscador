@@ -9,17 +9,17 @@
         <span *ngIf="formularioregistro.get('nombre')?.invalid && formularioregistro.get('nombre')?.touched">
   Debería escribir algo es obligatorio.
           </span>
-        <span *ngIf="formularioregistro.get('password')?.invalid && formularioregistro.get('password')?.touched">
-         <small *ngIf="formularioregistro.get('password')?.errors?.['required']">
+          <div *ngIf="formularioregistro.get('password')?.touched && formularioregistro.get('password')?.invalid">
+    <small *ngIf="formularioregistro.get('password')?.errors?.['required']">
       La contraseña es obligatoria.
     </small>
     <small *ngIf="formularioregistro.get('password')?.errors?.['pattern']">
       La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un símbolo.
     </small>
-          
+  </div>
           
         
-        </span>
+        
       </label>
 
       
