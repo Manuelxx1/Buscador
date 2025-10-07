@@ -22,6 +22,38 @@ import { ChangeDetectorRef } from '@angular/core';
 export class Registrarse {
   formularioregistro:FormGroup;
 datosdesesion:any;
+
+//método para el validator password 
+  //mensaje dinámico para el usuario
+passwordValidator(control: AbstractControl): ValidationErrors | null {
+  const value = control.value || '';
+  const errors: any = {};
+
+  if (value.length < 8) {
+    errors.minLength = true;
+  }
+  if (!/[A-Z]/.test(value)) {
+    errors.uppercase = true;
+  }
+  if (!/[a-z]/.test(value)) {
+    errors.lowercase = true;
+  }
+  if (!/\d/.test(value)) {
+    errors.number = true;
+  }
+  if (!/[!@#$%^&*()_+=\-{}
+
+\[\]
+
+:;"'<>,.?/]/.test(value)) {
+    errors.symbol = true;
+  }
+
+  return Object.keys(errors).length ? errors : null;
+}
+
+
+  
 constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router) {
     //this.mensaje = this.miServicio.getData();
   //formulario registro
@@ -30,11 +62,11 @@ constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private 
       password: [
     '',
     [
-      Validators.required,
-      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=\\-{}\\[\\]:;"\'<>,.?/]).{8,}$')
-
-    ]
+      Validators.required,this.passwordValidator]
   ]
+      //Validators.pattern no dinámico
+// Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=\\-{}\\[\\]:;"\'<>,.?/]).{8,}$')
+
     //email: ['', [Validators.required, Validators.email]]
   });
     
