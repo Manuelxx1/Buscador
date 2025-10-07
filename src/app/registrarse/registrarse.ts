@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet,RouterLink } from '@angular/router';
-import { Busquedaservice } from './busquedaservice';
+import { Busquedaservice } from '../busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
