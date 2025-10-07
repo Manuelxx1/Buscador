@@ -14,26 +14,30 @@
         
             <ul class="requisitos">
     <li [class.ok]="!formularioregistro.get('password')?.errors?.['minLength']">
-      ✅ Mínimo 8 caracteres
+       Mínimo 8 caracteres
     </li>
     <li [class.ok]="!formularioregistro.get('password')?.errors?.['uppercase']">
-      ✅ Al menos una letra mayúscula
+      Al menos una letra mayúscula
     </li>
     <li [class.ok]="!formularioregistro.get('password')?.errors?.['lowercase']">
-      ✅ Al menos una letra minúscula
+      Al menos una letra minúscula
     </li>
     <li [class.ok]="!formularioregistro.get('password')?.errors?.['number']">
-      ✅ Al menos un número
+     Al menos un número
     </li>
     <li [class.ok]="!formularioregistro.get('password')?.errors?.['symbol']">
-      ✅ Al menos un símbolo
+       Al menos un símbolo
     </li>
   </ul>
         
         
+        
       </label>
 
-      
+      <div class="icono-verificado" *ngIf="formularioregistro.get('password')?.valid">
+  ✔️ Contraseña válida
+</div>
+
 
       <button type="submit"  [disabled]="formularioregistro.invalid">Enviar</button>
     </form>
