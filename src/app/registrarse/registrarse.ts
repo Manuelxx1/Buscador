@@ -48,7 +48,22 @@ passwordValidator(control: AbstractControl): ValidationErrors | null {
   return Object.keys(errors).length ? errors : null;
 }
 
+//aviso de seguridad del pasword
+get passwordStrength(): number {
+  const value = this.formularioregistro.get('password')?.value || '';
+  let strength = 0;
 
+  if (value.length >= 8) strength += 1;
+  if (/[A-Z]/.test(value)) strength += 1;
+  if (/[a-z]/.test(value)) strength += 1;
+  if (/\d/.test(value)) strength += 1;
+  if (/[!@#$%^&*()_+=\-{}\[\]:;"'<>,.?/]/.test(value)) strength += 1;
+
+  return strength; // Máximo 5
+}
+
+
+  
   
 constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router) {
     //this.mensaje = this.miServicio.getData();
