@@ -21,7 +21,7 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class Registrarse {
   formularioregistro:FormGroup;
-
+datosdesesion:any;
 constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router) {
     //this.mensaje = this.miServicio.getData();
   //formulario registro
