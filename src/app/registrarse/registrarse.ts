@@ -41,11 +41,7 @@ passwordValidator(control: AbstractControl): ValidationErrors | null {
   if (!/\d/.test(value)) {
     errors.number = true;
   }
-  if (!/[!@#$%^&*()_+=\-{}
-
-\[\]
-
-:;"'<>,.?/]/.test(value)) {
+  if (!/[!@#$%^&*()_+=\-{}\[\]:;"'<>,.?/]/.test(value)) {
     errors.symbol = true;
   }
 
