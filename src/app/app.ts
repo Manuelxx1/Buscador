@@ -124,15 +124,15 @@ if (this.formulariologin.valid) {
   } else {
     alert('Por favor completá todos los campos');
   }
+      
+    }
+
       const usuarioGuardado = localStorage.getItem('usuario');
   if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado);
     console.log('Usuario en sesión:', usuario);
     this.datosdesesion =  'Usuario en sesión:' +  usuario;
   }
-      
-    }
-
       
 
 
