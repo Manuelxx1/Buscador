@@ -1,4 +1,10 @@
 
+<div class="modal" *ngIf="modalAbierto">
+  <div class="modal-contenido">
+    <span class="cerrar" (click)="cerrarModal()">×</span>
+    <!-- Tu formulario aquí -->
+
+    
 <div class="formularioregistro">
 
     <form [formGroup]="formularioregistro" (ngSubmit)="formularioregistrodatos()">
@@ -56,3 +62,8 @@
     </form>
     {{datosdesesion}}
   </div>
+    
+  </div>
+</div>
+
+
