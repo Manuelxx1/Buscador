@@ -56,6 +56,13 @@ menuActivo = false;
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
+
+    const usuarioGuardado = localStorage.getItem('usuario');
+  if (usuarioGuardado) {
+    const usuario = JSON.parse(usuarioGuardado);
+    console.log('Usuario en sesión:', usuario);
+    this.datosdesesion =  'Usuario en sesión:' +  usuario;
+  }
   }
 
   actualizarReloj() {
@@ -127,12 +134,7 @@ if (this.formulariologin.valid) {
       
     }
 
-      const usuarioGuardado = localStorage.getItem('usuario');
-  if (usuarioGuardado) {
-    const usuario = JSON.parse(usuarioGuardado);
-    console.log('Usuario en sesión:', usuario);
-    this.datosdesesion =  'Usuario en sesión:' +  usuario;
-  }
+      
       
 
 
