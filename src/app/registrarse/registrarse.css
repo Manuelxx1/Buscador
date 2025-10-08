@@ -86,12 +86,11 @@ button:hover:enabled {
   margin-top: 5px;
   font-weight: bold;
 }
-.formularioregistro{
-  
-  border-radius: 4px solid  ;
+.formularioregistro {
   background-color: white;
-  top:10px;
-  position:absolute;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 }
 
 
@@ -131,6 +130,7 @@ button:hover:enabled {
   font-size: 24px;
   cursor: pointer;
 }
+
 
 
 
