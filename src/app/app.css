@@ -47,14 +47,7 @@
   border: none;
 }
 
-.login-btn {
-  background-color: #ffcc00;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
+
 
 /* CLIMA + HORA */
 .weather-time {
@@ -147,10 +140,11 @@ button:hover {
 
 
   .search-box {
-  width: 100%;
+  width: 80%;
   padding: 12px 16px; /* Espacio interno para que el texto no esté pegado */
   margin: 10px 0;     /* Separación entre campos */
-  border: 1px solid #ccc; /* Borde gris claro */
+
+    border: 1px solid #ccc; /* Borde gris claro */
   border-radius: 6px;     /* Esquinas redondeadas */
   font-size: 16px;
   background-color: #f9f9f9; /* Fondo claro */
@@ -165,6 +159,7 @@ button:hover {
   background-color: #fff;
 }
 }
+
 
 
 
