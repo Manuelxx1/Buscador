@@ -128,6 +128,12 @@ button:hover:enabled {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .modal-contenido {
+    margin-top: env(safe-area-inset-top, 0);
+  }
+}
+
 
 
 
