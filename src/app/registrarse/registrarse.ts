@@ -105,5 +105,15 @@ if (this.formularioregistro.valid) {
   }
       
     }
+
+  //modal
+  modalAbierto = true;
+
+
+
+cerrarModal() {
+  this.modalAbierto = false;
+}
+
   
 }
