@@ -70,13 +70,7 @@ sesionActiva: boolean = false;
   }
 
   
-  const usuarioGuardado = localStorage.getItem('usuario');
-    this.sesionActiva = !!usuarioGuardado; // true si hay sesión
-  if (usuarioGuardado) {
-    const usuario = JSON.parse(usuarioGuardado);
-    console.log('Usuario en sesión:', usuario);
-    this.datosdesesion =  'Usuario en sesión:' +  usuario;
-  }
+  
 
   actualizarReloj() {
     const now = new Date();
@@ -131,6 +125,8 @@ if (this.formulariologin.valid) {
    
         // ✅ Guardar sesión en localStorage
         localStorage.setItem('usuario', JSON.stringify(res.usuario));
+
+session();
         
         alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
     //this.router.navigate(['/']); // redirige al perfil
@@ -146,6 +142,16 @@ if (this.formulariologin.valid) {
   }
       
     }
+
+  session(){
+  const usuarioGuardado = localStorage.getItem('usuario');
+    this.sesionActiva = !!usuarioGuardado; // true si hay sesión
+  if (usuarioGuardado) {
+    const usuario = JSON.parse(usuarioGuardado);
+    console.log('Usuario en sesión:', usuario);
+    this.datosdesesion =  'Usuario en sesión:' +  usuario;
+  }
+  }
 
       //cerrar session
   
