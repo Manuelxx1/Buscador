@@ -123,7 +123,7 @@ if (this.formulariologin.valid) {
         localStorage.setItem('usuario', JSON.stringify(res.usuario));
         
         alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
-    this.router.navigate(['/']); // redirige al perfil
+    //this.router.navigate(['/']); // redirige al perfil
   },
   error: err => {
     // Login fallido
