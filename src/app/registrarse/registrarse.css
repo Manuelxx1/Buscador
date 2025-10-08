@@ -133,7 +133,17 @@ button:hover:enabled {
     margin-top: env(safe-area-inset-top, 0);
   position: absolute;
   }
+  .formularioregistro{
+  
+  border-radius: 4px solid  ;
+  background-color: white;
+  top:10px;
+  position:absolute;
 }
+
+
+}
+
 
 
 
