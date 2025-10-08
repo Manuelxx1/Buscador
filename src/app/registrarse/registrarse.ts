@@ -113,6 +113,8 @@ if (this.formularioregistro.valid) {
 
 cerrarModal() {
   this.modalAbierto = false;
+  this.router.navigate(['/']);
+  
 }
 
   
