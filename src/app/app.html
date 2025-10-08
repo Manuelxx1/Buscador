@@ -66,6 +66,9 @@
       <button type="submit">Enviar</button>
     </form>
     {{datosdesesion}}
+<button (click)="cerrarSesion()" class="buttonCerrarSesion" >Cerrar sesión</button>
+
+  
   </div>
 
 
@@ -75,11 +78,7 @@
 
 
   
-<!--
-    <button class="login-btn">👤 Iniciar sesión</button>
-  </div>
 
-  -->
 <div class="nodemailer">
 
 <form [formGroup]="formularioIntereses" (ngSubmit)="enviarPreferencias()">
