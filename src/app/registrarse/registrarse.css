@@ -99,24 +99,28 @@ button:hover:enabled {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh; /* altura completa de la ventana */
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente */
   z-index: 1000;
 }
 
 
+
 .modal-contenido {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
   max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  position: relative;
+  z-index: 1001;
 }
 
 
@@ -128,21 +132,7 @@ button:hover:enabled {
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  .modal-contenido {
-    margin-top: env(safe-area-inset-top, 0);
-  position: absolute;
-  }
-  .formularioregistro{
-  
-  border-radius: 4px solid  ;
-  background-color: white;
-  top:10px;
-  position:absolute;
-}
 
-
-}
 
 
 
