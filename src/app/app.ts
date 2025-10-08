@@ -145,6 +145,7 @@ if (this.formulariologin.valid) {
         //de session
         //incluido el usuario
         //localStorage.clear();
+        this.sesionActiva = false;
 
   this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
