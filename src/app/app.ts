@@ -163,7 +163,7 @@ this.session();
         //localStorage.clear();
         this.sesionActiva = false;
 
-  this.router.navigate(['/']);   // Redirige al login o donde prefieras
+  //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
 
 
