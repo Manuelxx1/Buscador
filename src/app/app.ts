@@ -126,7 +126,7 @@ if (this.formulariologin.valid) {
         // ✅ Guardar sesión en localStorage
         localStorage.setItem('usuario', JSON.stringify(res.usuario));
 
-session();
+this.session();
         
         alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
     //this.router.navigate(['/']); // redirige al perfil
