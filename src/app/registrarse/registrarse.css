@@ -90,7 +90,7 @@ button:hover:enabled {
   
   border-radius: 4px solid  ;
   background-color: white;
-  
+  top:10px;
   position:absolute;
 }
 
@@ -131,8 +131,10 @@ button:hover:enabled {
 @media (max-width: 600px) {
   .modal-contenido {
     margin-top: env(safe-area-inset-top, 0);
+  position: absolute;
   }
 }
+
 
 
 
