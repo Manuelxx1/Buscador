@@ -100,13 +100,14 @@ button:hover:enabled {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  height: 100vh; /* altura completa de la ventana */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
   z-index: 1000;
 }
+
 
 .modal-contenido {
   background-color: white;
@@ -114,8 +115,10 @@ button:hover:enabled {
   border-radius: 8px;
   width: 90%;
   max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   position: relative;
 }
+
 
 .cerrar {
   position: absolute;
@@ -124,6 +127,7 @@ button:hover:enabled {
   font-size: 24px;
   cursor: pointer;
 }
+
 
 
 
