@@ -162,7 +162,7 @@ this.session();
         //incluido el usuario
         //localStorage.clear();
         this.sesionActiva = false;
-
+this.datosdesesion ="";
   //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
 
