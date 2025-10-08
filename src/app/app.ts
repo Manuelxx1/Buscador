@@ -109,6 +109,9 @@ if (this.formulariologin.valid) {
     // Login exitoso
     console.log('Login OK:', res);
    this.datosdesesion = res.usuario;
+        // ✅ Guardar sesión en localStorage
+        localStorage.setItem('usuario', JSON.stringify(res.usuario));
+        
         alert(res.mensaje); //mensaje del.backend por ejemplo: "Login exitoso"
     this.router.navigate(['/']); // redirige al perfil
   },
@@ -120,6 +123,11 @@ if (this.formulariologin.valid) {
 });
   } else {
     alert('Por favor completá todos los campos');
+  }
+      const usuarioGuardado = localStorage.getItem('usuario');
+  if (usuarioGuardado) {
+    const usuario = JSON.parse(usuarioGuardado);
+    console.log('Usuario en sesión:', usuario);
   }
       
     }
