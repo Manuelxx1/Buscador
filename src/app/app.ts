@@ -40,7 +40,7 @@ emailError: string | null = null;
   
 formulario: FormGroup;
   formulariologin: FormGroup;
-  ;
+  
 formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
 
