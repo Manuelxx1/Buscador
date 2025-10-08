@@ -108,7 +108,7 @@ if (this.formulariologin.valid) {
       next: res => {
     // Login exitoso
     console.log('Login OK:', res);
-   this.datosdesesion = res.usuario;
+   
         // ✅ Guardar sesión en localStorage
         localStorage.setItem('usuario', JSON.stringify(res.usuario));
         
@@ -128,6 +128,7 @@ if (this.formulariologin.valid) {
   if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado);
     console.log('Usuario en sesión:', usuario);
+    this.datosdesesion =  'Usuario en sesión:' +  usuario;
   }
       
     }
