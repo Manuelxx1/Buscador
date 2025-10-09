@@ -210,11 +210,12 @@ button:hover {
     padding: 12px 16px
     top: -350px;
     left:150px;
-    position:absolute;
+    position:relative;
     z-index: 1000;
     width: 50%;
 }
 }
+
 
 
 
