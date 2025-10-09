@@ -53,6 +53,8 @@ formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
 
 datosdesesion:any;
+  //datosdeltoken de Google
+  usuario: any;
   
 menuActivo = false;
   clock: string = '';
@@ -93,9 +95,30 @@ google.accounts.id.initialize({
 
   //método que se ocupa callback de sesión
   handleCredentialResponse(response: any) {
-  console.log('Token ID:', response.credential);
-  // Puedes enviarlo a tu backend para verificar el usuario
+  const token = response.credential;
+
+  // Decodificar el token JWT para obtener datos del usuario
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split('')
+      .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+      .join('')
+  );
+
+ // const userInfo = JSON.parse(jsonPayload);
+ //datos del token de sesión
+    //para la vista angular
+    this.usuario = JSON.parse(jsonPayload);
+    console.log('Usuario:', userInfo);
+
+      // También Puedes enviarlo a tu backend 
+    //para verificar que el token sea legítimo
 }
+
+
+
   
 
   actualizarReloj() {
