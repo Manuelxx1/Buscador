@@ -216,7 +216,7 @@ button:hover {
     font-size: 30px;
     background-color: #fff;
     border-radius: 4px;
-    padding: 12px 16px
+    padding: 12px 16px;
     top: 0;
     left: 100%; /* lo coloca justo al lado derecho del formulario */
   margin-left: 20px; /* espacio entre el form y el texto */
@@ -226,6 +226,7 @@ button:hover {
     width: 50%;
 }
 }
+
 
 
 
