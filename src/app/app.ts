@@ -58,15 +58,7 @@ sesionActiva: boolean = false;
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
-/*
-    const usuarioGuardado = localStorage.getItem('usuario');
-    this.sesionActiva = !!usuarioGuardado; // true si hay sesión
-  if (usuarioGuardado) {
-    const usuario = JSON.parse(usuarioGuardado);
-    console.log('Usuario en sesión:', usuario);
-    this.datosdesesion =  'Usuario en sesión:' +  usuario;
-  }
-  */
+
   }
 
   
@@ -149,7 +141,7 @@ this.session();
   if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado);
     console.log('Usuario en sesión:', usuario);
-    this.datosdesesion = 'Usuario en sesión:<br>' + usuario;
+    this.datosdesesion = 'Usuario en sesión:'+</br> + usuario;
   }
   }
 
