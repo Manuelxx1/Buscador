@@ -211,8 +211,10 @@ button:hover {
     margin-top: 10px;
     position:absolute;
     z-index: 1000;
+    width: 50%;
 }
 }
+
 
 
 
