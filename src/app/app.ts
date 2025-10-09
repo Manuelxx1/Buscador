@@ -54,12 +54,23 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
+  declare const google: any;
   
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
+//google button sesión
+google.accounts.id.initialize({
+    client_id: 'TU_CLIENT_ID.apps.googleusercontent.com',
+    callback: (response: any) => this.handleCredentialResponse(response)
+  });
 
-  }
+  google.accounts.id.renderButton(
+    document.getElementById('googleSignInButton'),
+    { theme: 'outline', size: 'large' }
+  );
+    
+  }// oninit
 
   
   
