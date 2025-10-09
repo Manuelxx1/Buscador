@@ -80,7 +80,12 @@ google.accounts.id.initialize({
     
   }// oninit
 
-  
+
+  //método del callback de sesión
+  handleCredentialResponse(response: any) {
+  console.log('Token ID:', response.credential);
+  // Puedes enviarlo a tu backend para verificar el usuario
+}
   
 
   actualizarReloj() {
