@@ -141,6 +141,21 @@ buttonCerrarSession:hover {
   width: 600px; /* o lo que necesites */
   margin: auto;
 }
+  .datosdesesion{
+    color:green;
+    font-size: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 12px 16px;
+    top: 0;
+    left: 30%; /* lo coloca justo al lado derecho del formulario */
+  margin-left: 20px; /* espacio entre el form y el texto */
+  white-space: nowrap; /* evita que se corte el texto */
+    position: absolute;
+    z-index: 1000;
+    width: 50%;
+    height:30%;
+}
 
 
 
@@ -232,6 +247,7 @@ button:hover {
     height:30%;
 }
 }
+
 
 
 
