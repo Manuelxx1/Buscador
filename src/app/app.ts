@@ -141,7 +141,8 @@ this.session();
   if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado);
     console.log('Usuario en sesión:', usuario);
-    this.datosdesesion = 'Usuario en sesión:' + usuario;
+    this.datosdesesion = 'Usuario en sesión:<br>' + usuario;
+
   }
   }
 
