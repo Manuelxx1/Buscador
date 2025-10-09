@@ -32,7 +32,7 @@
 
 .nav-links li a:hover {
   color: #ffcc00;
-}
+} 
 
 /* BUSCADOR + LOGIN */
 .search-login {
@@ -201,7 +201,19 @@ button:hover {
   box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Sombra azul externa */
   background-color: #fff;
 }
+
+  .datosdesesion{
+    color:green;
+    font-size: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 12px 16px
+    margin-top: 10px;
+    position:absolute;
+    z-index: 1000;
 }
+}
+
 
 
 
