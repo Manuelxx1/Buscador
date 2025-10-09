@@ -11,6 +11,14 @@ import { CryptoPrices } from './crypto-prices/crypto-prices';
 import { CommonModule } from '@angular/common';
 
 import { ChangeDetectorRef } from '@angular/core';
+//variable global 
+//El objeto google viene del script 
+//que cargás en index.html
+//<script src="https://accounts.google.com/gsi/client" async defer></script>
+//Como TypeScript no lo conoce por defecto,
+//usamos declare para evitar errores de compilación.
+declare const google: any;
+
 
 @Component({
   selector: 'app-root',
@@ -54,7 +62,7 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
-  declare const google: any;
+
   
   ngOnInit() {
     this.actualizarReloj();
