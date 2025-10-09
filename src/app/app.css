@@ -136,6 +136,11 @@ buttonCerrarSession:hover {
   font-weight: bold;
   margin-top: 10px;
 }
+.formulariologin {
+  position: relative;
+  width: 600px; /* o lo que necesites */
+  margin: auto;
+}
 
 
 
@@ -227,6 +232,7 @@ button:hover {
     height:30%;
 }
 }
+
 
 
 
