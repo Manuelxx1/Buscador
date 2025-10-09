@@ -68,11 +68,21 @@ sesionActiva: boolean = false;
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
 //google button sesión
+    //inicia la conexión hacia 
+    //cloud console para
+    //verificar el client_id
+    //y manejar el callback de respuesta
+    //que al iniciar sesión 
+    //nos retorna el token 
+    //con los datos de sesión del usuario
+    
 google.accounts.id.initialize({
     client_id: 'TU_CLIENT_ID.apps.googleusercontent.com',
     callback: (response: any) => this.handleCredentialResponse(response)
   });
 
+    //render el boton de google
+    //en el div googleSignInButton
   google.accounts.id.renderButton(
     document.getElementById('googleSignInButton'),
     { theme: 'outline', size: 'large' }
@@ -81,7 +91,7 @@ google.accounts.id.initialize({
   }// oninit
 
 
-  //método del callback de sesión
+  //método que se ocupa callback de sesión
   handleCredentialResponse(response: any) {
   console.log('Token ID:', response.credential);
   // Puedes enviarlo a tu backend para verificar el usuario
