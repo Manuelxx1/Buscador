@@ -69,7 +69,17 @@ sesionActiva: boolean = false;
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
-//google button sesión
+//usuario google en localstorage
+    //se coloca aquí así cuando se actualiza
+    //la pagina se llama a los datos 
+    //en localstorage otra vez 
+    //así se mantiene en la vista 
+    //en todo momento
+    const usuarioGuardado = localStorage.getItem('usuario');
+if (usuarioGuardado) {
+  this.usuario = JSON.parse(usuarioGuardado);
+}
+    //google button sesión
     //inicia la conexión hacia 
     //cloud console para
     //verificar el client_id
@@ -114,19 +124,12 @@ google.accounts.id.initialize({
     //console.log('Usuario:', userInfo);localStorage.setItem('usuario', JSON.stringify(this.usuario));
 localStorage.setItem('usuario', JSON.stringify(this.usuario));
 
-this.googlesesion();
+
 
       // También Puedes enviarlo a tu backend 
     //para verificar que el token sea legítimo
 }
 
-googlesesion(){
-const usuarioGuardado = localStorage.getItem('usuario');
-if (usuarioGuardado) {
-  this.usuario = JSON.parse(usuarioGuardado);
-}
-
-}
 
   cerrarSesionGoogle() {
   localStorage.removeItem('usuario');
