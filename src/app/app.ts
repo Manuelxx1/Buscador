@@ -134,7 +134,22 @@ localStorage.setItem('usuario', JSON.stringify(this.usuario));
   cerrarSesionGoogle() {
   localStorage.removeItem('usuario');
   this.usuario = null;
+
+  // Desactiva la selección automática de cuenta
+  //google.accounts.id.disableAutoSelect();
+
+  // Esperá un momento y re-renderizá el botón
+  setTimeout(() => {
+    const boton = document.getElementById('googleSignInButton');
+    if (boton) {
+      google.accounts.id.renderButton(boton, {
+        theme: 'outline',
+        size: 'large'
+      });
+    }
+  }, 100); // pequeño delay para asegurar que el DOM se actualizó
 }
+
 
 
   actualizarReloj() {
