@@ -64,7 +64,7 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
-mostrarbuton="none";
+mostrarbuton="";
   
   ngOnInit() {
     this.actualizarReloj();
@@ -80,6 +80,7 @@ mostrarbuton="none";
     const usuarioGuardado = localStorage.getItem('usuario');
 if (usuarioGuardado) {
   this.usuario = JSON.parse(usuarioGuardado);
+this.mostrarbuton="none";
 }
     //google button sesión
     //inicia la conexión hacia 
