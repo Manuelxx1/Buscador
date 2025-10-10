@@ -112,14 +112,20 @@ google.accounts.id.initialize({
     //para la vista angular
     this.usuario = JSON.parse(jsonPayload);
     //console.log('Usuario:', userInfo);
+    localStorage.setItem('usuario',this.usuario  );
+this.googlesesion();
 
       // También Puedes enviarlo a tu backend 
     //para verificar que el token sea legítimo
 }
 
+googlesesion(){
+const usuarioGuardado = localStorage.getItem('usuario');
+if (usuarioGuardado) {
+  this.usuario = JSON.parse(usuarioGuardado);
+}
 
-
-  
+}
 
   actualizarReloj() {
     const now = new Date();
