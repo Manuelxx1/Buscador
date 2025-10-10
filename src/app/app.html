@@ -73,7 +73,7 @@
   
 
 <!-- Solo se muestra si el usuario NO está logueado -->
-<div id="googleSignInButton"      ></div>
+<div id="googleSignInButton"  *ngIf="!usuario"    ></div>
 
 <div class="datosdeusuariogoogle" *ngIf="usuario">
   <p>Bienvenido, {{ usuario.name }}</p>
