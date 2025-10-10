@@ -69,7 +69,9 @@ sesionActiva: boolean = false;
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
-//usuario google en localstorage
+
+    this.usuario = null;
+    //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
     //en localstorage otra vez 
