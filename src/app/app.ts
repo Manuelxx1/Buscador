@@ -111,7 +111,7 @@ google.accounts.id.initialize({
  //datos del token de sesión
     //para la vista angular
     this.usuario = JSON.parse(jsonPayload);
-    console.log('Usuario:', userInfo);
+    //console.log('Usuario:', userInfo);
 
       // También Puedes enviarlo a tu backend 
     //para verificar que el token sea legítimo
