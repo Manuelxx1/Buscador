@@ -72,7 +72,8 @@
   </div>
   
 
-<div id="googleSignInButton"></div>
+<!-- Solo se muestra si el usuario NO está logueado -->
+<div id="googleSignInButton" *ngIf="!usuario"></div>
 
 <div *ngIf="usuario">
   <p>Bienvenido, {{ usuario.name }}</p>
