@@ -64,13 +64,13 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
-
+mostrarbuton="none";
   
   ngOnInit() {
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
 
-    this.usuario = null;
+    
     //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
@@ -136,7 +136,7 @@ localStorage.setItem('usuario', JSON.stringify(this.usuario));
   cerrarSesionGoogle() {
   localStorage.removeItem('usuario');
   this.usuario = null;
-
+this.mostrarbuton="block";
   // Desactiva la selección automática de cuenta
   //google.accounts.id.disableAutoSelect();
 
