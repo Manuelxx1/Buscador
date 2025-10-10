@@ -74,7 +74,11 @@
 
 <div id="googleSignInButton"></div>
 
-
+<div *ngIf="usuario">
+  <p>Bienvenido, {{ usuario.name }}</p>
+  <p>Correo: {{ usuario.email }}</p>
+  <img [src]="usuario.picture" alt="Foto de perfil" />
+</div>
 
   
 
