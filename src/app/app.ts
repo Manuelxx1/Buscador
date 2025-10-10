@@ -79,7 +79,7 @@ sesionActiva: boolean = false;
     //con los datos de sesión del usuario
     
 google.accounts.id.initialize({
-    client_id: 'TU_CLIENT_ID.apps.googleusercontent.com',
+    client_id: '781091117638-l85laji30vsovpooglq3ju7p2p2rrb6j.apps.googleusercontent.com',
     callback: (response: any) => this.handleCredentialResponse(response)
   });
 
