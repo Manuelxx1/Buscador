@@ -76,9 +76,17 @@
 
 
 <!-- Botón de iniciar sesión con Google -->
-<div *ngIf="!sesionActiva" id="googleSignInButton"></div>
+<!--se ocupa style.display de css porque mantiene
+  El elemento en el DOM mientras que *ngIf
+  lo elimina, por ese motivo no se puede 
+  hacer render al botón con *ngIf 
+  aquí cuando la sesión es true usa none
+  para ocultar el botón y block para mostrarlo
+  cuando la sesión es false
+  para poder iniciar sesión-->
+<div id="googleSignInButton" [style.display]="sesionActiva ? 'none' : 'block'"></div>
 
-<div class="datosdeusuariogoogle" *ngIf="usuario">
+  <div class="datosdeusuariogoogle" *ngIf="usuario">
   <p>Bienvenido, {{ usuario.name }}</p>
   <p>Correo: {{ usuario.email }}</p>
   <img [src]="usuario.picture" alt="Foto de perfil" />
