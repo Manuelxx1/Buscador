@@ -157,6 +157,9 @@ this.sesionActiva = false; // Desactivar sesión
         theme: 'outline',
         size: 'large'
       });
+    
+    google.accounts.id.prompt(); //Esto muestra el One Tap
+
     }
   }, 100); // pequeño delay para asegurar que el DOM se actualizó
 }
