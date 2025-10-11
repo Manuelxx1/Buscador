@@ -248,7 +248,7 @@ button:hover {
   
   .datosdesesion{
     color:green;
-    font-size: 8px;
+    font-size: 10px;
     background-color: #fff;
     border-radius: 4px;
     padding: 12px 16px;
@@ -258,12 +258,12 @@ button:hover {
   white-space: nowrap; /* evita que se corte el texto */
     position: absolute;
     z-index: 1000;
-    width: 50%;
-    height:30%;
+    width: 70%;
+    height:25%;
 }
 .datosdeusuariogoogle{
   color:green;
-    font-size: 8px;
+    font-size: 10px;
     background-color: #fff;
     border-radius: 4px;
     padding: 12px 16px;
@@ -273,12 +273,13 @@ button:hover {
   white-space: nowrap; /* evita que se corte el texto */
     position: absolute;
     z-index: 1000;
-    width: 30%;
-    height:30%;
+    width: 70%;
+    height:25%;
   
 }
   
 }
+
 
 
 
