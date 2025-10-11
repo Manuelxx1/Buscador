@@ -66,8 +66,6 @@
       <button type="submit">Enviar</button>
     </form>
     <p class="datosdesesion" *ngIf="sesionActiva"  [innerHTML]="datosdesesion"></p>
-<!-- Botón de cerrar sesión -->
-<button *ngIf="sesionActiva" (click)="cerrarSesionGoogle()">Cerrar sesión</button>
 
   
   </div>
@@ -90,7 +88,9 @@
   <p>Bienvenido, {{ usuario.name }}</p>
   <p>Correo: {{ usuario.email }}</p>
   <img [src]="usuario.picture" alt="Foto de perfil" />
-  <button (click)="cerrarSesionGoogle()">Cerrar sesión</button>
+<!-- Botón de cerrar sesión -->
+<button *ngIf="sesionActiva" (click)="cerrarSesionGoogle()">Cerrar sesión</button>
+
 </div>
 
   
