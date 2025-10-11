@@ -66,14 +66,17 @@
       <button type="submit">Enviar</button>
     </form>
     <p class="datosdesesion" *ngIf="sesionActiva"  [innerHTML]="datosdesesion"></p>
-<button *ngIf="sesionActiva"  (click)="cerrarSesion()" class="buttonCerrarSesion" >Cerrar sesión</button>
+<!-- Botón de cerrar sesión -->
+<button *ngIf="sesionActiva" (click)="cerrarSesionGoogle()">Cerrar sesión</button>
 
   
   </div>
+
   
 
-<!-- Solo se muestra si el usuario NO está logueado -->
-<div id="googleSignInButton"   [style.display]="mostrarbuton"></div>
+
+<!-- Botón de iniciar sesión con Google -->
+<div *ngIf="!sesionActiva" id="googleSignInButton"></div>
 
 <div class="datosdeusuariogoogle" *ngIf="usuario">
   <p>Bienvenido, {{ usuario.name }}</p>
