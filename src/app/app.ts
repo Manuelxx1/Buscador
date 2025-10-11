@@ -96,8 +96,14 @@ sesionActiva: boolean = false;
     
 google.accounts.id.initialize({
     client_id: '781091117638-l85laji30vsovpooglq3ju7p2p2rrb6j.apps.googleusercontent.com',
-    callback: (response: any) => this.handleCredentialResponse(response)
+    callback: (response: any) => this.handleCredentialResponse(response),
+    //auto_select: false,
+    cancel_on_tap_outside: false
+  
   });
+
+    
+  google.accounts.id.prompt(); //Esto muestra el One Tap
 
     //render el boton de google
     //en el div googleSignInButton
