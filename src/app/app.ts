@@ -64,6 +64,7 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
+  sesionActivaSinGoogle: boolean = false;
 
   
   ngOnInit() {
@@ -229,7 +230,7 @@ this.session();
 
   session(){
   const usuarioGuardado = localStorage.getItem('usuario');
-    this.sesionActiva = !!usuarioGuardado; // true si hay sesión
+    this.sesionActivaSinGoogle = !!usuarioGuardado; // true si hay sesión
   if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado);
     console.log('Usuario en sesión:', usuario);
@@ -246,7 +247,7 @@ this.session();
         //de session
         //incluido el usuario
         //localStorage.clear();
-        this.sesionActiva = false;
+        this.sesionActivaSinGoogle = false;
 this.datosdesesion ="";
   //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
