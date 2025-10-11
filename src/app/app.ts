@@ -64,7 +64,7 @@ menuActivo = false;
   }
 
 sesionActiva: boolean = false;
-mostrarbuton="";
+
   
   ngOnInit() {
     this.actualizarReloj();
@@ -78,10 +78,12 @@ mostrarbuton="";
     //así se mantiene en la vista 
     //en todo momento
     const usuarioGuardado = localStorage.getItem('usuario');
-if (usuarioGuardado) {
-  this.usuario = JSON.parse(usuarioGuardado);
-this.mostrarbuton="none";
-}
+  if (usuarioGuardado) {
+    this.usuario = JSON.parse(usuarioGuardado);
+    this.sesionActiva = true; // Activar sesión si hay usuario guardado
+  } else {
+    this.sesionActiva = false;
+  }
     //google button sesión
     //inicia la conexión hacia 
     //cloud console para
@@ -124,9 +126,8 @@ google.accounts.id.initialize({
  //datos del token de sesión
     //para la vista angular
     this.usuario = JSON.parse(jsonPayload);
-    //console.log('Usuario:', userInfo);localStorage.setItem('usuario', JSON.stringify(this.usuario));
-localStorage.setItem('usuario', JSON.stringify(this.usuario));
-
+  localStorage.setItem('usuario', JSON.stringify(this.usuario));
+  this.sesionActiva = true; // Activar sesión
 
 
       // También Puedes enviarlo a tu backend 
@@ -137,7 +138,7 @@ localStorage.setItem('usuario', JSON.stringify(this.usuario));
   cerrarSesionGoogle() {
   localStorage.removeItem('usuario');
   this.usuario = null;
-this.mostrarbuton="block";
+this.sesionActiva = false; // Desactivar sesión
   // Desactiva la selección automática de cuenta
   //google.accounts.id.disableAutoSelect();
 
