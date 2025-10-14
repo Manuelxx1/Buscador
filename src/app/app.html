@@ -95,8 +95,12 @@
 
 </div>
 
-  
-
+  <!-- loginconx-->
+<div *ngIf="user">
+  <h2>Bienvenido, {{ user.name }}</h2>
+  <p>@{{ user.username }}</p>
+  <img [src]="user.profile_image_url" alt="Foto de perfil" width="100">
+</div>
 
   
 
