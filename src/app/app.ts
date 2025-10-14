@@ -119,7 +119,7 @@ google.accounts.id.initialize({
       const codeVerifier = localStorage.getItem('code_verifier');
 
       if (code && codeVerifier) {
-        this.auth.loginWithTwitter(code, codeVerifier).subscribe((res: any) => {
+        this.miServicio.loginWithTwitter(code, codeVerifier).subscribe((res: any) => {
           console.log('Usuario:', res.user);
         });
       }
