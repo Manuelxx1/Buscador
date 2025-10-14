@@ -55,7 +55,8 @@ mensajeConfirmacion: string | null = null;
 datosdesesion:any;
   //datosdeltoken de Google
   usuario: any;
-  
+  //loginconx
+  user: any = null;
 menuActivo = false;
   clock: string = '';
 
@@ -121,6 +122,7 @@ google.accounts.id.initialize({
       if (code && codeVerifier) {
         this.miServicio.loginWithTwitter(code, codeVerifier).subscribe((res: any) => {
           console.log('Usuario:', res.user);
+          this.user = res.user;
         });
       }
     });
