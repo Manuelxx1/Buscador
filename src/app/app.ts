@@ -136,7 +136,7 @@ google.accounts.id.initialize({
         });
       }
     });
-  }
+  } 
     
   }// oninit
 
