@@ -282,7 +282,7 @@ this.datosdesesion ="";
 //loginconx
 loginWithX() {
     const clientId = 'WG1qMUp1ZDZMSGVGdjZvWVZUZEo6MTpjaQ';
-    const redirectUri = 'https://4200-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/';
+    const redirectUri = 'https://4200-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev';
     const codeVerifier = 'verificador123';
     const codeChallenge = 'verificador123';
 
