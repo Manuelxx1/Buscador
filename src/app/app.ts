@@ -9,7 +9,7 @@ import { Weather } from './weather/weather';
 import { CryptoPrices } from './crypto-prices/crypto-prices';
 
 import { CommonModule } from '@angular/common';
-
+import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 //variable global 
 //El objeto google viene del script 
@@ -65,7 +65,19 @@ menuActivo = false;
 
 sesionActiva: boolean = false;
   sesionActivaSinGoogle: boolean = false;
+//loginconx
+loginWithX() {
+    const clientId = 'WG1qMUp1ZDZMSGVGdjZvWVZUZEo6MTpjaQ';
+    const redirectUri = 'https://4200-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/';
+    const codeVerifier = 'verificador123';
+    const codeChallenge = 'verificador123';
 
+    localStorage.setItem('code_verifier', codeVerifier);
+
+    const authUrl = `https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=tweet.read%20users.read%20offline.access&state=abc123&code_challenge=${codeChallenge}&code_challenge_method=plain`;
+
+    window.location.href = authUrl;
+  }
   
   ngOnInit() {
     this.actualizarReloj();
@@ -111,6 +123,20 @@ google.accounts.id.initialize({
     document.getElementById('googleSignInButton'),
     { theme: 'outline', size: 'large' }
   );
+
+    //loginconx
+
+    this.route.queryParams.subscribe(params => {
+      const code = params['code'];
+      const codeVerifier = localStorage.getItem('code_verifier');
+
+      if (code && codeVerifier) {
+        this.auth.loginWithTwitter(code, codeVerifier).subscribe((res: any) => {
+          console.log('Usuario:', res.user);
+        });
+      }
+    });
+  }
     
   }// oninit
 
