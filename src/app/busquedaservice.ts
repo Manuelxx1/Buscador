@@ -122,6 +122,15 @@ registrarDatos(nombre: string, password: string): Observable<any> {
   return this.http.post('https://backend-news-tk56.onrender.com/guardar-preferencias', data);
 }
 
+//loginconx
+  
+  loginWithTwitter(code: string, codeVerifier: string) {
+    return this.http.post('http://localhost:3000/auth/twitter', {
+      code,
+      code_verifier: codeVerifier
+    });
+  }
+
   
 }
 
