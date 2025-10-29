@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './auth-callback.css'
 })
 export class AuthCallback implements OnInit{
-
+usuario: any = null;
 constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ constructor(private route: ActivatedRoute, private http: HttpClient) {}
           next: (data) => {
             console.log('Perfil:', data);
             // Podés guardar los datos en localStorage o mostrar en pantalla
+         this.usuario = data;
           },
           error: (err) => {
             console.error('Error al autenticar:', err);
