@@ -30,6 +30,9 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
   }
   */
 
+  //para login x
+clientId = 'eWRfV0hqekZhOTY5bkZHQ1RBSE46MTpjaQ';
+  redirectUri = 'https://4200-cs-582739288523-default.cs-us-east1-yeah.cloudshell.dev/auth/callback';
 
 constructor(private http: HttpClient) { }
 // Lógica de tu servicio
@@ -124,13 +127,10 @@ registrarDatos(nombre: string, password: string): Observable<any> {
 
 //loginconx
   
-  loginWithTwitter(code: string, codeVerifier: string) {
-    return this.http.post('http://localhost:3000/auth/twitter', {
-      code,
-      code_verifier: codeVerifier
-    });
+  loginWithX() {
+    const authUrl = `https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${this.clientId}&redirect_uri=${this.redirectUri}&scope=tweet.read users.read&state=secure123&code_challenge=challenge123&code_challenge_method=plain`;
+    window.location.href = authUrl;
   }
-
   
 }
 
