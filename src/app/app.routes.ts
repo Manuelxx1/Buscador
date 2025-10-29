@@ -30,6 +30,8 @@ export const routes: Routes = [
     { path: 'tecnologia', component: Tecnologia },
   { path: 'registrarse', component: Registrarse },
   { path: 'buscar', component: Busqueda },
+
+  { path: 'auth/callback', component: AuthCallback },
   { path: '**', component: NotFound }
 
 ];
