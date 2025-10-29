@@ -280,17 +280,8 @@ this.datosdesesion ="";
 }
 
 //loginconx
-loginWithX() {
-    const clientId = 'WG1qMUp1ZDZMSGVGdjZvWVZUZEo6MTpjaQ';
-    const redirectUri = 'https://4200-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev';
-    const codeVerifier = 'verificador123';
-    const codeChallenge = 'verificador123';
-
-    localStorage.setItem('code_verifier', codeVerifier);
-
-    const authUrl = `https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=tweet.read%20users.read%20offline.access&state=abc123&code_challenge=${codeChallenge}&code_challenge_method=plain`;
-
-    window.location.href = authUrl;
+iniciarSesionConX(): void {
+    this.miServicio.loginWithX();
   }
 
   enviarPreferencias() {
