@@ -112,21 +112,8 @@ google.accounts.id.initialize({
     document.getElementById('googleSignInButton'),
     { theme: 'outline', size: 'large' }
   );
-/*
-    //loginconx localStorage 
 
-    this.route.queryParams.subscribe(params => {
-      const code = params['code'];
-      const codeVerifier = localStorage.getItem('code_verifier');
 
-      if (code && codeVerifier) {
-        this.miServicio.loginWithTwitter(code, codeVerifier).subscribe((res: any) => {
-          console.log('Usuario:', res.user);
-          this.user = res.user;
-        });
-      }
-    });
- */
     
   }// oninit
 
