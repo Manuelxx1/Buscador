@@ -84,7 +84,9 @@
   para poder iniciar sesión-->
 <div id="googleSignInButton" [style.display]="sesionActiva ? 'none' : 'block'"></div>
 
-<button (click)="loginWithX()">Login con X</button>
+<!-- src/app/app.component.html -->
+<button (click)="iniciarSesionConX()">Iniciar sesión con X</button>
+
   
   <div class="datosdeusuariogoogle" *ngIf="usuario">
   <p>Bienvenido, {{ usuario.name }}</p>
