@@ -17,7 +17,7 @@ constructor(private route: ActivatedRoute, private http: HttpClient) {}
   ngOnInit(): void {
     const code = this.route.snapshot.queryParamMap.get('code');
     if (code) {
-      this.http.get(`http://localhost:3000/auth/callback?code=${code}`)
+      this.http.get(`https://3000-cs-582739288523-default.cs-us-east1-yeah.cloudshell.dev/auth/callback?code=${code}`)
         .subscribe({
           next: (data) => {
             console.log('Perfil:', data);
