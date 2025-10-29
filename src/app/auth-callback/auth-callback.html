@@ -1,10 +1,14 @@
 <p>auth-callback works!</p>
-<!-- src/app/auth-callback/auth-callback.component.html -->
-<div *ngIf="usuario">
+<div *ngIf="usuario; else cargando">
   <h2>Bienvenido, {{ usuario.name }}</h2>
   <p>@{{ usuario.username }}</p>
   <img [src]="usuario.profile_image_url" alt="Foto de perfil" width="100" />
 </div>
+
+<ng-template #cargando>
+  <p>Cargando perfil...</p>
+</ng-template>
+<pre>{{ usuario | json }}</pre>
 
 
 
