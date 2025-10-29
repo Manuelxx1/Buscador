@@ -112,8 +112,8 @@ google.accounts.id.initialize({
     document.getElementById('googleSignInButton'),
     { theme: 'outline', size: 'large' }
   );
-
-    //loginconx
+/*
+    //loginconx localStorage 
 
     this.route.queryParams.subscribe(params => {
       const code = params['code'];
@@ -126,7 +126,7 @@ google.accounts.id.initialize({
         });
       }
     });
- 
+ */
     
   }// oninit
 
