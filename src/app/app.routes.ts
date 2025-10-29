@@ -11,6 +11,7 @@ import { Registrarse } from './registrarse/registrarse';
 import { Tecnologia } from './tecnologia/tecnologia';
 
 
+import { AuthCallback } from './auth-callback/auth-callback';
 
 
 import { NotFound} from './not-found/not-found';
