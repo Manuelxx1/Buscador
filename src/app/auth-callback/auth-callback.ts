@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-auth-callback',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './auth-callback.html',
   styleUrl: './auth-callback.css'
 })
