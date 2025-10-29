@@ -22,7 +22,8 @@ constructor(private route: ActivatedRoute, private http: HttpClient) {}
           next: (data) => {
             console.log('Perfil:', data);
             // Podés guardar los datos en localStorage o mostrar en pantalla
-         this.usuario = data;
+         this.usuario = data.data;
+
           },
           error: (err) => {
             console.error('Error al autenticar:', err);
