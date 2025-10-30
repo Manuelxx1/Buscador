@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AuthCallback implements OnInit{
 usuario: any = null;
+  error: string | null = null;
 constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -28,6 +29,9 @@ constructor(private route: ActivatedRoute, private http: HttpClient) {}
           },
           error: (err) => {
             console.error('Error al autenticar:', err);
+          this.error = 'Error al autenticar: ' + err.message;
+    
+          
           }
         });
     }
