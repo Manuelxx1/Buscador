@@ -24,7 +24,11 @@ export class AuthCallback implements OnInit{
       code,
       code_verifier: codeVerifier
     }).subscribe({
-      next: (data) => this.usuario = data,
+      next: (data) => {
+        this.usuario = data;
+      localStorage.setItem('user_profile', JSON.stringify(data));
+  },
+
       error: (err) => this.error = 'Error al autenticar: ' + err.message
     });
   }
