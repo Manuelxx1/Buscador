@@ -56,7 +56,7 @@ datosdesesion:any;
   //datosdeltoken de Google
   usuario: any;
   //loginconx
-  user: any = null;
+  usuariodex: any = null;
 menuActivo = false;
   clock: string = '';
 
@@ -72,7 +72,10 @@ sesionActiva: boolean = false;
     this.actualizarReloj();
     setInterval(() => this.actualizarReloj(), 1000);
 
-    
+//usuario de x en localStorage 
+    const usuarioGuardadox = localStorage.getItem('user_profile');
+
+    this.usuariodex = JSON.parse(usuarioGuardadox);
     //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
@@ -82,7 +85,8 @@ sesionActiva: boolean = false;
     const usuarioGuardado = localStorage.getItem('usuario');
   if (usuarioGuardado) {
     this.usuario = JSON.parse(usuarioGuardado);
-    this.sesionActiva = true; // Activar sesión si hay usuario guardado
+    
+      this.sesionActiva = true; // Activar sesión si hay usuario guardado
   } else {
     this.sesionActiva = false;
   }
