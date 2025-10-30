@@ -20,7 +20,7 @@ export class AuthCallback implements OnInit{
     const code = this.route.snapshot.queryParamMap.get('code');
     const codeVerifier = 'challenge123'; // mismo valor que usaste en el login
 
-    this.http.post('https://3000-cs-582739288523-default.cs-us-east1-yeah.cloudshell.dev/auth/callback', {
+    this.http.post('https://loginconx.onrender.com/auth/callback', {
       code,
       code_verifier: codeVerifier
     }).subscribe({
