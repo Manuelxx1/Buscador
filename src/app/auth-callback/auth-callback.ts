@@ -26,7 +26,7 @@ export class AuthCallback implements OnInit{
     }).subscribe({
       next: (data) => {
         this.usuario = data;
-      localStorage.setItem('user_profile', JSON.stringify(data));
+      localStorage.setItem('usuario', JSON.stringify(data));
   },
 
       error: (err) => this.error = 'Error al autenticar: ' + err.message
