@@ -56,7 +56,7 @@ datosdesesion:any;
   //datosdeltoken de Google
   usuario: any;
   //loginconx
-  usuariodex: any = null;
+  usuariodex: any ;
 menuActivo = false;
   clock: string = '';
 
