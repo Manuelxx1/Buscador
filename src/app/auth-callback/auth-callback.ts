@@ -38,7 +38,7 @@ export class AuthCallback implements OnInit{
         window.location.href = '/';
 
 });
-;   
+ 
   },
 
       error: (err) => this.error = 'Error al autenticar: ' + err.message
