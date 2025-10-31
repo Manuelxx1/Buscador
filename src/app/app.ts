@@ -73,9 +73,10 @@ sesionActiva: boolean = false;
     setInterval(() => this.actualizarReloj(), 1000);
 
 //usuario de x en localStorage 
-    const usuarioGuardadox = localStorage.getItem('user_profile');
 
-    this.usuariodex = JSON.parse(usuarioGuardadox);
+const usuarioGuardadodex = localStorage.getItem('twitter_session');
+    this.usuariodex = usuarioGuardadodex ? JSON.parse(usuarioGuardadodex) : null;
+    
     //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
