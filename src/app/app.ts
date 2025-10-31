@@ -276,6 +276,21 @@ iniciarSesionConX(): void {
     this.miServicio.loginWithX();
   }
 
+
+
+  //cerrar session
+  
+      cerrarSesionDex() {
+  localStorage.removeItem('twitter_session'); // Elimina la sesión
+      //si quiero borrar todos los datos
+        //de session
+        //incluido el usuario
+        //localStorage.clear();
+        
+this.usuariodex ="";
+  //this.router.navigate(['/']);   // Redirige al login o donde prefieras
+}
+
   enviarPreferencias() {
 this.emailenviado = null;
   this.emailError = null;
