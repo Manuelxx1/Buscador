@@ -66,7 +66,7 @@ menuActivo = false;
 
 sesionActiva: boolean = false;
   sesionActivaSinGoogle: boolean = false;
-
+sesionActivaDex:boolean = false;
   
   ngOnInit() {
     this.actualizarReloj();
@@ -76,7 +76,7 @@ sesionActiva: boolean = false;
 
 const usuarioGuardadodex = localStorage.getItem('twitter_session');
     this.usuariodex = usuarioGuardadodex ? JSON.parse(usuarioGuardadodex) : null;
-    
+    this.sesionActivaDex=true;
     //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
@@ -286,7 +286,7 @@ iniciarSesionConX(): void {
         //de session
         //incluido el usuario
         //localStorage.clear();
-        
+        this.sesionActivaDex=false;
 this.usuariodex ="";
   //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
