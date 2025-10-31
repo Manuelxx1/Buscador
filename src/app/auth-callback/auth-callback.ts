@@ -37,7 +37,7 @@ export class AuthCallback implements OnInit{
   //window.location.reload();
         window.location.href = '/';
 
-});
+
  
   },
 
