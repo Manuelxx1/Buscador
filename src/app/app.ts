@@ -56,7 +56,7 @@ datosdesesion:any;
   //datosdeltoken de Google
   usuario: any;
   //loginconx
-  usuariodex: any ;
+  usuariodex: any = null;
 menuActivo = false;
   clock: string = '';
 
@@ -76,7 +76,7 @@ sesionActivaDex:boolean = false;
 
 const usuarioGuardadodex = localStorage.getItem('twitter_session');
     this.usuariodex = usuarioGuardadodex ? JSON.parse(usuarioGuardadodex) : null;
-    this.sesionActivaDex=true;
+    this.sesionActivaDex = !!this.usuariodex;
     //usuario google en localstorage
     //se coloca aquí así cuando se actualiza
     //la pagina se llama a los datos 
@@ -287,7 +287,7 @@ iniciarSesionConX(): void {
         //incluido el usuario
         //localStorage.clear();
         this.sesionActivaDex=false;
-this.usuariodex ="";
+this.usuariodex = null;
   //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
 
