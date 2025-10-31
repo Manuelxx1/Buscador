@@ -33,8 +33,10 @@ export class AuthCallback implements OnInit{
         //lo que fuerza que AppComponent ejecute ngOnInit() de nuevo
 //Así se lee el localStorage 
         //y se muestra el usuario sin tocar F5
-this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-  window.location.reload();
+//this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+  //window.location.reload();
+        window.location.href = '/';
+
 });
 ;   
   },
