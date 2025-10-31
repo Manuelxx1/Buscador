@@ -27,7 +27,16 @@ export class AuthCallback implements OnInit{
       next: (data) => {
         this.usuario = data;
       localStorage.setItem('twitter_session', JSON.stringify(data));
-this.router.navigate(['/']);   
+        //¿Qué hace esto?
+//Navega a la raíz (/) como antes
+//Pero además recarga la app, 
+        //lo que fuerza que AppComponent ejecute ngOnInit() de nuevo
+//Así se lee el localStorage 
+        //y se muestra el usuario sin tocar F5
+this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+  window.location.reload();
+});
+;   
   },
 
       error: (err) => this.error = 'Error al autenticar: ' + err.message
