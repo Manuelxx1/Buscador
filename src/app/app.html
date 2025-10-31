@@ -99,9 +99,9 @@
 
   <!-- loginconx-->
 <div *ngIf="usuariodex">
-  <h2>Bienvenido, {{ usuario.name }}</h2>
-  <p>@{{ usuario.username }}</p>
-  <img [src]="usuario.profile_image_url" alt="Foto de perfil" width="100" />
+  <h2>Bienvenido, {{ usuariodex.name }}</h2>
+  <p>@{{ usuariodex.username }}</p>
+  <img [src]="usuariodex.profile_image_url" alt="Foto de perfil" width="100" />
 <!-- Botón de cerrar sesión -->
 <button *ngIf="sesionActivaDex" (click)="cerrarSesionDex()">Cerrar sesión</button>
 
