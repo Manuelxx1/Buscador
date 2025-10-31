@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-callback',
@@ -14,7 +14,7 @@ export class AuthCallback implements OnInit{
   usuario: any = null;
   error: string | null = null;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient,private router: Router) {}
 
   ngOnInit(): void {
     const code = this.route.snapshot.queryParamMap.get('code');
@@ -27,7 +27,7 @@ export class AuthCallback implements OnInit{
       next: (data) => {
         this.usuario = data;
       localStorage.setItem('twitter_session', JSON.stringify(data));
-
+this.router.navigate(['/']);   
   },
 
       error: (err) => this.error = 'Error al autenticar: ' + err.message
