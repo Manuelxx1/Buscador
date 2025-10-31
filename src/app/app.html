@@ -86,7 +86,7 @@
 
 <!-- Botón de session de x -->
 
-<button class="login-x"  (click)="iniciarSesionConX()" >
+<button class="login-x"  (click)="iniciarSesionConX()" [style.display]="sesionActivaDex ? 'none' : 'block'" >
  Iniciar sesión con <img src="img/x-logo.svg" alt="X logo" width="20">
 </button>
 
