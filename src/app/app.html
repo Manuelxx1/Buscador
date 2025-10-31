@@ -85,7 +85,11 @@
 <div id="googleSignInButton" [style.display]="sesionActiva ? 'none' : 'block'"></div>
 
 <!-- src/app/app.component.html -->
-<button (click)="iniciarSesionConX()">Iniciar sesión con X</button>
+
+<button class="login-x">
+  <img src="img/x-logo.svg" alt="X logo" width="20" (click)="iniciarSesionConX()" />
+  Iniciar sesión con X
+</button>
 
   
   <div class="datosdeusuariogoogle" *ngIf="usuario">
