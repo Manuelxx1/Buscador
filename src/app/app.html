@@ -61,7 +61,7 @@
         <a routerLink="/registrarse">REGISTRARSE</a>
       </label>
 
-      <button type="submit"  >Enviar</button>
+      <button type="submit" [style.display]="sesionActivaSinGoogle ? 'none' : 'block'" >Enviar</button>
     </form>
     <p class="datosdesesion" *ngIf="sesionActivaSinGoogle"  [innerHTML]="datosdesesion"></p>
 <!-- Botón de cerrar sesión -->
