@@ -61,11 +61,13 @@
         <a routerLink="/registrarse">REGISTRARSE</a>
       </label>
 
-      
-
-      <button type="submit">Enviar</button>
+      <button type="submit"  [style.display]="sesionActivaSinGoogle ? 'none' : 'block'"  >Enviar</button>
     </form>
     <p class="datosdesesion" *ngIf="sesionActivaSinGoogle"  [innerHTML]="datosdesesion"></p>
+<!-- Botón de cerrar sesión -->
+<button *ngIf="sesionActivaSinGoogle" (click)="cerrarSesion()">Cerrar sesión</button>
+  </form>
+    
 
   
   </div>
@@ -84,11 +86,7 @@
   para poder iniciar sesión-->
 <div id="googleSignInButton" [style.display]="sesionActiva ? 'none' : 'block'"></div>
 
-<!-- Botón de session de x -->
 
-<button class="login-x"  (click)="iniciarSesionConX()" [style.display]="sesionActivaDex ? 'none' : 'block'" >
- Iniciar sesión con <img src="img/x-logo.svg" alt="X logo" width="20">
-</button>
 
   
   <div class="datosdeusuariogoogle" *ngIf="usuario">
@@ -99,6 +97,12 @@
 <button *ngIf="sesionActiva" (click)="cerrarSesionGoogle()">Cerrar sesión</button>
 
 </div>
+
+  <!-- Botón de session de x -->
+
+<button class="login-x"  (click)="iniciarSesionConX()" [style.display]="sesionActivaDex ? 'none' : 'block'" >
+ Iniciar sesión con <img src="img/x-logo.svg" alt="X logo" width="20">
+</button>
 
   <!-- loginconx-->
 <div *ngIf="usuariodex">
