@@ -67,6 +67,9 @@ menuActivo = false;
 sesionActiva: boolean = false;
   sesionActivaSinGoogle: boolean = false;
 sesionActivaDex:boolean = false;
+
+  datosDebug: string = '';
+
   
   ngOnInit() {
     this.actualizarReloj();
@@ -222,10 +225,19 @@ this.sesionActiva = false; // Desactivar sesión
 
     formulariologindatos() {
 if (this.formulariologin.valid) {
-      this.miServicio.iniciarSesion(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe({
+
+  const nombre = this.formulariologin.value.nombre;
+    const password = this.formulariologin.value.password;
+
+    this.datosDebug = `Enviando: ${nombre} / ${password}`;
+      
+  
+  this.miServicio.iniciarSesion(this.formulariologin.value.nombre,this.formulariologin.value.password).subscribe({
       next: res => {
     // Login exitoso
     console.log('Login OK:', res);
+//agregar los datos de la response a la property 
+        this.datosDebug += `\nRespuesta: ${JSON.stringify(res)}`;
    
         // ✅ Guardar sesión en localStorage
         localStorage.setItem('usuario', JSON.stringify(res.usuario));
@@ -238,6 +250,8 @@ this.session();
   error: err => {
     // Login fallido
     console.error('Error de login:', err);
+
+    this.datosDebug += `\nError: ${JSON.stringify(err)}`;
     alert('Nombre o contraseña incorrectos');
   }
 });
