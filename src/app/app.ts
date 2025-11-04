@@ -290,6 +290,15 @@ iniciarSesionConX(): void {
     this.miServicio.loginWithX();
   }
 
+  loginWithDiscord() {
+    const clientId = '1435160999891046460';
+    const redirectUri = 'https://logindiscord.onrender.com/callback'; // backend
+    const scope = 'identify email';
+    const discordAuthUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${scope}`;
+    window.location.href = discordAuthUrl;
+
+  
+
 
 
   //cerrar session
