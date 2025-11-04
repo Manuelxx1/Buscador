@@ -115,8 +115,9 @@
 
   
 <!-- Botón de login -->
-<button *ngIf="!username" (click)="loginWithDiscord()">Login con Discord</button>
 
+
+<button *ngIf="!isLoggedIn()" (click)="loginWithDiscord()">Login con Discord</button>
 
 
 
@@ -127,7 +128,8 @@
 
 
   <!-- Botón de logout -->
-<button *ngIf="username" (click)="logoutdiscord()">Cerrar sesión</button>
+<button *ngIf="isLoggedIn()" (click)="logoutdiscord()">Cerrar sesión</button>
+
 
 
 <div class="nodemailer">
