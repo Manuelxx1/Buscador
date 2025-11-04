@@ -131,7 +131,21 @@ registrarDatos(nombre: string, password: string): Observable<any> {
     const authUrl = `https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${this.clientId}&redirect_uri=${this.redirectUri}&scope=tweet.read users.read&state=secure123&code_challenge=challenge123&code_challenge_method=plain`;
     window.location.href = authUrl;
   }
-  
+//logindiscord
+  //métodos que usa el app .ts 
+  //para obtener  el localStorage 
+  saveUser(user: any) {
+    localStorage.setItem('discordUser', JSON.stringify(user));
+  }
+
+  getUser() {
+    const user = localStorage.getItem('discordUser');
+    return user ? JSON.parse(user) : null;
+  }
+
+  clearUser() {
+    localStorage.removeItem('discordUser');
+  }
 }
 
   
