@@ -321,16 +321,7 @@ iniciarSesionConX(): void {
     this.miServicio.loginWithX();
   }
 
-  //login discord 
-  loginWithDiscord() {
-    const clientId = '1435160999891046460';
-    const redirectUri = 'https://logindiscord.onrender.com/callback'; // backend
-    const scope = 'identify email';
-    const discordAuthUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${scope}`;
-    window.location.href = discordAuthUrl;
-
   
-  }
 
 
   //cerrar session
@@ -345,6 +336,26 @@ iniciarSesionConX(): void {
 this.usuariodex = null;
   //this.router.navigate(['/']);   // Redirige al login o donde prefieras
 }
+
+
+  //login discord 
+  loginWithDiscord() {
+    const clientId = '1435160999891046460';
+    const redirectUri = 'https://logindiscord.onrender.com/callback'; // backend
+    const scope = 'identify email';
+    const discordAuthUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${scope}`;
+    window.location.href = discordAuthUrl;
+
+  
+  }
+  //cerrar  sesión de discord
+  logoutdiscord() {
+  this.miServicio.clearUser();
+  this.username = '';
+  this.avatar = '';
+  this.id = '';
+}
+
 
   enviarPreferencias() {
 this.emailenviado = null;
