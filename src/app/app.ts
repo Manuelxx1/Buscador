@@ -70,6 +70,11 @@ sesionActivaDex:boolean = false;
 
   datosDebug: string = '';
 
+  //login discord 
+username: string = '';
+  avatar: string = '';
+  id: string = '';
+  
   
   ngOnInit() {
     this.actualizarReloj();
@@ -121,9 +126,35 @@ google.accounts.id.initialize({
     { theme: 'outline', size: 'large' }
   );
 
-
+//login discord
+    this.route.queryParams.subscribe(params => {
+      if (params['username'] && params['avatar'] && params['id']) {
+        // Recibido desde el backend
+        const user = {
+          username: params['username'],
+          avatar: params['avatar'],
+          id: params['id']
+        };
+        this.miServicio.saveUser(user);
+        this.setUser(user);
+      } else {
+        // Recuperado desde localStorage
+        const savedUser = this.miServicio.getUser();
+        if (savedUser) {
+          this.setUser(savedUser);
+        }
+      }
+    });
     
   }// oninit
+
+  //método de login discord de OnInit 
+  //para la vista angular 
+  setUser(user: any) {
+    this.username = user.username;
+    this.avatar = user.avatar;
+    this.id = user.id;
+  }
 
 
   //método que se ocupa callback de sesión
@@ -290,6 +321,7 @@ iniciarSesionConX(): void {
     this.miServicio.loginWithX();
   }
 
+  //login discord 
   loginWithDiscord() {
     const clientId = '1435160999891046460';
     const redirectUri = 'https://logindiscord.onrender.com/callback'; // backend
@@ -298,7 +330,7 @@ iniciarSesionConX(): void {
     window.location.href = discordAuthUrl;
 
   
-
+  }
 
 
   //cerrar session
