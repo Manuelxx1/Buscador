@@ -146,6 +146,11 @@ registrarDatos(nombre: string, password: string): Observable<any> {
   clearUser() {
     localStorage.removeItem('discordUser');
   }
+  //comprobar sesion por metodo
+  isLoggedIn(): boolean {
+  return !!localStorage.getItem('discordUser');
+}
+
 }
 
   
