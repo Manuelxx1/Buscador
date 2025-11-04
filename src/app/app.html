@@ -111,8 +111,15 @@
 
 </div>
 
+  <!-- logincondiscord-->
 
-  
+  <button (click)="loginWithDiscord()">Login con Discord</button>
+
+<div *ngIf="username">
+  <h2>¡Bienvenido, {{ username }}!</h2>
+  <img [src]="'https://cdn.discordapp.com/avatars/' + id + '/' + avatar + '.png'" alt="Avatar" width="100">
+</div>
+
 
 <div class="nodemailer">
 
