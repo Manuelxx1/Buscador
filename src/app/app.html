@@ -113,12 +113,21 @@
 
   <!-- logincondiscord-->
 
-  <button (click)="loginWithDiscord()">Login con Discord</button>
+  
+<!-- Botón de login -->
+<button *ngIf="!username" (click)="loginWithDiscord()">Login con Discord</button>
+
+
+
 
 <div *ngIf="username">
   <h2>¡Bienvenido, {{ username }}!</h2>
   <img [src]="'https://cdn.discordapp.com/avatars/' + id + '/' + avatar + '.png'" alt="Avatar" width="100">
 </div>
+
+
+  <!-- Botón de logout -->
+<button *ngIf="username" (click)="logoutdiscord()">Cerrar sesión</button>
 
 
 <div class="nodemailer">
