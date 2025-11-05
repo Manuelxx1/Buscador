@@ -353,6 +353,7 @@ this.usuariodex = null;
   //cerrar  sesión de discord
   logoutdiscord() {
   this.miServicio.clearUser();
+    window.location.href = '/';
   this.username = '';
   this.avatar = '';
   this.id = '';
