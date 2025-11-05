@@ -117,7 +117,9 @@
 <!-- Botón de login -->
 
 <!-- Solo si NO hay sesión -->
-<button *ngIf="!username" (click)="loginWithDiscord()">Login con Discord</button>
+<button class="discord-button"  *ngIf="!username" (click)="loginWithDiscord()">
+ <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord" class="icon">
+  Login con Discord</button>
 
 
 <div *ngIf="username">
