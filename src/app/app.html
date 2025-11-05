@@ -92,7 +92,6 @@
   <img [src]="usuario.picture" alt="Foto de perfil" />
 <!-- Botón de cerrar sesión -->
 <button *ngIf="sesionActiva" (click)="cerrarSesionGoogle()">Cerrar sesión</button>
-
 </div>
 
   <!-- Botón de session de x -->
@@ -107,15 +106,14 @@
   <p>@{{ usuariodex.username }}</p>
   <img [src]="usuariodex.profile_image_url" alt="Foto de perfil" width="100" />
 <!-- Botón de cerrar sesión -->
-<button *ngIf="sesionActivaDex" (click)="cerrarSesionDex()">Cerrar sesión</button>
-
+<button class="login-x"  *ngIf="sesionActivaDex" (click)="cerrarSesionDex()">
+  <img src="img/x-logo.svg" alt="X logo" width="20">Cerrar sesión</button>
 </div>
 
-  <!-- logincondiscord-->
-
+ 
   
+  <!-- logincondiscord--> 
 <!-- Botón de login -->
-
 <!-- Solo si NO hay sesión -->
 <button class="discord-button"  *ngIf="!username" (click)="loginWithDiscord()">
  <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord" class="icon">
