@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, signal, OnInit, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet,RouterLink } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
@@ -444,8 +444,28 @@ this.emailenviado = null;
   }
   
 */
+//Detectar clic fuera del desplegable
+  //del buscadorcontenido para ocultarlo
+  @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
+  mostrarDesplegable = false;
+
+  @HostListener('document:click', ['$event'])
+  cerrarSiHaceClickAfuera(event: MouseEvent) {
+    if (this.contenedorDesplegable && !this.contenedorDesplegable.nativeElement.contains(event.target)) {
+      this.mostrarDesplegable = false;
+    }
+  }
   
 buscarcontenido() {
+//Cerrar si el input de búsqueda está vacío
+  const palabra = this.formulario.value.palabraclave?.trim();
+
+  if (!palabra) {
+    this.mostrarDesplegable = false;
+    this.enlace = '';
+    return;
+  }
+  
   if (this.formulario.valid) {
     this.miServicio.obtenerEnlace(this.formulario.value.palabraclave).subscribe(data => {
       this.enlace = data;
