@@ -454,6 +454,7 @@ this.emailenviado = null;
 
 
   
+
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
@@ -481,16 +482,13 @@ buscarcontenido() {
   cerrarSiHaceClickAfuera(event: Event) {
     const target = event.target as HTMLElement;
 
-    const clicFuera =
-      this.contenedorDesplegable &&
-      !this.contenedorDesplegable.nativeElement.contains(target) &&
-      this.inputBuscador &&
-      !this.inputBuscador.nativeElement.contains(target);
+    const fueraDelInput = this.inputBuscador && !this.inputBuscador.nativeElement.contains(target);
+    const fueraDelDesplegable = this.contenedorDesplegable && !this.contenedorDesplegable.nativeElement.contains(target);
 
-    if (clicFuera) {
+    if (fueraDelInput && fueraDelDesplegable) {
       this.mostrarDesplegable = false;
     }
-      }
+  }
 
 
 
