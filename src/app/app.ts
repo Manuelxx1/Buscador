@@ -40,6 +40,8 @@ dnidefinido!:any;
 enlace!:any;
  // emailenviado:any;
   cargando = false;
+  cargandobuscarcontenido: boolean = false;
+
 emailenviado: string | null = null;
 emailError: string | null = null;
 
@@ -463,16 +465,20 @@ buscarcontenido() {
     if (!palabra) {
       this.mostrarDesplegable = false;
       this.enlace = '';
+      this.cargando = false;
       return;
     }
 
     if (this.formulario.valid) {
+      this.cargando = true; // ⏳ empieza la carga
       this.miServicio.obtenerEnlace(palabra).subscribe(data => {
         this.enlace = data;
         this.mostrarDesplegable = true;
+        this.cargando = false; // ✅ termina la carga
       }, error => {
         this.enlace = "No se encontraron resultados.";
         this.mostrarDesplegable = false;
+        this.cargando = false; // ❌ termina la carga con error
       });
     } else {
       this.formulario.markAllAsTouched();
