@@ -223,6 +223,12 @@ this.sesionActiva = false; // Desactivar sesión
     const mins = now.getMinutes().toString().padStart(2, '0');
     this.clock = `🕒 ${hours}:${mins}`;
   }
+
+
+        //Detectar clic fuera del desplegable
+  //del buscadorcontenido para ocultarlo
+  @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
+  @ViewChild('inputBuscador') inputBuscador!: ElementRef;
   
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router,private route: ActivatedRoute ) {
@@ -446,11 +452,7 @@ this.emailenviado = null;
 */
 
   
-//Detectar clic fuera del desplegable
-  //del buscadorcontenido para ocultarlo
-  @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
-  @ViewChild('inputBuscador') inputBuscador!: ElementRef;
-  mostrarDesplegable = false;
+
 
 
   
