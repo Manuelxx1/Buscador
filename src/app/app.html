@@ -129,7 +129,9 @@
 
 
   <!-- Solo si SÍ hay sesión -->
-<button *ngIf="username" (click)="logoutdiscord()">Cerrar sesión</button>
+<button class="discord-button"   *ngIf="username" (click)="logoutdiscord()">
+  <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord" class="icon">
+  Cerrar sesión</button>
 
 
 
