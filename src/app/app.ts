@@ -357,10 +357,7 @@ this.usuariodex = null;
   this.avatar = '';
   this.id = '';
 }
-  //comprobar sesión por método 
-isLoggedIn(): boolean {
-  return this.miServicio.isLoggedIn();
-}
+  
 
 
   enviarPreferencias() {
