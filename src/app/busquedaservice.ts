@@ -140,16 +140,15 @@ registrarDatos(nombre: string, password: string): Observable<any> {
 
   getUser() {
     const user = localStorage.getItem('discordUser');
+    //si user es true muestra el response de json 
+    //si es false  muestra null
     return user ? JSON.parse(user) : null;
   }
 
   clearUser() {
     localStorage.removeItem('discordUser');
   }
-  //comprobar sesion por metodo
-  isLoggedIn(): boolean {
-  return !!localStorage.getItem('discordUser');
-}
+
 
 }
 
