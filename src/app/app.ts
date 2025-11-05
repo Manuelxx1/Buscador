@@ -140,9 +140,11 @@ google.accounts.id.initialize({
       } else {
         // Recuperado desde localStorage
         const savedUser = this.miServicio.getUser();
-        if (savedUser) {
-          this.setUser(savedUser);
-        }
+        if (savedUser && savedUser.username) {
+    this.username = savedUser.username;
+    this.avatar = savedUser.avatar;
+    this.id = savedUser.id;
+          }
       }
     });
     
