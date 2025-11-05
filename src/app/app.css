@@ -303,9 +303,33 @@ button:hover {
   cursor: pointer;
 }
 
+.discord-button {
+  background-color: #5865F2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.discord-button:hover {
+  background-color: #4752c4;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
 
   
 }
+
 
 
 
