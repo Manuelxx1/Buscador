@@ -446,34 +446,35 @@ this.emailenviado = null;
 */
 
   
-buscarcontenido() {
-//Cerrar si el input de búsqueda está vacío
-  const palabra = this.formulario.value.palabraclave?.trim();
-
-  if (!palabra) {
-    this.mostrarDesplegable = false;
-    this.enlace = '';
-    return;
-  }
-  
-  if (this.formulario.valid) {
-    this.miServicio.obtenerEnlace(this.formulario.value.palabraclave).subscribe(data => {
-      this.enlace = data;
-      this.mostrarDesplegable = true;
-    }, error => {
-      this.enlace = "No se encontraron resultados.";
-      this.mostrarDesplegable = false;
-    });
-  } else {
-    this.formulario.markAllAsTouched();
-  }
-}
-
-  //Detectar clic fuera del desplegable
+//Detectar clic fuera del desplegable
   //del buscadorcontenido para ocultarlo
   @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
- @ViewChild('inputBuscador') inputBuscador!: ElementRef;
+  @ViewChild('inputBuscador') inputBuscador!: ElementRef;
   mostrarDesplegable = false;
+
+
+  
+buscarcontenido() {
+    const palabra = this.formulario.value.palabraclave?.trim();
+
+    if (!palabra) {
+      this.mostrarDesplegable = false;
+      this.enlace = '';
+      return;
+    }
+
+    if (this.formulario.valid) {
+      this.miServicio.obtenerEnlace(palabra).subscribe(data => {
+        this.enlace = data;
+        this.mostrarDesplegable = true;
+      }, error => {
+        this.enlace = "No se encontraron resultados.";
+        this.mostrarDesplegable = false;
+      });
+    } else {
+      this.formulario.markAllAsTouched();
+    }
+  }
 
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
@@ -489,7 +490,8 @@ buscarcontenido() {
     if (clicFuera) {
       this.mostrarDesplegable = false;
     }
-  }
+      }
+
 
 
 
