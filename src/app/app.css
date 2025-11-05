@@ -332,10 +332,11 @@ button:hover {
   border: 1px solid #ccc;
   max-height: 200px;
   overflow-y: auto;
-  width: 300px;
+  width: 100%;
   z-index: 100;
   padding: 10px;
 }
+
 .desplegable a {
   display: block;
   margin-bottom: 5px;
@@ -349,6 +350,7 @@ button:hover {
 
   
 }
+
 
 
 
