@@ -31,7 +31,7 @@
     <form [formGroup]="formulario" (ngSubmit)="buscarcontenido()">
       <label>
           <h2>Buscar contenido</h2>
-        <input formControlName="palabraclave"  placeholder="Buscar..." class="search-box" />
+        <input #inputBuscador formControlName="palabraclave"  placeholder="Buscar..." class="search-box" />
          <!-- muestra u oculta el desplegable
         de resultado de búsqueda segun lo que sucede 
 en el input text y evento de click fuera del input text-->
