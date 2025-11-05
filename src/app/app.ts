@@ -74,6 +74,11 @@ sesionActivaDex:boolean = false;
 username: string = '';
   avatar: string = '';
   id: string = '';
+
+  //para el buscador que usa springboot
+  //que retorna los enlaces 
+  mostrarDesplegable = false;
+
   
   
   ngOnInit() {
@@ -441,16 +446,19 @@ this.emailenviado = null;
 */
   
 buscarcontenido() {
-    if (this.formulario.valid) {
-      console.log('Datos enviados:', this.formulario.value);
-
-      this.miServicio.obtenerEnlace(this.formulario.value.palabraclave).subscribe(data => {
+  if (this.formulario.valid) {
+    this.miServicio.obtenerEnlace(this.formulario.value.palabraclave).subscribe(data => {
       this.enlace = data;
+      this.mostrarDesplegable = true;
+    }, error => {
+      this.enlace = "No se encontraron resultados.";
+      this.mostrarDesplegable = false;
     });
-    } else {
-      this.formulario.markAllAsTouched();
-    }
+  } else {
+    this.formulario.markAllAsTouched();
   }
+}
+
 
 
  /*
