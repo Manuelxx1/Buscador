@@ -465,20 +465,20 @@ buscarcontenido() {
     if (!palabra) {
       this.mostrarDesplegable = false;
       this.enlace = '';
-      this.cargando = false;
+      this.cargandobuscarcontenido = false;
       return;
     }
 
     if (this.formulario.valid) {
-      this.cargando = true; // ⏳ empieza la carga
+      this.cargandobuscarcontenido = true; // ⏳ empieza la carga
       this.miServicio.obtenerEnlace(palabra).subscribe(data => {
         this.enlace = data;
         this.mostrarDesplegable = true;
-        this.cargando = false; // ✅ termina la carga
+        this.cargandobuscarcontenido = false; // ✅ termina la carga
       }, error => {
         this.enlace = "No se encontraron resultados.";
         this.mostrarDesplegable = false;
-        this.cargando = false; // ❌ termina la carga con error
+        this.cargandobuscarcontenido = false; // ❌ termina la carga con error
       });
     } else {
       this.formulario.markAllAsTouched();
