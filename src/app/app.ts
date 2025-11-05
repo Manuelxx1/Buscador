@@ -444,17 +444,7 @@ this.emailenviado = null;
   }
   
 */
-//Detectar clic fuera del desplegable
-  //del buscadorcontenido para ocultarlo
-  @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
-  mostrarDesplegable = false;
 
-  @HostListener('document:click', ['$event'])
-  cerrarSiHaceClickAfuera(event: MouseEvent) {
-    if (this.contenedorDesplegable && !this.contenedorDesplegable.nativeElement.contains(event.target)) {
-      this.mostrarDesplegable = false;
-    }
-  }
   
 buscarcontenido() {
 //Cerrar si el input de búsqueda está vacío
@@ -478,6 +468,28 @@ buscarcontenido() {
     this.formulario.markAllAsTouched();
   }
 }
+
+  //Detectar clic fuera del desplegable
+  //del buscadorcontenido para ocultarlo
+  @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
+ @ViewChild('inputBuscador') inputBuscador!: ElementRef;
+  mostrarDesplegable = false;
+
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  cerrarSiHaceClickAfuera(event: Event) {
+    const target = event.target as HTMLElement;
+
+    const clicFuera =
+      this.contenedorDesplegable &&
+      !this.contenedorDesplegable.nativeElement.contains(target) &&
+      this.inputBuscador &&
+      !this.inputBuscador.nativeElement.contains(target);
+
+    if (clicFuera) {
+      this.mostrarDesplegable = false;
+    }
+  }
 
 
 
