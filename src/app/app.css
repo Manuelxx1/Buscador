@@ -326,9 +326,30 @@ button:hover {
   width: 24px;
   height: 24px;
 }
+  .desplegable {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 300px;
+  z-index: 100;
+  padding: 10px;
+}
+.desplegable a {
+  display: block;
+  margin-bottom: 5px;
+  color: #007bff;
+  text-decoration: none;
+}
+.desplegable a:hover {
+  text-decoration: underline;
+}
+
 
   
 }
+
 
 
 
