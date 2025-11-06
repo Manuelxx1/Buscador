@@ -475,7 +475,8 @@ this.emailenviado = null;
 
 
   
-
+//para el buscador que no es en tiempo real
+/*
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
@@ -503,6 +504,8 @@ buscarcontenido() {
     }
   }
 
+  */
+
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
   cerrarSiHaceClickDentroDeZona(event: Event) {
@@ -523,6 +526,7 @@ buscarcontenido() {
     }, 150);
   }
   }
+  
 
   buscarcontenidoEnTiempoReal(valor: string) {
   const palabra = valor?.trim();
@@ -536,7 +540,7 @@ buscarcontenido() {
   this.cargandobuscarcontenido = true;
 
   this.miServicio.obtenerEnlace(palabra).subscribe(data => {
-    this.enlace = data;
+    this.enlace = data.replace(/<\/a>/g, '</a><br>');
     this.mostrarDesplegable = true;
     this.cargandobuscarcontenido = false;
   }, error => {
