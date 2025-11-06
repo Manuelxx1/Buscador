@@ -327,7 +327,8 @@ button:hover {
   height: 24px;
 }
   .desplegable {
-  position: absolute;
+  position: relative;
+    
   background: white;
   border: 1px solid #ccc;
   max-height: 200px;
@@ -364,6 +365,7 @@ button:hover {
 
   
 }
+
 
 
 
