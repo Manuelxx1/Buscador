@@ -40,7 +40,7 @@
 en el input text y evento de click fuera del input text-->
 
       
-      <div #contenedorDesplegable *ngIf="mostrarDesplegable" class="desplegable" [innerHTML]="enlace"></div>
+
 
       <span *ngIf="formulario.get('palabraclave')?.invalid && formulario.get('palabraclave')?.touched">
         Debería escribir algo es obligatorio.
@@ -52,6 +52,7 @@ en el input text y evento de click fuera del input text-->
   </form>
 </div>
   </div>
+        <div #contenedorDesplegable *ngIf="mostrarDesplegable" class="desplegable" [innerHTML]="enlace"></div>
 
 
             <div class="formulariologin">
