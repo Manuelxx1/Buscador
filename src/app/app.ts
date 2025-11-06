@@ -472,7 +472,7 @@ buscarcontenido() {
     if (this.formulario.valid) {
       this.cargandobuscarcontenido = true; // ⏳ empieza la carga
       this.miServicio.obtenerEnlace(palabra).subscribe(data => {
-        this.enlace = data;
+        this.enlace = data + '<br>';
         this.mostrarDesplegable = true;
         this.cargandobuscarcontenido = false; // ✅ termina la carga
       }, error => {
