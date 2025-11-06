@@ -11,6 +11,11 @@ import { CryptoPrices } from './crypto-prices/crypto-prices';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+
+//para busquedacontenido en tiempo real 
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+
+
 //variable global 
 //El objeto google viene del script 
 //que cargás en index.html
@@ -154,8 +159,20 @@ google.accounts.id.initialize({
           }
       }
     });
+
+    //busquedacontenido en tiempo real
     
+    this.formulario.get('palabraclave')?.valueChanges
+    .pipe(
+      debounceTime(300), // espera 300ms después de que el usuario deja de escribir
+      distinctUntilChanged() // solo si el valor cambió
+    )
+    .subscribe(valor => {
+      this.buscarcontenidoEnTiempoReal(valor);
+    });
   }// oninit
+
+  
 
   //método de login discord de OnInit 
   //para la vista angular 
@@ -506,6 +523,29 @@ buscarcontenido() {
     }, 150);
   }
   }
+
+  buscarcontenidoEnTiempoReal(valor: string) {
+  const palabra = valor?.trim();
+
+  if (!palabra) {
+    this.mostrarDesplegable = false;
+    this.enlace = '';
+    return;
+  }
+
+  this.cargandobuscarcontenido = true;
+
+  this.miServicio.obtenerEnlace(palabra).subscribe(data => {
+    this.enlace = data;
+    this.mostrarDesplegable = true;
+    this.cargandobuscarcontenido = false;
+  }, error => {
+    this.enlace = "No se encontraron resultados.";
+    this.mostrarDesplegable = false;
+    this.cargandobuscarcontenido = false;
+  });
+}
+
 
 
  /*
