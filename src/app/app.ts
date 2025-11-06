@@ -476,7 +476,7 @@ this.emailenviado = null;
 
   
 //para el buscador que no es en tiempo real
-/*
+
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
@@ -504,7 +504,7 @@ buscarcontenido() {
     }
   }
 
-  */
+  
 
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
