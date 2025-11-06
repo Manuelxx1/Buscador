@@ -478,7 +478,13 @@ this.emailenviado = null;
 
   
 //para el buscador que no es en tiempo real
-/*
+//pero funciona igual mediante el boton enviar
+  //se usa este método porque el método del tiempo real
+  //espera un argumento que le llega del imput 
+  //y es enviado mediante el suscribe que esta 
+  //en el ngOnInit 
+  //y este metodo buscarcontenido es llamado desde el boton enviar 
+  //que no tiene argumentos por eso funciona 
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
@@ -505,7 +511,7 @@ buscarcontenido() {
       this.formulario.markAllAsTouched();
     }
   }
-*/
+
   
 
   @HostListener('document:click', ['$event'])
