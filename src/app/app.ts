@@ -491,19 +491,21 @@ buscarcontenido() {
   cerrarSiHaceClickDentroDeZona(event: Event) {
   const target = event.target as HTMLElement;
 
-  const clicDentro =
+  const clicDentroZona =
     this.zonaLimite &&
     this.zonaLimite.nativeElement.contains(target);
 
-  if (clicDentro) {
-    // Espera 100ms antes de cerrar, para que el enlace se abra
+  const clicDentroDesplegable =
+    this.contenedorDesplegable &&
+    this.contenedorDesplegable.nativeElement.contains(target);
+
+  // Solo cerrar si el clic fue dentro de la zona límite, pero no en el desplegable
+  if (clicDentroZona && !clicDentroDesplegable) {
     setTimeout(() => {
       this.mostrarDesplegable = false;
-    }, 100);
+    }, 150);
   }
-}
-
-
+  }
 
 
  /*
