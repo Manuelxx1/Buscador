@@ -495,7 +495,10 @@ buscarcontenido() {
     this.zonaLimite.nativeElement.contains(target);
 
   if (clicDentro) {
-    this.mostrarDesplegable = false;
+    // Espera 100ms antes de cerrar, para que el enlace se abra
+    setTimeout(() => {
+      this.mostrarDesplegable = false;
+    }, 100);
   }
 }
 
