@@ -485,6 +485,8 @@ this.emailenviado = null;
   //en el ngOnInit 
   //y este metodo buscarcontenido es llamado desde el boton enviar 
   //que no tiene argumentos por eso funciona 
+  //para aclarar los dos métodos hacen lo mismo
+  //solo que son activados o llamados de forma diferente 
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
