@@ -161,7 +161,9 @@ google.accounts.id.initialize({
     });
 
     //busquedacontenido en tiempo real
-    
+    //aquí se obtiene la palabra clave parcial 
+    //o completa del formulario de búsqueda 
+    //y se la envia al método buscarcontenidoEnTiempoReal
     this.formulario.get('palabraclave')?.valueChanges
     .pipe(
       debounceTime(300), // espera 300ms después de que el usuario deja de escribir
@@ -476,7 +478,7 @@ this.emailenviado = null;
 
   
 //para el buscador que no es en tiempo real
-
+/*
 buscarcontenido() {
     const palabra = this.formulario.value.palabraclave?.trim();
 
@@ -503,7 +505,7 @@ buscarcontenido() {
       this.formulario.markAllAsTouched();
     }
   }
-
+*/
   
 
   @HostListener('document:click', ['$event'])
