@@ -30,7 +30,7 @@
 
   <div class="buscarcontenido">
     <div #zonaLimite class="zona-limite">
-  <form [formGroup]="formulario" (ngSubmit)="buscarcontenidoEnTiempoReal()">
+  <form [formGroup]="formulario" (ngSubmit)="buscarcontenido()">
     <label>
       <h2>Buscar contenido</h2>
       <input #inputBuscador formControlName="palabraclave" placeholder="Buscar..." class="search-box" />
