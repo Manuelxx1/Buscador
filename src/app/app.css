@@ -331,7 +331,7 @@ button:hover {
     
   background: white;
   border: 1px solid #ccc;
-    border-radius: 50%;
+    border-radius: 5%;
   max-height: 200px;
   overflow-y: auto;
   width: 100%;
@@ -366,6 +366,7 @@ button:hover {
 
   
 }
+
 
 
 
