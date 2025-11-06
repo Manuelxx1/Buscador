@@ -231,7 +231,7 @@ this.sesionActiva = false; // Desactivar sesión
   //del buscadorcontenido para ocultarlo
   @ViewChild('contenedorDesplegable') contenedorDesplegable!: ElementRef;
   @ViewChild('inputBuscador') inputBuscador!: ElementRef;
-  
+  @ViewChild('zonaLimite', { static: false }) zonaLimite!: ElementRef;
   
   constructor(private miServicio: Busquedaservice,private fb: FormBuilder,private cdRef: ChangeDetectorRef,private router: Router,private route: ActivatedRoute ) {
     //this.mensaje = this.miServicio.getData();
@@ -487,16 +487,17 @@ buscarcontenido() {
 
   @HostListener('document:click', ['$event'])
   @HostListener('document:touchstart', ['$event'])
-  cerrarSiHaceClickAfuera(event: Event) {
-    const target = event.target as HTMLElement;
+  cerrarSiHaceClickDentroDeZona(event: Event) {
+  const target = event.target as HTMLElement;
 
-    const fueraDelInput = this.inputBuscador && !this.inputBuscador.nativeElement.contains(target);
-    const fueraDelDesplegable = this.contenedorDesplegable && !this.contenedorDesplegable.nativeElement.contains(target);
+  const clicDentro =
+    this.zonaLimite &&
+    this.zonaLimite.nativeElement.contains(target);
 
-    if (fueraDelInput && fueraDelDesplegable) {
-      this.mostrarDesplegable = false;
-    }
+  if (clicDentro) {
+    this.mostrarDesplegable = false;
   }
+}
 
 
 
