@@ -366,6 +366,7 @@ button:hover {
 
   .whatsapp-float-link {
   position: fixed;
+    border:2px solid black;
   bottom: 20px;
   right: 20px;
   color: white;
@@ -383,6 +384,7 @@ button:hover {
 
   
 }
+
 
 
 
