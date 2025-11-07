@@ -382,7 +382,7 @@ button:hover {
      /* Esto escala el ícono sin cambiar su resolución*/
   transform: scale(1.5); /* 1.5 = 150% del tamaño original */
   margin-left: 8px; /* espacio entre texto e ícono */
-  vertical-align: middle;
+  top:10px;
 }
 
 
@@ -432,6 +432,7 @@ button:hover {
 
   
 }
+
 
 
 
