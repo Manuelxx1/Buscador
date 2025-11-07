@@ -174,6 +174,10 @@ google.accounts.id.initialize({
     });
 //cookie de visita al sitio
      this.detectarVisita(); 
+    //cookie de tema claro oscuro
+this.aplicarTemaGuardado();       // Aplica el tema guardado al iniciar
+    this.detectarCambioDeTema();
+    
   }// oninit
 
   
@@ -576,6 +580,41 @@ detectarVisita() {
   }
     }
 
+  //métodos para la cookie tema claro oscuro 
+
+guardarTema(tema: string) {
+    document.cookie = "tema=" + tema + "; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT";
+  }
+
+  obtenerCookie(nombre: string): string | null {
+    const cookies = document.cookie.split(';');
+    for (let c of cookies) {
+      const [clave, valor] = c.trim().split('=');
+      if (clave === nombre) return valor;
+    }
+    return null;
+  }
+
+  aplicarTemaGuardado() {
+    const tema = this.obtenerCookie("tema");
+    if (tema === "oscuro") {
+      document.body.classList.add("oscuro");
+    } else {
+      document.body.classList.remove("oscuro");
+    }
+  }
+
+  detectarCambioDeTema() {
+    const observer = new MutationObserver(() => {
+      const esOscuro = document.body.classList.contains("oscuro");
+      const tema = esOscuro ? "oscuro" : "claro";
+      this.guardarTema(tema); // Guarda automáticamente cada vez que cambia el tema
+    });
+
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  
  /*
     mostrarModal = false;
 
