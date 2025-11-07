@@ -364,20 +364,26 @@ button:hover {
   100% { transform: rotate(360deg); }
 }
 
-  .whatsapp-float {
+  .whatsapp-float-link {
   position: fixed;
   bottom: 20px;
-  right: 35px;
+  right: 20px;
   color: white;
   padding: 10px 15px;
   text-decoration: none;
   font-weight: bold;
   
 }
+  whatsapp-float-icon{
+    right: 15px;
+    width:25px;
+    
+  }
 
 
   
 }
+
 
 
 
