@@ -172,6 +172,8 @@ google.accounts.id.initialize({
     .subscribe(valor => {
       this.buscarcontenidoEnTiempoReal(valor);
     });
+//cookie de visita al sitio
+     this.detectarVisita(); 
   }// oninit
 
   
@@ -559,8 +561,20 @@ buscarcontenido() {
     this.cargandobuscarcontenido = false;
   });
 }
-
-
+//método para la cookie  de visita
+detectarVisita() {
+  //se crea la cookie 
+  const yaVisitado = document.cookie.includes("visitante=si");
+ //si no existe o es distinto de yaVisitado
+  //se crea la cookie 
+  if (!yaVisitado) {
+    document.cookie = "visitante=si; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+    alert("¡Bienvenido por primera vez!");
+//else se usa yaVisitado
+  } else {
+    alert("¡Bienvenido de nuevo!");
+  }
+    }
 
  /*
     mostrarModal = false;
