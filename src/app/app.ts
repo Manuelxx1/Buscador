@@ -175,8 +175,8 @@ google.accounts.id.initialize({
 //cookie de visita al sitio
      this.detectarVisita(); 
     //cookie de tema claro oscuro
-this.aplicarTemaGuardado();       // Aplica el tema guardado al iniciar
-    this.detectarCambioDeTema();
+//this.aplicarTemaGuardado();       // Aplica el tema guardado al iniciar
+    //this.detectarCambioDeTema();
     
   }// oninit
 
