@@ -23,7 +23,7 @@ export const routes: Routes = [
 //  un rootcomponent para ello y también evitar crear 
   // un component como home no planeado para rellenar ese path
   // sólo para que funcione el 404
-     // { path: '', component:Busqueda },
+     { path: '', component:App },
     { path: 'politica', component: Politica },
   { path: 'economia', component: Economia },
     { path: 'deportes', component: Deportes },
