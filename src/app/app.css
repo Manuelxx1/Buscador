@@ -368,10 +368,8 @@ button:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
   color: white;
   padding: 10px 15px;
-  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -380,6 +378,7 @@ button:hover {
 
   
 }
+
 
 
 
