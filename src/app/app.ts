@@ -14,8 +14,8 @@ import { ChangeDetectorRef } from '@angular/core';
 
 //para busquedacontenido en tiempo real 
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-
-
+//para el carrito de compras 
+import { Product } from './models/product';
 //variable global 
 //El objeto google viene del script 
 //que cargás en index.html
