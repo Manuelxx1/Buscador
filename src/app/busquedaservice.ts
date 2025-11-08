@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 //model para el carrito de compras 
-  import { Product } from '../models/product';
+  import { Product } from './models/product';
 
 import { of } from 'rxjs';
 
