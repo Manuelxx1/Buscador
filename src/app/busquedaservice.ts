@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+//model para el carrito de compras 
+  import { Product } from '../models/product';
 
 import { of } from 'rxjs';
 
@@ -34,7 +35,17 @@ private backendURL: string = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f800
 clientId = 'eWRfV0hqekZhOTY5bkZHQ1RBSE46MTpjaQ';
   redirectUri = 'https://4200-cs-582739288523-default.cs-us-east1-yeah.cloudshell.dev/auth/callback';
 
-constructor(private http: HttpClient) { }
+//para el carrito de compras 
+  private items: Product[] = [];
+
+  
+  constructor(private http: HttpClient) {
+    //para el carrito de compras 
+    const saved = localStorage.getItem('cart');
+    if (saved) {
+      this.items = JSON.parse(saved);
+    }
+  }
 // Lógica de tu servicio
   getData() {
     return 'Datos del servicio';
@@ -149,6 +160,51 @@ registrarDatos(nombre: string, password: string): Observable<any> {
     localStorage.removeItem('discordUser');
   }
 
+  //carrito de compras
+
+  addToCart(product: Product) {
+    const existing = this.items.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      this.items.push({ ...product, quantity: 1 });
+    }
+    this.save();
+  }
+
+  removeFromCart(productId: number) {
+    this.items = this.items.filter(item => item.id !== productId);
+    this.save();
+  }
+
+  decreaseQuantity(productId: number) {
+    const item = this.items.find(p => p.id === productId);
+    if (item) {
+      item.quantity -= 1;
+      if (item.quantity <= 0) {
+        this.removeFromCart(productId);
+      } else {
+        this.save();
+      }
+    }
+  }
+
+  clearCart() {
+    this.items = [];
+    this.save();
+  }
+
+  getItems(): Product[] {
+    return this.items;
+  }
+
+  getTotal(): number {
+    return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+
+  private save() {
+    localStorage.setItem('cart', JSON.stringify(this.items));
+      }
 
 }
 
