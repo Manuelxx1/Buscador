@@ -85,8 +85,12 @@ username: string = '';
   //para el buscador que usa springboot
   //que retorna los enlaces 
   mostrarDesplegable = false;
-
-  
+//para el carrito  de compras 
+  products: Product[] = [
+    { id: 1, name: 'Zapatos', price: 50, quantity: 1 },
+    { id: 2, name: 'Camisa', price: 30, quantity: 1 },
+    { id: 3, name: 'Pantalón', price: 40, quantity: 1 }
+  ];
   
   ngOnInit() {
     this.actualizarReloj();
@@ -614,7 +618,56 @@ guardarTema(tema: string) {
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
   }
 
-  
+  //para el carrito de compras 
+
+  addToCart(product: Product) {
+    this.miServicio.addToCart(product);
+  }
+
+  removeItem(id: number) {
+    if (confirm('¿Eliminar este producto del carrito?')) {
+      this.miServicio.removeFromCart(id);
+    }
+  }
+
+  decrease(id: number) {
+    this.miServicio.decreaseQuantity(id);
+  }
+
+  increase(product: Product) {
+    this.miServicio.addToCart(product);
+  }
+
+  clearCart() {
+    if (confirm('¿Vaciar todo el carrito?')) {
+      this.miServicio.clearCart();
+    }
+  }
+
+  confirmPurchase() {
+    alert('¡Compra confirmada!\n\n' + this.getCartSummary());
+    this.clearCart();
+  }
+
+  get cartItems(): Product[] {
+    return this.miServicio.getItems();
+  }
+
+  get total(): number {
+    return this.miServicio.getTotal();
+  }
+
+  getCartSummary(): string {
+    const items = this.cartItems;
+    if (items.length === 0) return 'El carrito está vacío.';
+
+    let resumen = 'Resumen de tu compra:\n\n';
+    items.forEach(item => {
+      resumen += `- ${item.name} x ${item.quantity} = $${item.price * item.quantity}\n`;
+    });
+    resumen += `\nTotal: $${this.total}`;
+    return resumen;
+  }
  /*
     mostrarModal = false;
 
