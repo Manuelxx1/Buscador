@@ -377,8 +377,8 @@ button:hover {
 
 
     .whatsapp-float-icon {
-        width: 30px;
-  height: 30px;
+        width: 50px;
+  height: 50px;
      /* Esto escala el ícono sin cambiar su resolución*/
   /*transform: scale(1.5);*/ /* 1.5 = 150% del tamaño original */
   margin-left: 8px; /* espacio entre texto e ícono */
@@ -432,6 +432,7 @@ button:hover {
 
   
 }
+
 
 
 
