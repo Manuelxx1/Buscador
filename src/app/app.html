@@ -308,6 +308,35 @@ en el mismo template que el button que lo dispara
 
 <img src="img/images.jpeg" alt="Logo">
 
+
+<h1>🛍️ Carrito de Compras</h1>
+
+<h2>Productos</h2>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - ${{ product.price }}
+    <button (click)="addToCart(product)">Agregar</button>
+  </li>
+</ul>
+
+<h2>Carrito</h2>
+<ul>
+  <li *ngFor="let item of cartItems">
+    {{ item.name }} - ${{ item.price }} x {{ item.quantity }}
+    <button (click)="increase(item)">+</button>
+    <button (click)="decrease(item.id)">-</button>
+    <button (click)="removeItem(item.id)">Eliminar</button>
+  </li>
+</ul>
+
+<p><strong>Total:</strong> ${{ total }}</p>
+<button (click)="clearCart()">Vaciar carrito</button>
+
+<h3>Resumen final</h3>
+<pre>{{ getCartSummary() }}</pre>
+<button (click)="confirmPurchase()">Confirmar compra</button>
+
+
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-section">
