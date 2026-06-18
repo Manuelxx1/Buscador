@@ -230,7 +230,7 @@ google.accounts.id.initialize({
         }
       });
 
-      if (query && query>=10 ) {
+      if (query && query.length >=10 ) {
      // this.loading = true;
       //this.error = false;
       //this.products = [];
