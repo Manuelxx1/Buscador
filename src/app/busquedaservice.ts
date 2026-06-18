@@ -58,7 +58,7 @@ clientId = 'eWRfV0hqekZhOTY5bkZHQ1RBSE46MTpjaQ';
         //sin usar un ngfor
  // private backendURL: string = "https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer";
 
-private apiURL = 'https://portfoliowebbackendkoyeb-1.onrender.com/personas/traer';
+private apiURL = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/personas/traer';
 
 //private apiURL = 'https://8080-cs-a039ce25-3610-425a-9d0a-fbf343f80023.cs-us-east1-pkhd.cloudshell.dev/personas/traer';
 
@@ -87,7 +87,7 @@ obtenerPorIdform(dni:any):Observable<any> {
 }
   
 */
-private apiURLenlace = 'https://portfoliowebbackendkoyeb-1.onrender.com/html-link';
+private apiURLenlace = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/html-link';
   
 obtenerEnlace(dni:any):Observable<any> {
     return this.http.get(`${this.apiURLenlace}?frase=${dni}`, { responseType: 'text' });
@@ -96,7 +96,7 @@ obtenerEnlace(dni:any):Observable<any> {
 }
 
   //formulario login método
-  private apiURLogin = 'https://portfoliowebbackendkoyeb-1.onrender.com/loginsinjwt';
+  private apiURLogin = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/loginsinjwt';
 
 iniciarSesion(nombre: string, password: string): Observable<any> {
   const datosdesesion = { nombre, password };
@@ -104,7 +104,7 @@ iniciarSesion(nombre: string, password: string): Observable<any> {
 }
 
   //formulario registro método
-  private apiURLRegistro = 'https://portfoliowebbackendkoyeb-1.onrender.com/register';
+  private apiURLRegistro = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/register';
 
 registrarDatos(nombre: string, password: string): Observable<any> {
   const datosderegistro = { nombre, password };
