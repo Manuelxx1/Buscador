@@ -28,8 +28,42 @@ aplicamos al footer para los iconos de redes sociales-->
     <li><a routerLink="/contacto">Contacto</a></li>
   </ul>
 
-  
 
+
+
+  <!--buscador nuevo optimizado para angular routerLink -->
+
+  <!-- Buscador -->
+  <div class="search-container">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      class="search-box-for-products"
+      placeholder="Buscar productos..."
+    />
+
+  </div>
+
+
+<h3>Resultados de la búsqueda </h3>
+<ul>
+  <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
+      <img [src]="product.imageUrl" alt="{{ product.title }}" />
+      <div class="product-info">
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.leadText }}</p>
+        <p>{{ product.category }}</p>
+        
+        <!--no se coloca la barra al inicio de routerLink 
+        porque en la base ya se le agrego junto a la ruta-->
+    <a routerLink="{{product.angularRoute}}">ruta path {{product.angularRoute}}</a> 
+      </div>
+  </li>
+</ul>
+
+
+  <!-- buscador antiguo para abrir enlaces desde backend usando el filtro 
+  de map -->
   <div class="buscarcontenido">
     <div #zonaLimite class="zona-limite">
   <form [formGroup]="formulario" (ngSubmit)="buscarcontenido()">
