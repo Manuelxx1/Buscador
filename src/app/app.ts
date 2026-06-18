@@ -198,7 +198,12 @@ google.accounts.id.initialize({
   this.searchControl.valueChanges.subscribe(term => {
     const query = term?.trim();
   
-      
+      if (query && query.length >=15 ) {
+     // this.loading = true;
+      //this.error = false;
+      //this.products = [];
+      //this.searchActive = true;
+        
 
       this.miServicio.searchProducts(query).subscribe({
         next: data => {
@@ -230,12 +235,7 @@ google.accounts.id.initialize({
         }
       });
 
-      if (query && query.length >=10 ) {
-     // this.loading = true;
-      //this.error = false;
-      //this.products = [];
-      //this.searchActive = true;
-        this.resultadosobtenidos=true;
+      
     } else {
       this.resultadosDeBusqueda = [];
       //this.searchActive = false;
