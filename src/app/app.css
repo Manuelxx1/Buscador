@@ -101,6 +101,31 @@ buttonCerrarSession:hover {
   background-size: 18px;
 }
 
+/* Lista en desktop */
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff; /* cada resultado sobre fondo blanco */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.result-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 6px;
+}
+
 
 /* CLIMA + HORA */
 .weather-time {
