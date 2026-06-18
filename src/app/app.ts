@@ -46,6 +46,7 @@ enlace!:any;
  // emailenviado:any;
   cargando = false;
   cargandobuscarcontenido: boolean = false;
+  resultadosobtenidos: boolean = false;
 
 emailenviado: string | null = null;
 emailError: string | null = null;
@@ -207,7 +208,7 @@ google.accounts.id.initialize({
         next: data => {
          // this.products = data;
           this.resultadosDeBusqueda=data;
-          this.cargandobuscarcontenido=true;
+          this.resultadosobtenidos=true;
          // this.filteredProducts = [...this.products];
           //this.currentPage = 1; // inicializa en la primera página
     //this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
