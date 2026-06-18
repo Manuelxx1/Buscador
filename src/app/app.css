@@ -91,6 +91,16 @@ buttonCerrarSession:hover {
   background-color: #fff;
 }
 
+.search-box-for-products {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 40px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat right 10px center;
+  background-size: 18px;
+}
+
 
 /* CLIMA + HORA */
 .weather-time {
