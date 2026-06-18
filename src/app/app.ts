@@ -201,12 +201,13 @@ google.accounts.id.initialize({
       //this.error = false;
       //this.products = [];
       //this.searchActive = true;
-      this.cargandobuscarcontenido=true;
+      
 
       this.miServicio.searchProducts(query).subscribe({
         next: data => {
          // this.products = data;
           this.resultadosDeBusqueda=data;
+          this.cargandobuscarcontenido=true;
          // this.filteredProducts = [...this.products];
           //this.currentPage = 1; // inicializa en la primera página
     //this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
