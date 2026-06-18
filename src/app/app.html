@@ -44,8 +44,8 @@ aplicamos al footer para los iconos de redes sociales-->
 
   </div>
 
-<div *ngIf="resultadosDeBusqueda">
-<h3 *ngIf="resultadosDeBusqueda">Resultados de la búsqueda </h3>
+<div *ngIf="cargandobuscarcontenido">
+<h3>Resultados de la búsqueda </h3>
 <ul class="results-list">
   <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
       <img [src]="product.imageUrl" alt="{{ product.title }}" />
