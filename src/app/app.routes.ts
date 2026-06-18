@@ -10,6 +10,9 @@ import { Registrarse } from './registrarse/registrarse';
 
 import { Tecnologia } from './tecnologia/tecnologia';
 
+import { InteligenciaArtificial1 } from './articulo-noticias/tecnologia/inteligencia-artificial/inteligencia-artificial1';
+import { CiberSeguridad1 } from './articulo-noticias/tecnologia/ciberseguridad/ciberseguridad1';
+import { CiberSeguridad2 } from './articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2';
 
 import { AuthCallback } from './auth-callback/auth-callback';
 
@@ -30,7 +33,9 @@ export const routes: Routes = [
     { path: 'cultura', component: Cultura },
     { path: 'tecnologia', component: Tecnologia },
   { path: 'registrarse', component: Registrarse },
-  
+  {path: 'articulo-noticias-tecnologia-inteligencia-artificial1', component: InteligenciaArtificial1 },
+                                {path: 'articulo-noticias/tecnologia/ciberseguridad/ciberseguridad1', component: CiberSeguridad1 },
+                               {path: 'articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2', component: CiberSeguridad2 }
 
   { path: 'auth/callback', component: AuthCallback },
   { path: '**', component: NotFound }
