@@ -59,6 +59,10 @@ formulario: FormGroup;
 formularioIntereses: FormGroup;
 mensajeConfirmacion: string | null = null;
 
+  //recibir datos del formulario buscador nuevo
+  searchControl = new FormControl('');
+  resultadosDeBusqueda:any[] = [];
+
 datosdesesion:any;
   //datosdeltoken de Google
   usuario: any;
@@ -181,6 +185,57 @@ google.accounts.id.initialize({
     //cookie de tema claro oscuro
 //this.aplicarTemaGuardado();       // Aplica el tema guardado al iniciar
     //this.detectarCambioDeTema();
+
+
+
+
+
+
+    //Buscador nuevo optimizado para RouterLink 
+
+    // 2. Mantener la lógica normal del buscador
+  this.searchControl.valueChanges.subscribe(term => {
+    const query = term?.trim();
+    if (query && query.length >= 2) {
+     // this.loading = true;
+      //this.error = false;
+      //this.products = [];
+      //this.searchActive = true;
+
+      this.productService.searchProducts(query).subscribe({
+        next: data => {
+         // this.products = data;
+          this.resultadosDeBusqueda=data;
+         // this.filteredProducts = [...this.products];
+          //this.currentPage = 1; // inicializa en la primera página
+    //this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
+           // this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);// genera botones
+           // alert('Resultados:'+ this.products.length+'TotalPages:'+this.totalPages);
+ // alert('Pages:'+ this.pages);
+//calcular categorías aquí directamente 
+/*this.productscategories = [...new Set(this.products
+      .filter(p => p.category && p.category.name)  // solo los que tienen categoría
+      .map(p => p.category.name)
+  )
+];
+     */
+         // this.loading = false;
+          
+        },
+        error: err => {
+          console.error('Error al buscar productos', err);
+        // alert('Error al buscar productos'+ err);
+          //this.products = [];
+          //this.loading = false;
+          //this.error = true;
+        }
+      });
+    } else {
+      this.resultadosDeBusqueda = [];
+      //this.searchActive = false;
+    }
+  });
+    
     
   }// oninit
 
