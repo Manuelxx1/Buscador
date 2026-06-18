@@ -95,6 +95,22 @@ obtenerEnlace(dni:any):Observable<any> {
  // console.log('DNI recibido en el servicio:', dni); //Esto lo ves en la consola del navegador
 }
 
+
+
+  private apiUrlBuscador = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/buscar';
+
+    // Método para buscar productos por término en el buscador principal 
+  searchProducts(term: string | number): Observable<any[]> {
+ 
+   
+    //el nombre del parámetro debe coincidir con lo que espera 
+    //el endpoint en @RequestParam("q") para definir la ruta correcta 
+    //sino lanza un error técnico (400 Bad Request o un MissingServletRequestParameterException) 
+    //porque no encuentra el parámetro obligatorio q, 
+    //haciendo que Angular salte directo a la función error: err => { ... }.
+    return this.http.get<any[]>(`${this.apiUrlBuscador}?q=${term}`);
+  }
+
   //formulario login método
   private apiURLogin = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/loginsinjwt';
 
