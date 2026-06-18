@@ -197,11 +197,7 @@ google.accounts.id.initialize({
     // 2. Mantener la lógica normal del buscador
   this.searchControl.valueChanges.subscribe(term => {
     const query = term?.trim();
-    if (query ) {
-     // this.loading = true;
-      //this.error = false;
-      //this.products = [];
-      //this.searchActive = true;
+  
       
 
       this.miServicio.searchProducts(query).subscribe({
@@ -233,6 +229,13 @@ google.accounts.id.initialize({
           //this.error = true;
         }
       });
+
+      if (query && query>=10 ) {
+     // this.loading = true;
+      //this.error = false;
+      //this.products = [];
+      //this.searchActive = true;
+        this.resultadosobtenidos=true;
     } else {
       this.resultadosDeBusqueda = [];
       //this.searchActive = false;
