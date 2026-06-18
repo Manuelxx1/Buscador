@@ -2,7 +2,7 @@ import { Component, signal, OnInit, ElementRef, HostListener, ViewChild } from '
 import { RouterOutlet,RouterLink } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
+import {FormControl, ReactiveFormsModule, FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ThemeToggleComponent } from './theme-toggle-component/theme-toggle-component';
 import { Weather } from './weather/weather';
