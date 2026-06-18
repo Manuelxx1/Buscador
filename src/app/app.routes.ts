@@ -35,7 +35,7 @@ export const routes: Routes = [
   { path: 'registrarse', component: Registrarse },
   {path: 'articulo-noticias-tecnologia-inteligencia-artificial1', component: InteligenciaArtificial1 },
                                 {path: 'articulo-noticias/tecnologia/ciberseguridad/ciberseguridad1', component: CiberSeguridad1 },
-                               {path: 'articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2', component: CiberSeguridad2 },
+  {path: 'articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2', component: CiberSeguridad2 },
   { path: 'auth/callback', component: AuthCallback },
   { path: '**', component: NotFound }
 
