@@ -202,7 +202,7 @@ google.accounts.id.initialize({
       //this.products = [];
       //this.searchActive = true;
 
-      this.productService.searchProducts(query).subscribe({
+      this.miServicio.searchProducts(query).subscribe({
         next: data => {
          // this.products = data;
           this.resultadosDeBusqueda=data;
