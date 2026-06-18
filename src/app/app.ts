@@ -201,6 +201,7 @@ google.accounts.id.initialize({
       //this.error = false;
       //this.products = [];
       //this.searchActive = true;
+      this.cargandobuscarcontenido=true;
 
       this.miServicio.searchProducts(query).subscribe({
         next: data => {
