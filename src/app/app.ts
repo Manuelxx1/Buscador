@@ -197,7 +197,7 @@ google.accounts.id.initialize({
     // 2. Mantener la lógica normal del buscador
   this.searchControl.valueChanges.subscribe(term => {
     const query = term?.trim();
-    if (query && query.length >= 2) {
+    if (query && query.length >= 10) {
      // this.loading = true;
       //this.error = false;
       //this.products = [];
