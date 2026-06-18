@@ -108,13 +108,14 @@ buttonCerrarSession:hover {
   margin: 0;
 }
 
+/*
 .result-item {
   display: flex;
   align-items: center;
   padding: 12px;
   border-bottom: 1px solid #eee;
   background-color: #fff; /* cada resultado sobre fondo blanco */
-  border-radius: 6px;
+  /*border-radius: 6px;
   margin-bottom: 10px;
 }
 
@@ -125,6 +126,7 @@ buttonCerrarSession:hover {
   margin-right: 15px;
   border-radius: 6px;
 }
+*/
 
 
 /* CLIMA + HORA */
