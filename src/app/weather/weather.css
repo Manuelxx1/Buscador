@@ -1,8 +1,69 @@
 
-span {
-  font-size: 20px;
-  margin-left: 10px;
+/*CSS pensado con estilo mobile first
+esto quiere decir que primero se definen los estilos para
+mobile y luego con el @media Query
+se definen para las pantallas más grandes 
+lo que no se define en @media Query se hereda automáticamente 
+
+esto es lo inverso del desktop first
+*/
+
+/* Contenedor principal tipo tarjeta */
+.weather-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 400px; /* Evita que se estire demasiado en tablets */
+  margin: 16px auto;
+  font-family: system-ui, -apple-system, sans-serif;
 }
-.p{
-  font-size: 8px;
+
+/* Contenedor Grid: Por defecto 1 columna en móviles */
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 16px; /* Espaciado uniforme entre filas */
+}
+
+/* Cada fila de clima */
+.weather-item {
+  display: flex;
+  align-items: center; /* Alinea verticalmente ícono y texto */
+  gap: 12px; /* Espacio entre el emoji y el texto */
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+/* Estilo para los emojis/íconos */
+.weather-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Estilo para los textos */
+.weather-text {
+  margin: 0; /* Remueve el margen por defecto del <p> */
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.weather-text span {
+  font-weight: 600; /* Resalta el valor numérico/dinámico */
+  color: #212529;
+}
+
+/* -----------------------------------------
+   MEDIA QUERY: Para pantallas más grandes (Tablets/Desktop)
+----------------------------------------- */
+@media (min-width: 480px) {
+  .weather-card {
+    max-width: 600px;
+  }
+  
+  /* En pantallas más grandes, se transforma automáticamente en 2 columnas */
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
