@@ -89,6 +89,8 @@ buttonCerrarSession:hover {
   padding: 8px 40px 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  position:relative;
+  top:10px;
   background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat right 10px center;
   background-size: 18px;
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Sombra interna sutil */
