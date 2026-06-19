@@ -246,6 +246,7 @@ google.accounts.id.initialize({
   ).subscribe(term => {
     const query = term?.trim();
     if (query && query.length >= 2) {
+      this.cargandobuscarcontenido=true;
       // Llamás al endpoint que te da las palabras sugeridas (tipo Google)
       this.miServicio.getSugerenciasKeywords(query).subscribe(data => {
         this.sugerencias = data; 
@@ -277,6 +278,8 @@ seleccionarSugerencia(keywordParaBuscar: string) {
     next: data => {
       // Guardamos TODOS los artículos que tengan esa keyword en el array general
       this.resultadosDeBusqueda = data;
+      this.resultadosobtenidos=true;
+          this.cargandobuscarcontenido=false;
     }
   });
 }
