@@ -8,50 +8,40 @@ lo que no se define en @media Query se hereda automáticamente
 esto es lo inverso del desktop first
 */
 
-/* Contenedor principal tipo tarjeta */
-.weather-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  max-width: 400px; /* Evita que se estire demasiado en tablets */
-  margin: 16px auto;
-  font-family: system-ui, -apple-system, sans-serif;
-}
-
-/* Contenedor Grid: Por defecto 1 columna en móviles */
+/* El contenedor principal en modo Grid vertical */
 .weather-grid {
   display: grid;
-  grid-template-columns: 1fr; 
-  gap: 16px; /* Espaciado uniforme entre filas */
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-/* Cada fila de clima */
+/* Cada fila o bloque de datos */
 .weather-item {
   display: flex;
-  align-items: center; /* Alinea verticalmente ícono y texto */
-  gap: 12px; /* Espacio entre el emoji y el texto */
+  align-items: center;
+  gap: 12px;
   background-color: #f8f9fa;
   padding: 12px;
   border-radius: 12px;
 }
 
-/* Estilo para los emojis/íconos */
-.weather-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-/* Estilo para los textos */
+/* El texto descriptivo (Temperatura:, Viento:, etc.) */
 .weather-text {
-  margin: 0; /* Remueve el margen por defecto del <p> */
+  margin: 0;
   color: #495057;
   font-size: 0.95rem;
 }
 
+/* El valor dinámico que viene de Angular (los números/estados) */
 .weather-text span {
-  font-weight: 600; /* Resalta el valor numérico/dinámico */
+  font-weight: 600;
   color: #212529;
+}
+
+/* El tamaño de los emojis */
+.weather-icon {
+  font-size: 1.3rem;
+  line-height: 1;
 }
 
 /* -----------------------------------------
