@@ -15,11 +15,10 @@ aplicamos al footer para los iconos de redes sociales-->
 
   <button class="hamburger" (click)="toggleMenu()">☰</button>
 <app-theme-toggle-component></app-theme-toggle-component>
-<app-weather></app-weather>
+
   
   <div class="weather-time">
-    <span id="weather">🌤️ 22°C</span>
-    <span id="clock">{{ clock }}</span>
+    <app-weather></app-weather>
   </div>
 
   <ul class="nav-links" [class.active]="menuActivo" id="navLinks">
