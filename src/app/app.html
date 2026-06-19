@@ -13,12 +13,13 @@ aplicamos al footer para los iconos de redes sociales-->
         
   <div class="logo">NoticiasHoy</div>
 
-  <button class="hamburger" (click)="toggleMenu()">☰</button>
-<app-theme-toggle-component></app-theme-toggle-component>
-
-  
-  <div class="weather-time">
+  <div class="weather-navbar-container">
     <app-weather></app-weather>
+  </div>
+
+  <div class="nav-right-actions">
+    <app-theme-toggle-component></app-theme-toggle-component>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
   </div>
 
   <ul class="nav-links" [class.active]="menuActivo" id="navLinks">
