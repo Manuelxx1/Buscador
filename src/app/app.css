@@ -250,8 +250,12 @@ buttonCerrarSession:hover {
   font-size: 0px !important; /* Esconde el texto largo en móvil */
 }
 
+/* LA SOLUCIÓN AQUÍ: Forzamos tamaño, visibilidad y color contrastante */
 :host ::ng-deep .weather-text span {
-  font-size: 0.8rem !important; /* Muestra solo el número */
+  font-size: 0.85rem !important; /* Le devolvemos el tamaño al número */
+  display: inline-block !important; /* Rompe la herencia del font-size: 0px */
+  color: #ffcc00 !important; /* Color amarillo (como tus hovers) o #ffffff para que se lea en la barra negra */
+  font-weight: bold !important;
 }
 
 
