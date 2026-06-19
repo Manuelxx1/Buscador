@@ -1,14 +1,14 @@
 <div *ngIf="temperature !== null">
-  <div style="display: inline; align-items: center; gap: 10px;">
-    <span style="font-size: 2em;">🌡</span>
+  <div>
+    <span >🌡</span>
     <p>Temperatura: {{ temperature }}°C</p>
   
-      <span style="font-size: 2em;">💨</span>
+      <span>💨</span>
     <p>Viento: {{ windSpeed }} km/h</p>
  
-  <span style="font-size: 2em;">🕒</span>
+  <span >🕒</span>
     <p>Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
- <span style="font-size: 2em;">🌤️</span>
+ <span>🌤️</span>
     <p>Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
   </div>
   
