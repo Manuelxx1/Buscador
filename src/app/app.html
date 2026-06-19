@@ -65,19 +65,19 @@ aplicamos al footer para los iconos de redes sociales-->
 
   <!-- buscador antiguo para abrir enlaces desde backend usando el filtro 
   de map -->
-  <div class="buscarcontenido">
+ <!-- <div class="buscarcontenido">
     <div #zonaLimite class="zona-limite">
   <form [formGroup]="formulario" (ngSubmit)="buscarcontenido()">
     <label>
       <h2>Buscar contenido</h2>
       <input #inputBuscador formControlName="palabraclave" placeholder="Buscar..." class="search-box" />
-
+-->
 <!-- muestra u oculta el desplegable
         de resultado de búsqueda segun lo que sucede 
 en el input text y evento de click fuera del input text-->
 
       
-
+<!--
 
       <span *ngIf="formulario.get('palabraclave')?.invalid && formulario.get('palabraclave')?.touched">
         Debería escribir algo es obligatorio.
@@ -91,7 +91,7 @@ en el input text y evento de click fuera del input text-->
   </div>
         <div #contenedorDesplegable *ngIf="mostrarDesplegable" class="desplegable" [innerHTML]="enlace"></div>
 
-  
+  -->
             <div class="formulariologin">
 
     <form [formGroup]="formulariologin" (ngSubmit)="formulariologindatos()">
@@ -112,7 +112,8 @@ en el input text y evento de click fuera del input text-->
       <button type="submit" [style.display]="sesionActivaSinGoogle ? 'none' : 'block'" >Enviar</button>
     </form>
     <p class="datosdesesion" *ngIf="sesionActivaSinGoogle"  [innerHTML]="datosdesesion"></p>
-<!-- Botón de cerrar sesión -->
+
+  <!-- Botón de cerrar sesión -->
 <button *ngIf="sesionActivaSinGoogle" (click)="cerrarSesion()">Cerrar sesión</button>
   </div>
 
@@ -343,35 +344,8 @@ en el mismo template que el button que lo dispara
 
 <img src="img/images.jpeg" alt="Logo">
 
-<div class="carritodecompra">
-<h1>🛍️ Carrito de Compras</h1>
 
-<h2>Productos</h2>
-<ul>
-  <li *ngFor="let product of products">
-    {{ product.name }} - ${{ product.price }}
-    <button (click)="addToCart(product)">Agregar</button>
-  </li>
-</ul>
 
-<h2>Carrito</h2>
-<ul>
-  <li *ngFor="let item of cartItems">
-    {{ item.name }} - ${{ item.price }} x {{ item.quantity }}
-    <button (click)="increase(item)">+</button>
-    <button (click)="decrease(item.id)">-</button>
-    <button (click)="removeItem(item.id)">Eliminar</button>
-  </li>
-</ul>
-
-<p><strong>Total:</strong> ${{ total }}</p>
-<button (click)="clearCart()">Vaciar carrito</button>
-
-<h3>Resumen final</h3>
-<pre>{{ getCartSummary() }}</pre>
-<button (click)="confirmPurchase()">Confirmar compra</button>
-
-</div>
 
 <footer class="site-footer">
   <div class="footer-content">
