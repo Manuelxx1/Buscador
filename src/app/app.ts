@@ -247,7 +247,7 @@ google.accounts.id.initialize({
     const query = term?.trim();
     if (query && query.length >= 2) {
       // Llamás al endpoint que te da las palabras sugeridas (tipo Google)
-      this.productService.getSugerenciasKeywords(query).subscribe(data => {
+      this.miServicio.getSugerenciasKeywords(query).subscribe(data => {
         this.sugerencias = data; 
         this.mostrarSugerencias = true;
       });
@@ -273,7 +273,7 @@ seleccionarSugerencia(keywordParaBuscar: string) {
   this.mostrarSugerencias = false;
 
   // 3. DISPARAMOS la búsqueda real en la base de datos con la palabra completa
-  this.productService.searchProducts(keywordParaBuscar).subscribe({
+  this.miServicio.searchProducts(keywordParaBuscar).subscribe({
     next: data => {
       // Guardamos TODOS los artículos que tengan esa keyword en el array general
       this.resultadosDeBusqueda = data;
