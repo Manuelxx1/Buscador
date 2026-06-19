@@ -1,15 +1,27 @@
-<div *ngIf="temperature !== null">
-  <div>
-    <span >🌡</span>
-    <p>Temperatura: {{ temperature }}°C</p>
+
+
+<div *ngIf="temperature !== null" class="weather-card">
+  <div class="weather-grid">
+    
+    <div class="weather-item">
+      <span class="weather-icon">🌡</span>
+      <p class="weather-text">Temperatura: <span>{{ temperature }}°C</span></p>
+    </div>
   
-      <span>💨</span>
-    <p>Viento: {{ windSpeed }} km/h</p>
+    <div class="weather-item">
+      <span class="weather-icon">💨</span>
+      <p class="weather-text">Viento: <span>{{ windSpeed }} km/h</span></p>
+    </div>
  
-  <span >🕒</span>
-    <p>Momento del día: {{ isDay ? 'Día' : 'Noche' }}</p>
- <span>🌤️</span>
-    <p>Estado del clima: {{ getWeatherDescription(weatherCode) }}</p>
+    <div class="weather-item">
+      <span class="weather-icon">🕒</span>
+      <p class="weather-text">Momento del día: <span>{{ isDay ? 'Día' : 'Noche' }}</span></p>
+    </div>
+
+    <div class="weather-item">
+      <span class="weather-icon">🌤️</span>
+      <p class="weather-text">Estado del clima: <span>{{ getWeatherDescription(weatherCode) }}</span></p>
+    </div>
+
   </div>
-  
 </div>
