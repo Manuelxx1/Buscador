@@ -116,7 +116,7 @@ getSugerenciasKeywords(term: string): Observable<string[]> {
     // Apuntamos a un nuevo endpoint '/sugerencias' en tu Spring Boot
     return this.http.get<string[]>(`https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/sugerencias?q=${term}`);
 
- 
+}
   
   
   
