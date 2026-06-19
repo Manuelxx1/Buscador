@@ -45,11 +45,11 @@ aplicamos al footer para los iconos de redes sociales-->
       (blur)="cerrarSugerencias()"
     />
 
-    <ul *ngIf="sugerencias.length > 0 && mostrarSugerencias" class="suggestions-dropdown">
-    <li *ngFor="let sug of sugerencias" (mousedown)="seleccionarSugerencia(sug)">
-      <i class="icono-buscar">🔍</i> {{ sug.title }}
+<ul *ngIf="sugerencias.length > 0 && mostrarSugerencias" class="suggestions-dropdown">
+    <li *ngFor="let palabra of sugerencias" (mousedown)="seleccionarSugerencia(palabra)">
+      🔍 {{ palabra }}
     </li>
-    </ul>
+</ul>
 
   </div>
 
