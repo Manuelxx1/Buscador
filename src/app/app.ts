@@ -276,7 +276,7 @@ seleccionarSugerencia(keywordParaBuscar: string) {
   this.productService.searchProducts(keywordParaBuscar).subscribe({
     next: data => {
       // Guardamos TODOS los artículos que tengan esa keyword en el array general
-      this.resultadosDeBusqueda = data; 
+      this.resultadosDeBusqueda = data;
     }
   });
 }
