@@ -13,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 
 //para busquedacontenido en tiempo real 
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 //para el carrito de compras 
 import { Product } from './models/product';
 //variable global 
@@ -48,6 +49,9 @@ enlace!:any;
   cargandobuscarcontenido: boolean = false;
   resultadosobtenidos: boolean = false;
 
+sugerencias: any[] = [];
+mostrarSugerencias = false;
+  
 emailenviado: string | null = null;
 emailError: string | null = null;
 
@@ -195,7 +199,7 @@ google.accounts.id.initialize({
     //Buscador nuevo optimizado para RouterLink 
 
     // 2. Mantener la lógica normal del buscador
-  this.searchControl.valueChanges.subscribe(term => {
+  /*this.searchControl.valueChanges.subscribe(term => {
     const query = term?.trim();
   
       if (query && query.length >=10 ) {
@@ -231,9 +235,52 @@ google.accounts.id.initialize({
         this.cargandobuscarcontenido=false 
     }
   });
+
+  */
+
+//Buscador con sugerencias 
+    this.searchControl.valueChanges.pipe(
+    debounceTime(300),        //  Espera 300ms a que el usuario pare de escribir
+    distinctUntilChanged(),   //  Evita buscar si el texto no cambió (ej: si apretó flechas)
+    switchMap(term => {
+      const query = term?.trim();
+      if (query && query.length >= 2) {
+        this.mostrarSugerencias = true;
+        return this.miServicio.searchProducts(query); // Reutiliza tu servicio actual
+      } else {
+        this.sugerencias = [];
+        this.mostrarSugerencias = false;
+        return of([]); // Retorna un array vacío si no hay texto suficiente
+      }
+    })
+  ).subscribe({
+    next: data => {
+      // Guardamos las respuestas como sugerencias predictivas
+      this.sugerencias = data; 
+    },
+    error: err => {
+      console.error('Error en sugerencias', err);
+    }
+  });
     
     
   }// oninit
+
+
+// Al hacer clic en una sugerencia, rellenamos el buscador
+seleccionarSugerencia(articulo: any) {
+  this.searchControl.setValue(articulo.title, { emitEvent: false });
+  this.resultadosDeBusqueda = [articulo]; // Muestra directo el resultado
+  this.sugerencias = [];
+  this.mostrarSugerencias = false;
+}
+
+cerrarSugerencias() {
+  // Le damos un pequeño delay para que el evento (mousedown) llegue a ejecutarse
+  setTimeout(() => {
+    this.mostrarSugerencias = false;
+  }, 200);
+}
 
   
 
