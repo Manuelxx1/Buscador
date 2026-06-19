@@ -203,27 +203,15 @@ google.accounts.id.initialize({
       //this.error = false;
       //this.products = [];
       //this.searchActive = true;
-        
+        this.cargandobuscarcontenido=true;
 
       this.miServicio.searchProducts(query).subscribe({
         next: data => {
          // this.products = data;
           this.resultadosDeBusqueda=data;
           this.resultadosobtenidos=true;
-         // this.filteredProducts = [...this.products];
-          //this.currentPage = 1; // inicializa en la primera página
-    //this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
-           // this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);// genera botones
-           // alert('Resultados:'+ this.products.length+'TotalPages:'+this.totalPages);
- // alert('Pages:'+ this.pages);
-//calcular categorías aquí directamente 
-/*this.productscategories = [...new Set(this.products
-      .filter(p => p.category && p.category.name)  // solo los que tienen categoría
-      .map(p => p.category.name)
-  )
-];
-     */
-         // this.loading = false;
+          this.cargandobuscarcontenido=false;
+         
           
         },
         error: err => {
@@ -240,6 +228,7 @@ google.accounts.id.initialize({
       this.resultadosDeBusqueda = [];
       //this.searchActive = false;
       this.resultadosobtenidos=false;
+        this.cargandobuscarcontenido=false 
     }
   });
     
