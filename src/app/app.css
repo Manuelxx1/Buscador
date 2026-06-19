@@ -11,6 +11,15 @@
   overflow: visible;
 }
 
+
+  :host ::ng-deep .weather-grid {
+    gap: 12px !important;
+  }
+  :host ::ng-deep .weather-text {
+    font-size: 0.85rem !important; /* Devuelve el texto en escritorio */
+  }
+
+
 .logo {
   font-size: 1.5em;
   font-weight: bold;
@@ -34,12 +43,6 @@
   color: #ffcc00;
 } 
 
-/* BUSCADOR + LOGIN */
-.search-login {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
 
 
   button {
@@ -120,12 +123,6 @@ buttonCerrarSession:hover {
 */
 
 
-/* CLIMA + HORA */
-.weather-time {
-  display: flex;
-  gap: 10px;
-  font-size: 0.9em;
-}
 
 /* BOTÓN HAMBURGUESA */
 .hamburger {
@@ -217,6 +214,47 @@ buttonCerrarSession:hover {
 
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
+/* Estilos propios de la Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+}
+.logo {
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================
+   MODIFICADORES: Esto altera al clima SOLO cuando está en la navbar
+   ========================================================== */
+:host ::ng-deep .weather-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 6px !important;
+}
+
+:host ::ng-deep .weather-item {
+  display: flex !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+:host ::ng-deep .weather-text {
+  font-size: 0px !important; /* Esconde el texto largo en móvil */
+}
+
+:host ::ng-deep .weather-text span {
+  font-size: 0.8rem !important; /* Muestra solo el número */
+}
+
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -231,17 +269,8 @@ buttonCerrarSession:hover {
     display: block;
   }
 
-  .search-login {
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-  }
 
-  .weather-time {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
+  
 
   button {
   background-color: #007bff;
