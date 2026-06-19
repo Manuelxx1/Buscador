@@ -13,6 +13,10 @@ aplicamos al footer para los iconos de redes sociales-->
         
   <div class="logo">NoticiasHoy</div>
 
+  <button class="hamburger" (click)="toggleMenu()">☰</button>
+<app-theme-toggle-component></app-theme-toggle-component>
+<app-weather></app-weather>
+  
   <div class="weather-time">
     <span id="weather">🌤️ 22°C</span>
     <span id="clock">{{ clock }}</span>
@@ -29,7 +33,7 @@ aplicamos al footer para los iconos de redes sociales-->
   </ul>
 
 
-
+</nav>
 
   <!--buscador nuevo optimizado para angular routerLink -->
 
@@ -43,6 +47,9 @@ aplicamos al footer para los iconos de redes sociales-->
     />
 
   </div>
+
+
+
 
 <div *ngIf="resultadosobtenidos">  
       <div *ngIf="cargandobuscarcontenido" class="spinner"></div>
@@ -226,12 +233,7 @@ Cerrar sesión<img src="img/x-logo.svg" alt="X logo" width="20"></button>
 
 
 
-  <button class="hamburger" (click)="toggleMenu()">☰</button>
-<app-theme-toggle-component></app-theme-toggle-component>
-<app-weather></app-weather>
-
-
-</nav>
+  
 
 
 
