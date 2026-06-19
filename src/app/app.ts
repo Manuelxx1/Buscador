@@ -255,6 +255,7 @@ google.accounts.id.initialize({
     } else {
       this.sugerencias = [];
       this.mostrarSugerencias = false;
+      this.cargandobuscarcontenido=false
     }
   });
     
