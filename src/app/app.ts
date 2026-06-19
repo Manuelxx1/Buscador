@@ -49,7 +49,7 @@ enlace!:any;
   cargandobuscarcontenido: boolean = false;
   resultadosobtenidos: boolean = false;
 
-sugerencias: any[] = [];
+sugerencias: string[] = [];
 mostrarSugerencias = false;
   
 emailenviado: string | null = null;
@@ -239,27 +239,21 @@ google.accounts.id.initialize({
   */
 
 //Buscador con sugerencias 
-    this.searchControl.valueChanges.pipe(
-    debounceTime(300),        //  Espera 300ms a que el usuario pare de escribir
-    distinctUntilChanged(),   //  Evita buscar si el texto no cambió (ej: si apretó flechas)
-    switchMap(term => {
-      const query = term?.trim();
-      if (query && query.length >= 2) {
+    // Escucha lo que escribe para mostrar sugerencias de palabras
+  this.searchControl.valueChanges.pipe(
+    debounceTime(300),
+    distinctUntilChanged()
+  ).subscribe(term => {
+    const query = term?.trim();
+    if (query && query.length >= 2) {
+      // Llamás al endpoint que te da las palabras sugeridas (tipo Google)
+      this.productService.getSugerenciasKeywords(query).subscribe(data => {
+        this.sugerencias = data; 
         this.mostrarSugerencias = true;
-        return this.miServicio.searchProducts(query); // Reutiliza tu servicio actual
-      } else {
-        this.sugerencias = [];
-        this.mostrarSugerencias = false;
-        return of([]); // Retorna un array vacío si no hay texto suficiente
-      }
-    })
-  ).subscribe({
-    next: data => {
-      // Guardamos las respuestas como sugerencias predictivas
-      this.sugerencias = data; 
-    },
-    error: err => {
-      console.error('Error en sugerencias', err);
+      });
+    } else {
+      this.sugerencias = [];
+      this.mostrarSugerencias = false;
     }
   });
     
@@ -268,13 +262,26 @@ google.accounts.id.initialize({
 
 
 // Al hacer clic en una sugerencia, rellenamos el buscador
-seleccionarSugerencia(articulo: any) {
-  this.searchControl.setValue(articulo.title, { emitEvent: false });
-  this.resultadosDeBusqueda = [articulo]; // Muestra directo el resultado
+// Ocurre cuando el usuario hace clic en la palabra sugerida (Ej: "ciberseguridad")
+seleccionarSugerencia(keywordParaBuscar: string) {
+  // 1. Ponemos la palabra completa en el input (ej: reemplaza "ciber" por "ciberseguridad")
+  // Usamos emitEvent: false para que no se vuelva a meter en el bucle de sugerencias
+  this.searchControl.setValue(keywordParaBuscar, { emitEvent: false });
+  
+  // 2. Cerramos la lista flotante porque ya elegimos la palabra
   this.sugerencias = [];
   this.mostrarSugerencias = false;
+
+  // 3. DISPARAMOS la búsqueda real en la base de datos con la palabra completa
+  this.productService.searchProducts(keywordParaBuscar).subscribe({
+    next: data => {
+      // Guardamos TODOS los artículos que tengan esa keyword en el array general
+      this.resultadosDeBusqueda = data; 
+    }
+  });
 }
 
+  
 cerrarSugerencias() {
   // Le damos un pequeño delay para que el evento (mousedown) llegue a ejecutarse
   setTimeout(() => {
