@@ -1,12 +1,8 @@
-img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
+
 span {
-  font-size: 10px;
+  font-size: 20px;
   margin-left: 10px;
 }
 .p{
-  font-size: 10px;
+  font-size: 8px;
 }
