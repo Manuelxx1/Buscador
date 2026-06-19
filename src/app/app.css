@@ -231,9 +231,36 @@ buttonCerrarSession:hover {
   gap: 8px;
 }
 
+
+  /*
+  Por defecto, Angular tiene un sistema de "encapsulamiento de estilos". 
+  Esto significa que el CSS que escribes para la navbar
+  no puede afectar al componente <app-weather>, 
+  ya que Angular los aísla para que no se pinchen entre sí.
+Para saltear esa restricción en este caso específico
+  (donde necesitas achicar el clima solo cuando está dentro de la barra), 
+  usamos :host ::ng-deep
+
+:host le dice a Angular: "Aplica esto desde este componente actual (la navbar)".
+
+::ng-deep le dice: "Fuerza a que estos estilos viajen hacia adentro de los componentes hijos 
+  (en este caso, <app-weather>)".
+
+  ::ng-deep se va a encargar de pisar temporalmente los estilos definidos en el wheater 
+  solo cuando el wheater esté adentro de la barra navbar , haciendo que:
+
+.weather-grid pase de display: grid (vertical) a display: flex (horizontal).
+
+.weather-text pase a font-size: 0px para esconder las palabras largas en el celular.
+
+.weather-text span mantenga su tamaño para que el usuario siga viendo los números.
+  */
+
 /* ==========================================================
-   MODIFICADORES: Esto altera al clima SOLO cuando está en la navbar
-   ========================================================== */
+   MODIFICADORES: Esto altera al clima SOLO cuando está en la navbar 
+  cuando el archivo wheater sea llamado desde otro componente desde su selector
+  se aplicaría su estilo propio definido en su css
+  ========================================================== */
 :host ::ng-deep .weather-grid {
   display: flex !important;
   flex-direction: row !important;
