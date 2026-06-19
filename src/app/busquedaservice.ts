@@ -99,7 +99,7 @@ obtenerEnlace(dni:any):Observable<any> {
 
   private apiUrlBuscador = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/buscar';
 
-    // Método para buscar productos por término en el buscador principal 
+    //1. Método para buscar productos por término en el buscador principal 
   searchProducts(term: string | number): Observable<any[]> {
  
    
@@ -111,6 +111,16 @@ obtenerEnlace(dni:any):Observable<any> {
     return this.http.get<any[]>(`${this.apiUrlBuscador}?q=${term}`);
   }
 
+  // 2. EL MÉTODO NUEVO (Trae solo la lista de textos/palabras sugeridas)
+getSugerenciasKeywords(term: string): Observable<string[]> {
+    // Apuntamos a un nuevo endpoint '/sugerencias' en tu Spring Boot
+    return this.http.get<string[]>(`https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/sugerencias?q=${term}`);
+
+ 
+  
+  
+  
+  
   //formulario login método
   private apiURLogin = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/loginsinjwt';
 
