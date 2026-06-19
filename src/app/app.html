@@ -57,9 +57,10 @@ aplicamos al footer para los iconos de redes sociales-->
   <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
       <img [src]="product.imageUrl" alt="{{ product.title }}" />
       <div class="product-info">
+        <p>{{ product.category }}</p>
         <h4>{{ product.title }}</h4>
         <p>{{ product.leadText }}</p>
-        <p>{{ product.category }}</p>
+        
         
         <!--no se coloca la barra al inicio de routerLink 
         porque en la base ya se le agrego junto a la ruta-->
