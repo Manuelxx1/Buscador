@@ -100,7 +100,14 @@ en el input text y evento de click fuera del input text-->
         <div #contenedorDesplegable *ngIf="mostrarDesplegable" class="desplegable" [innerHTML]="enlace"></div>
 
   -->
-            <div class="formulariologin">
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+            
+
+
+<div class="formulariologin">
 
     <form [formGroup]="formulariologin" (ngSubmit)="formulariologindatos()">
       <label>
@@ -391,5 +398,4 @@ en el mismo template que el button que lo dispara
 
  
     
-    <router-outlet />
          
