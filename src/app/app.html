@@ -42,7 +42,14 @@ aplicamos al footer para los iconos de redes sociales-->
       [formControl]="searchControl"
       class="search-box-for-products"
       placeholder="Buscar..."
+      (blur)="cerrarSugerencias()"
     />
+
+    <ul *ngIf="sugerencias.length > 0 && mostrarSugerencias" class="suggestions-dropdown">
+    <li *ngFor="let sug of sugerencias" (mousedown)="seleccionarSugerencia(sug)">
+      <i class="icono-buscar">🔍</i> {{ sug.title }}
+    </li>
+    </ul>
 
   </div>
 
