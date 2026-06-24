@@ -5,7 +5,7 @@ import { FacebookComments } from '../../facebook-comments/facebook-comments';
   selector: 'app-ciberseguridad1',
   imports: [FacebookComments],
   templateUrl: './ciberseguridad1.html',
-  styleUrl: './ciberseguridad1.css',
+  styleUrl: './ciberseguridad1.css'
 })
 export class CiberSeguridad1 
 {
