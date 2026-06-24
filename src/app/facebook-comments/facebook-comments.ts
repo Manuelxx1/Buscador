@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+/*import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router'; // <-- Importamos el Router
 
@@ -36,7 +36,7 @@ currentRoute: string = '';
 
 */
   /*en cloudshell pata pruebas*/
-  get fullUrl(): string {
+ /* get fullUrl(): string {
   // Como Cloud Shell está protegido, le pasamos una URL real externa 
   // para que Facebook se digne a renderizar la caja de comentarios de prueba.
   return 'https://www.facebook.com'; 
@@ -69,6 +69,69 @@ currentRoute: string = '';
   }
 
 
-
-  
   }
+  */
+
+
+
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common'; // <-- Sumamos CommonModule
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-facebook-comments',
+  standalone: true, // <-- Asegurate de que tenga esta línea explicitly
+  imports: [CommonModule], // <-- Agregamos CommonModule acá
+  templateUrl: './facebook-comments.html',
+  styleUrl: './facebook-comments.css'
+})
+export class FacebookComments implements OnInit {
+  
+  currentRoute: string = '';
+  
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
+  ngOnInit(): void {
+    this.currentRoute = this.router.url; 
+    if (isPlatformBrowser(this.platformId)) {
+      this.cargarOParsearSDK();
+    }
+  }
+
+  get fullUrl(): string {
+    // Forzamos la URL externa fija para engañar al proxy de Cloud Shell
+    return 'https://www.facebook.com'; 
+  }
+
+  private cargarOParsearSDK() {
+    const win = window as any;
+    
+    // Si ya existe el objeto de Facebook en el navegador, lo parseamos directo
+    if (win.FB) {
+      setTimeout(() => { 
+        win.FB.XFBML.parse(); 
+      }, 500);
+    } else {
+      // Si no existe, lo creamos dinámicamente asegurando el onload
+      const script = document.createElement('script');
+      script.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0';
+      script.async = true;
+      script.defer = true;
+      script.crossOrigin = 'anonymous';
+      
+      script.onload = () => {
+        setTimeout(() => {
+          if (win.FB) {
+            win.FB.XFBML.parse();
+          }
+        }, 600);
+      };
+      
+      document.body.appendChild(script);
+    }
+  }
+}
+
