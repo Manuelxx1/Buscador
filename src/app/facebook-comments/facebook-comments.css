@@ -1,8 +1,8 @@
 .facebook-comments-container {
   width: 100%;
+  min-height: 200px; /* Le da un alto mínimo inicial para que no se colapse */
   margin-top: 30px;
   padding: 15px;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: block; /* Asegura que se comporte como un bloque contenedor */
 }
