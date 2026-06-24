@@ -29,29 +29,46 @@ currentRoute: string = '';
       this.cargarOParsearSDK();
     }
   }
-
+/*en un servidor real tipo firebase usar esto
   get fullUrl(): string {
     return `${this.baseUrl}${this.currentRoute}`;
   }
 
-  
+*/
+  /*en cloudshell pata pruebas*/
+  get fullUrl(): string {
+  // Como Cloud Shell está protegido, le pasamos una URL real externa 
+  // para que Facebook se digne a renderizar la caja de comentarios de prueba.
+  return 'https://www.facebook.com'; 
+}
 
   private cargarOParsearSDK() {
-    const win = window as any;
-
-    // Si el SDK de Facebook ya está cargado en el index.html, solo le pedimos que parsee el nuevo componente
-    if (win.FB) {
+  const win = window as any;
+  
+  if (win.FB) {
+    // Le damos 500ms para asegurarnos de que Angular ya pintó el HTML en Cloud Shell
+    setTimeout(() => { 
+      win.FB.XFBML.parse(); 
+    }, 500);
+  } else {
+    const script = document.createElement('script');
+    script.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0';
+    script.async = true;
+    script.defer = true;
+    script.crossOrigin = 'anonymous';
+    
+    // Cuando el script termine de descargarse en Cloud Shell, forzamos el renderizado
+    script.onload = () => {
       setTimeout(() => {
-        win.FB.XFBML.parse(); 
-      }, 100);
-    } else {
-      // Si no existe, creamos el script dinámicamente (reemplaza 'TU_APP_ID' si tenés una, sino funciona igual)
-      const script = document.createElement('script');
-      script.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0';
-      script.async = true;
-      script.defer = true;
-      script.crossOrigin = 'anonymous';
-      document.body.appendChild(script);
-    }
+        if (win.FB) win.FB.XFBML.parse();
+      }, 500);
+    };
+    
+    document.body.appendChild(script);
   }
+  }
+
+
+
+  
   }
