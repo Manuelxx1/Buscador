@@ -1,5 +1,6 @@
-import { Component, Input, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router'; // <-- Importamos el Router
 
 
 
@@ -9,27 +10,31 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './facebook-comments.html',
   styleUrl: './facebook-comments.css'
 })
-export class FacebookComments implements AfterViewInit {
+export class FacebookComments implements OnInit {
   
 
-  // Recibimos la ruta del artículo desde el componente padre (ej: '/articulo-noticias/.../ciberseguridad2')
-  @Input() currentRoute: string = ''; 
-
+currentRoute: string = '';
   // Tu dominio web definitivo (cuando lo subas). Para pruebas locales, Facebook suele usar localhost
   private baseUrl = 'https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev'; 
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  // Inyectamos el Router en el constructor
+  constructor(private router: Router,@Inject(PLATFORM_ID) private platformId: Object ) {}
+
+  ngOnInit(): void {
+    // ¡Acá está el truco! Obtenemos la ruta exacta donde está parado el usuario
+    // Ejemplo: /articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2
+    this.currentRoute = this.router.url; 
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.cargarOParsearSDK();
+    }
+  }
 
   get fullUrl(): string {
     return `${this.baseUrl}${this.currentRoute}`;
   }
 
-  ngAfterViewInit(): void {
-    // Nos aseguramos de ejecutar esto solo en el navegador (evita errores si usás SSR)
-    if (isPlatformBrowser(this.platformId)) {
-      this.cargarOParsearSDK();
-    }
-  }
+  
 
   private cargarOParsearSDK() {
     const win = window as any;
