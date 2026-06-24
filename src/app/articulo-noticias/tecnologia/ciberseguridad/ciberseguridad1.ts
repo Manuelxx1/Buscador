@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FacebookComments } from './../facebook-comments/facebook-comments';
+import { FacebookComments } from './../../facebook-comments/facebook-comments';
 
 @Component({
   selector: 'app-ciberseguridad1',
