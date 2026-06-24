@@ -88,6 +88,8 @@ import { Router } from '@angular/router';
 export class FacebookComments implements OnInit {
   
   currentRoute: string = '';
+  private baseUrl = 'https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev'; 
+
   
   constructor(
     private router: Router,
@@ -100,12 +102,19 @@ export class FacebookComments implements OnInit {
       this.cargarOParsearSDK();
     }
   }
-
+/*
   get fullUrl(): string {
     // Forzamos la URL externa fija para engañar al proxy de Cloud Shell
     return 'https://www.facebook.com'; 
   }
+*/
 
+/*en un servidor real tipo firebase usar esto*/
+  get fullUrl(): string {
+    return `${this.baseUrl}${this.currentRoute}`;
+  }
+
+  
   private cargarOParsearSDK() {
     const win = window as any;
     
