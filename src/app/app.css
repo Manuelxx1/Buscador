@@ -101,7 +101,7 @@ buttonCerrarSession:hover {
 
 .suggestions-dropdown {
   position: absolute;
-  top: 100%; /* Se pega justo abajo del input */
+  top: 5px; /* Se pega justo abajo del input */
   left: 0;
   width: 100%;
   background: white;
