@@ -16,8 +16,8 @@ export class FacebookComments implements OnInit {
   
   currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
-private baseUrl = 'https://noticiashoy-f24a0.web.app';
-
+//private baseUrl = 'https://noticiashoy-f24a0.web.app';
+private baseUrl = 'http://localhost:4200';
   
   constructor(
     private router: Router,
