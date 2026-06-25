@@ -88,7 +88,8 @@ import { Router } from '@angular/router';
 export class FacebookComments implements OnInit {
   
   currentRoute: string = '';
-  private baseUrl = 'https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev'; 
+  // Reemplazá la de Cloud Shell por la tuya de Firebase:
+private baseUrl = 'https://noticiashoy-f24a0.web.app';
 
   
   constructor(
