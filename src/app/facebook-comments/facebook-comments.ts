@@ -37,33 +37,22 @@ private baseUrl = 'https://noticiashoy-f24a0.web.app';
     return `${this.baseUrl}${this.currentRoute}`;
   }
 
-  
   private cargarOParsearSDK() {
-    const win = window as any;
-    
-    // Si ya existe el objeto de Facebook en el navegador, lo parseamos directo
+  const win = window as any;
+  
+  // Le damos un pequeño respiro para asegurarnos de que el SDK del index.html cargó
+  setTimeout(() => {
     if (win.FB) {
-      setTimeout(() => { 
-        win.FB.XFBML.parse(); 
-      }, 500);
+      // Si ya existe (lo normal gracias al index.html), lo parseamos
+      win.FB.XFBML.parse();
     } else {
-      // Si no existe, lo creamos dinámicamente asegurando el onload
-      const script = document.createElement('script');
-      script.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0';
-      script.async = true;
-      script.defer = true;
-      script.crossOrigin = 'anonymous';
-      
-      script.onload = () => {
-        setTimeout(() => {
-          if (win.FB) {
-            win.FB.XFBML.parse();
-          }
-        }, 600);
-      };
-      
-      document.body.appendChild(script);
+      // Si justo tardó un cachito más, reintentamos en medio segundo
+      setTimeout(() => {
+        if (win.FB) win.FB.XFBML.parse();
+      }, 500);
     }
-  }
+  }, 300);
+}
+  
 }
 
