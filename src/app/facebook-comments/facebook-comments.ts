@@ -37,22 +37,22 @@ private baseUrl = 'https://noticiashoy-f24a0.web.app';
     return `${this.baseUrl}${this.currentRoute}`;
   }
 
+  // ESTO ES LO ÚNICO QUE SE CAMBIA EN EL TS:
   private cargarOParsearSDK() {
-  const win = window as any;
-  
-  // Le damos un pequeño respiro para asegurarnos de que el SDK del index.html cargó
-  setTimeout(() => {
-    if (win.FB) {
-      // Si ya existe (lo normal gracias al index.html), lo parseamos
-      win.FB.XFBML.parse();
-    } else {
-      // Si justo tardó un cachito más, reintentamos en medio segundo
-      setTimeout(() => {
-        if (win.FB) win.FB.XFBML.parse();
-      }, 500);
+    const win = window as any;
+    
+    // Le damos 1 segundo entero (1000ms) para que Angular termine de dibujar el HTML
+    setTimeout(() => {
+      if (win.FB) {
+        win.FB.XFBML.parse();
+      } else {
+        // Si el script de Facebook todavía se está descargando, reintentamos un segundo después
+        setTimeout(() => {
+          if (win.FB) win.FB.XFBML.parse();
+        }, 1000);
+      }
+    }, 1000);
     }
-  }, 300);
-}
   
 }
 
