@@ -69,7 +69,7 @@ export class FacebookComments /*implements OnInit*/ {
     js.onload = () => {
       if ((window as any).FB) {
         (window as any).FB.XFBML.parse();
-        console.log("¡SDK de Facebook cargado dinámicamente con éxito!");
+        alert("¡SDK de Facebook cargado dinámicamente con éxito!");
       }
       else{
         
