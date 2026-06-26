@@ -36,6 +36,8 @@ export class FacebookComments /*implements OnInit*/ {
     
       if (typeof (window as any).FB !== 'undefined') {
         (window as any).FB.XFBML.parse();
+      }else{
+        alert("El SDK de Facebook no se ha cargado en el index.html");
       }
     });
     }
