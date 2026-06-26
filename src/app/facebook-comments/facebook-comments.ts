@@ -33,16 +33,48 @@ export class FacebookComments /*implements OnInit*/ {
 // Renderiza el plugin solo después de que el DOM esté listo, evitando errores
     afterNextRender(() => {
       // Escanea el DOM y renderiza la caja de comentarios al cargar la vista
-    alert("url del input de mierda "+this.url);
+   /* alert("url del input de mierda "+this.url);
       if (typeof (window as any).FB !== 'undefined') {
         (window as any).FB.XFBML.parse();
       }else{
         
         alert("El SDK de Facebook no se ha cargado en el index.html");
       }
+      */
+      this.cargarSdkFacebook();
+
     });
-    }
     
+  }//constructor   
+                    
+
+                    private cargarSdkFacebook() {
+    // Si ya existe el script instalado, solo lo ejecuta
+    if (typeof (window as any).FB !== 'undefined') {
+      (window as any).FB.XFBML.parse();
+      return;
+    }
+
+    // Si no existe, lo crea e inserta en el HTML a la fuerza
+    const id = 'facebook-jssdk';
+    if (document.getElementById(id)) return;
+
+    const fjs = document.getElementsByTagName('script')[0];
+    const js = document.createElement('script') as HTMLScriptElement;
+    js.id = id;
+    js.src = "https://facebook.net";
+    js.crossOrigin = "anonymous";
+    
+    // Cuando el script termina de descargarse de internet, renderiza los comentarios
+    js.onload = () => {
+      if ((window as any).FB) {
+        (window as any).FB.XFBML.parse();
+        console.log("¡SDK de Facebook cargado dinámicamente con éxito!");
+      }
+    };
+
+    fjs.parentNode?.insertBefore(js, fjs);
+    }
     
 
   //ngOnInit(): void {
