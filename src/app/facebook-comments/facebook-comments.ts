@@ -16,8 +16,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class FacebookComments implements OnInit {
   // Recibe la URL del post o página actual desde el componente padre
-  @Input() url: string = window.location.href;
-
+ // @Input() url: string = window.location.href;
+url: string ='https://google.com';
   // currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
 //private baseUrl = 'https://noticiashoy-f24a0.web.app';
