@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './facebook-comments.html',
   styleUrl: './facebook-comments.css'
 })
-export class FacebookComments /*implements OnInit*/ {
+export class FacebookComments implements OnInit {
   
   currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
