@@ -19,41 +19,41 @@ export class FacebookComments /*implements OnInit*/ {
   currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
 //private baseUrl = 'https://noticiashoy-f24a0.web.app';
-private baseUrl = 'http://localhost:4200';
-  
+//private baseUrl = 'http://localhost:4200';
+  private baseUrl ='https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev';
   constructor(
-    /*private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
-    */
+    private router: Router
+   // @Inject(PLATFORM_ID) private platformId: Object
+    
   ) 
   {
 
 // Renderiza el plugin solo después de que el DOM esté listo, evitando errores
     afterNextRender(() => {
-      const win = window as any;
-      if (win.FB) { 
-        win.FB.XFBML.parse();
-      }else{
-        alert("ni garcha");
+      // Escanea el DOM y renderiza la caja de comentarios al cargar la vista
+    
+      if (typeof (window as any).FB !== 'undefined') {
+        (window as any).FB.XFBML.parse();
       }
     });
-    
     }
-/*
+    
+    
+
   ngOnInit(): void {
     this.currentRoute = this.router.url; 
-    if (isPlatformBrowser(this.platformId)) {
-      this.cargarOParsearSDK();
-    }
+  //  if (isPlatformBrowser(this.platformId)) {
+      //this.cargarOParsearSDK();
+    //}
   }
 
-*/
+
 /*en un servidor real tipo firebase usar esto*/
-  /*
+  
   get fullUrl(): string {
     return `${this.baseUrl}${this.currentRoute}`;
   }
-*/
+
   // ESTO ES LO ÚNICO QUE SE CAMBIA EN EL TS:
  /*
   private cargarOParsearSDK() {
