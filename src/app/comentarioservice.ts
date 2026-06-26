@@ -15,7 +15,7 @@ export interface Comentario {
 })
 export class ComentarioService {
   // Ajustá la URL si tu backend usa otro puerto o subruta en producción
-  private apiUrl = 'http://localhost:8080/api/comentarios'; 
+  private apiUrl = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/comentarios'; 
 
   constructor(private http: HttpClient) {}
 
