@@ -30,8 +30,9 @@ private baseUrl = 'http://localhost:4200';
 
 // Renderiza el plugin solo después de que el DOM esté listo, evitando errores
     afterNextRender(() => {
-      if (typeof (FB as any) !== 'undefined' && FB.XFBML) {
-        FB.XFBML.parse();
+      const win = window as any;
+      if (win.FB) { {
+        win.FB.XFBML.parse();
       }
     });
     
