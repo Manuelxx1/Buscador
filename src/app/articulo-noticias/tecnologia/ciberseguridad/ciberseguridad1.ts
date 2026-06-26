@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FacebookComments } from '../../../facebook-comments/facebook-comments';
+import { Comentarios } from '../../../comentarios/comentarios';
 
 @Component({
   selector: 'app-ciberseguridad1',
-  imports: [FacebookComments],
+  imports: [Comentarios],
   templateUrl: './ciberseguridad1.html',
   styleUrl: './ciberseguridad1.css'
 })
