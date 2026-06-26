@@ -1,9 +1,11 @@
 
 
 
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID,afterNextRender } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common'; // <-- Sumamos CommonModule
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-facebook-comments',
@@ -12,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './facebook-comments.html',
   styleUrl: './facebook-comments.css'
 })
-export class FacebookComments implements OnInit {
+export class FacebookComments /*implements OnInit*/ {
   
   currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
@@ -20,10 +22,21 @@ export class FacebookComments implements OnInit {
 private baseUrl = 'http://localhost:4200';
   
   constructor(
-    private router: Router,
+    /*private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+    */
+  ) 
+  {
 
+// Renderiza el plugin solo después de que el DOM esté listo, evitando errores
+    afterNextRender(() => {
+      if (typeof (FB as any) !== 'undefined' && FB.XFBML) {
+        FB.XFBML.parse();
+      }
+    });
+    
+    }
+/*
   ngOnInit(): void {
     this.currentRoute = this.router.url; 
     if (isPlatformBrowser(this.platformId)) {
@@ -31,13 +44,15 @@ private baseUrl = 'http://localhost:4200';
     }
   }
 
-
+*/
 /*en un servidor real tipo firebase usar esto*/
+  /*
   get fullUrl(): string {
     return `${this.baseUrl}${this.currentRoute}`;
   }
-
+*/
   // ESTO ES LO ÚNICO QUE SE CAMBIA EN EL TS:
+ /*
   private cargarOParsearSDK() {
     const win = window as any;
     
@@ -53,6 +68,7 @@ private baseUrl = 'http://localhost:4200';
       }
     }, 1000);
     }
+    */
   
 }
 
