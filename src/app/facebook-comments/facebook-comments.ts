@@ -4,7 +4,7 @@
 import { Component, OnInit, Inject, PLATFORM_ID,afterNextRender,Input } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common'; // <-- Sumamos CommonModule
 import { Router } from '@angular/router';
-
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './facebook-comments.html',
   styleUrl: './facebook-comments.css'
 })
-export class FacebookComments /*implements OnInit*/ {
+export class FacebookComments implements OnInit {
   // Recibe la URL del post o página actual desde el componente padre
   @Input() url: string = window.location.href;
 
@@ -23,15 +23,15 @@ export class FacebookComments /*implements OnInit*/ {
 //private baseUrl = 'https://noticiashoy-f24a0.web.app';
 //private baseUrl = 'http://localhost:4200';
   //private baseUrl ='https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev';
-  constructor(
+//constructor(
     //private router: Router
    // @Inject(PLATFORM_ID) private platformId: Object
     
-  ) 
-  {
+ // ) 
+//{
 
 // Renderiza el plugin solo después de que el DOM esté listo, evitando errores
-    afterNextRender(() => {
+   // afterNextRender(() => {
       // Escanea el DOM y renderiza la caja de comentarios al cargar la vista
    /* alert("url del input de mierda "+this.url);
       if (typeof (window as any).FB !== 'undefined') {
@@ -41,13 +41,13 @@ export class FacebookComments /*implements OnInit*/ {
         alert("El SDK de Facebook no se ha cargado en el index.html");
       }
       */
-      this.cargarSdkFacebook();
+    //this.cargarSdkFacebook();
 
-    });
+    //});
     
-  }//constructor   
+ // }//constructor   
                     
-
+/*
                     private cargarSdkFacebook() {
     // Si ya existe el script instalado, solo lo ejecuta
     if (typeof (window as any).FB !== 'undefined') {
@@ -113,6 +113,23 @@ export class FacebookComments /*implements OnInit*/ {
     }, 1000);
     }
     */
+
+
+
+  iframeUrl!: SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+  ngOnInit() {
+    // Codificamos la URL para que sea segura para el iframe
+    const urlCodificada = encodeURIComponent(this.url);
+    
+    // Construimos el enlace del plugin en versión iframe nativo
+    const rawUrl = `https://facebook.com{urlCodificada}&width=100%25&numposts=5`;
+    
+    // Angular requiere bypassSecurityTrustResourceUrl para permitir iframes externos
+    this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(rawUrl);
+  }
   
 }
 
