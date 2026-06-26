@@ -1,7 +1,7 @@
 
 
 
-import { Component, OnInit, Inject, PLATFORM_ID,afterNextRender } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID,afterNextRender,Input } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common'; // <-- Sumamos CommonModule
 import { Router } from '@angular/router';
 
@@ -14,15 +14,17 @@ import { Router } from '@angular/router';
   templateUrl: './facebook-comments.html',
   styleUrl: './facebook-comments.css'
 })
-export class FacebookComments implements OnInit {
-  
-  currentRoute: string = '';
+export class FacebookComments /*implements OnInit*/ {
+  // Recibe la URL del post o página actual desde el componente padre
+  @Input() url: string = window.location.href;
+
+  // currentRoute: string = '';
   // Reemplazá la de Cloud Shell por la tuya de Firebase:
 //private baseUrl = 'https://noticiashoy-f24a0.web.app';
 //private baseUrl = 'http://localhost:4200';
-  private baseUrl ='https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev';
+  //private baseUrl ='https://4200-cs-582739288523-default.cs-us-east1-pkhd.cloudshell.dev';
   constructor(
-    private router: Router
+    //private router: Router
    // @Inject(PLATFORM_ID) private platformId: Object
     
   ) 
@@ -40,20 +42,20 @@ export class FacebookComments implements OnInit {
     
     
 
-  ngOnInit(): void {
-    this.currentRoute = this.router.url; 
+  //ngOnInit(): void {
+    //this.currentRoute = this.router.url; 
   //  if (isPlatformBrowser(this.platformId)) {
       //this.cargarOParsearSDK();
     //}
-  }
+  //}
 
 
 /*en un servidor real tipo firebase usar esto*/
   
-  get fullUrl(): string {
+ /* get fullUrl(): string {
     return `${this.baseUrl}${this.currentRoute}`;
   }
-
+*/
   // ESTO ES LO ÚNICO QUE SE CAMBIA EN EL TS:
  /*
   private cargarOParsearSDK() {
