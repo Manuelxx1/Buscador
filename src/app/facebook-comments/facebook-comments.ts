@@ -71,7 +71,7 @@ export class FacebookComments /*implements OnInit*/ {
         (window as any).FB.XFBML.parse();
         console.log("¡SDK de Facebook cargado dinámicamente con éxito!");
       }
-      }else{
+      else{
         
         alert("El SDK de Facebook no se ha cargado en el index.html");
               }
