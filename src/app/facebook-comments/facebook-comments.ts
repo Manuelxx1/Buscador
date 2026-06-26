@@ -33,7 +33,7 @@ export class FacebookComments /*implements OnInit*/ {
 // Renderiza el plugin solo después de que el DOM esté listo, evitando errores
     afterNextRender(() => {
       // Escanea el DOM y renderiza la caja de comentarios al cargar la vista
-    alert("url del input de mierda "+url);
+    alert("url del input de mierda "+this.url);
       if (typeof (window as any).FB !== 'undefined') {
         (window as any).FB.XFBML.parse();
       }else{
