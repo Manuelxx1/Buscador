@@ -1,1 +1,42 @@
-<p>comentarios works!</p>
+<div class="comentarios-seccion">
+  <h3>Comentarios ({{ comentarios.length }})</h3>
+
+  <!-- Formulario Reactivo -->
+  <form [formGroup]="comentarioForm" (ngSubmit)="enviarComentario()" class="comentario-form">
+    <div class="form-group">
+      <input 
+        type="text" 
+        formControlName="autor" 
+        placeholder="Tu nombre o alias..." 
+        class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <textarea 
+        formControlName="contenido" 
+        placeholder="Escribe un comentario público..." 
+        rows="3" 
+        class="form-control"></textarea>
+    </div>
+
+    <!-- El botón se habilita reactivamente según el estado del FormGroup -->
+    <button type="submit" [disabled]="comentarioForm.invalid" class="btn-comentar">
+      Publicar comentario
+    </button>
+  </form>
+
+  <!-- Lista de comentarios -->
+  <div class="comentarios-lista">
+    <div *ngIf="comentarios.length === 0" class="sin-comentarios">
+      Sé el primero en comentar esta noticia.
+    </div>
+
+    <div *ngFor="let c of comentarios" class="comentario-item">
+      <div class="comentario-header">
+        <span class="comentario-autor">{{ c.autor }}</span>
+        <span class="comentario-fecha">{{ c.fecha | date:'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+      <p class="comentario-texto">{{ c.contenido }}</p>
+    </div>
+  </div>
+</div>
