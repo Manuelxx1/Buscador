@@ -31,7 +31,7 @@
 .navbar-clock {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #495057; /* Cambialo según el tema claro/oscuro de tu portal */
+    color: #000000; /* Cambialo según el tema claro/oscuro de tu portal */
     font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para que los números no "bailen" al cambiar */
     background-color: #f1f3f5;
     padding: 0.4rem 0.7rem;
