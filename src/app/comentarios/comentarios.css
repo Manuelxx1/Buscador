@@ -1,0 +1,151 @@
+/* Contenedor principal de la sección */
+/*mobile first*/
+
+.comentarios-seccion {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.comentarios-seccion h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eceff1;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Formulario --- */
+.comentario-form {
+    background-color: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Estilos para los inputs y el textarea */
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #495057;
+    box-sizing: border-box; /* Fundamental en Android para que no se desborde */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Efecto focus al tocar la pantalla en el celu */
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* Evita que deformen el diseño estirando el textarea */
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botón de publicar */
+.btn-comentar {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%; /* En móviles un botón ancho es mucho más fácil de tocar */
+    transition: background-color 0.2s ease;
+}
+
+.btn-comentar:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Estado deshabilitado (Reactivo) */
+.btn-comentar:disabled {
+    background-color: #6c757d;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- Lista de Comentarios --- */
+.comentarios-lista {
+    margin-top: 1.5rem;
+}
+
+.sin-comentarios {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 2rem 0;
+}
+
+/* Cada tarjeta de comentario */
+.comentario-item {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.2rem 0.5rem;
+    animation: fadeIn 0.3s ease-in-out; /* Efecto sutil cuando se agrega a la lista */
+}
+
+/* Encabezado: Autor y Fecha */
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.comentario-autor {
+    font-weight: 700;
+    color: #343a40;
+    font-size: 0.95rem;
+}
+
+.comentario-fecha {
+    font-size: 0.8rem;
+    color: #868e96;
+}
+
+/* Texto del comentario */
+.comentario-texto {
+    margin: 0;
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-line; /* Respeta los saltos de línea que meta el usuario */
+    word-break: break-word; /* Evita que una palabra larguísima rompa el layout */
+}
+
+/* Animación sutil para los nuevos comentarios */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Media Query para pantallas más grandes --- */
+@media (min-width: 576px) {
+    .btn-comentar {
+        width: auto; /* En pantallas grandes el botón vuelve a su tamaño normal */
+        float: right;
+    }
+    .comentario-form::after { /* Limpia el float */
+        content: "";
+        display: block;
+        clear: both;
+    }
+  }
