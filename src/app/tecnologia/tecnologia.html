@@ -21,3 +21,22 @@
   <main>
     <article>
       <h2>Startups argentinas apuestan por inteligencia artificial en logística
+      </h2>
+<ul class="results-list">
+  <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
+      <img [src]="product.imageUrl" alt="{{ product.title }}" />
+      <div class="product-info">
+        <p>{{ product.category }}</p>
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.leadText }}</p>
+        
+        
+        <!--no se coloca la barra al inicio de routerLink 
+        porque en la base ya se le agrego junto a la ruta-->
+    <a routerLink="{{product.angularRoute}}">ruta path {{product.angularRoute}}</a> 
+      </div>
+  </li>
+</ul>
+      
+    </article>
+  </main>
