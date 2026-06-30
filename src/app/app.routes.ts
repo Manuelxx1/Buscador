@@ -13,7 +13,7 @@ import { Tecnologia } from './tecnologia/tecnologia';
 import { InteligenciaArtificial1 } from './articulo-noticias/tecnologia/inteligencia-artificial/inteligencia-artificial1';
 import { CiberSeguridad1 } from './articulo-noticias/tecnologia/ciberseguridad/ciberseguridad1';
 import { CiberSeguridad2 } from './articulo-noticias/tecnologia/ciberseguridad/ciberseguridad2';
-
+import { Inicio } from './inicio/inicio';
 import { AuthCallback } from './auth-callback/auth-callback';
 
 
@@ -26,7 +26,8 @@ export const routes: Routes = [
 //  un rootcomponent para ello y también evitar crear 
   // un component como home no planeado para rellenar ese path
   // sólo para que funcione el 404
-     { path: '', component:Busqueda },
+     //{ path: '', component:Busqueda },
+  { path: '', component:Inicio },
     { path: 'politica', component: Politica },
   { path: 'economia', component: Economia },
     { path: 'deportes', component: Deportes },
