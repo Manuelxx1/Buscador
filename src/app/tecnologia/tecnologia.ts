@@ -1,5 +1,5 @@
 import { Component,OnInit} from '@angular/core';
-import { Busquedaservice } from './busquedaservice';
+import { Busquedaservice } from '../busquedaservice';
 
 @Component({
   selector: 'app-tecnologia',
