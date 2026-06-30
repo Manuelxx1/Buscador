@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, signal, OnInit,OnDestroy,  ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet,RouterLink } from '@angular/router';
 import { Busquedaservice } from './busquedaservice';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +32,7 @@ declare const google: any;
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit   {
+export class App implements OnInit,OnDestroy   {
   protected readonly title = signal('buscador');
   mensaje!: string;
 dnidefinido!:any;
@@ -76,6 +76,9 @@ datosdesesion:any;
 menuActivo = false;
   clock: string = '';
 
+horaActual: Date = new Date();
+  private clockIntervalId: any;
+
   toggleMenu() {
     this.menuActivo = !this.menuActivo;
   }
@@ -102,9 +105,18 @@ username: string = '';
   ];
   
   ngOnInit() {
-    this.actualizarReloj();
-    setInterval(() => this.actualizarReloj(), 1000);
+   // this.actualizarReloj();
+   // setInterval(() => this.actualizarReloj(), 1000);
 
+// Actualiza la hora cada 1 segundo (1000 milisegundos)
+ //setInterval tiene un identicador de proceso
+    //que Guardamos en clockIntervalId parapoder detenerlo
+    //cuando salgamos de la página así no consume recursos 
+    //como memoria o batería cuando no lo necesitamos
+    this.clockIntervalId = setInterval(() => {
+      this.horaActual = new Date();
+    }, 1000);
+    
 //usuario de x en localStorage 
 
 const usuarioGuardadodex = localStorage.getItem('twitter_session');
@@ -263,7 +275,25 @@ google.accounts.id.initialize({
   }// oninit
 
 
-// Al hacer clic en una sugerencia, rellenamos el buscador
+//cuando salimos de la página 
+  //limpiamos o paramos el setInterval para que deje de ejecutarse
+//cada 1 segundo de forma innecesaria evitando que colapse 
+  //la memoria y gaste batería etc en el momento que no lo necesitamos
+  ngOnDestroy(): void {
+    // Limpieza ninja: evita fugas de memoria en Termux/Android
+    //en clockIntervalId se guarda el número de id del setInterval 
+    //eso  permite que podamos parar el setInterval 
+    //que esta actualizando la hora 
+    if (this.clockIntervalId) {
+      clearInterval(this.clockIntervalId);
+    }
+  }
+
+
+
+  
+  
+  // Al hacer clic en una sugerencia, rellenamos el buscador
 // Ocurre cuando el usuario hace clic en la palabra sugerida (Ej: "ciberseguridad")
 seleccionarSugerencia(keywordParaBuscar: string) {
   // 1. Ponemos la palabra completa en el input (ej: reemplaza "ciber" por "ciberseguridad")
@@ -356,14 +386,14 @@ this.sesionActiva = false; // Desactivar sesión
 
 
 
-
+/*
   actualizarReloj() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, '0');
     const mins = now.getMinutes().toString().padStart(2, '0');
     this.clock = `🕒 ${hours}:${mins}`;
   }
-
+*/
 
         //Detectar clic fuera del desplegable
   //del buscadorcontenido para ocultarlo
