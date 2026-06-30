@@ -296,8 +296,8 @@ buttonCerrarSession:hover {
        podés achicar la fuente o incluso ocultar los segundos para ahorrar espacio: */
     .navbar-clock {
       position:relative;
-      right:50px;
-      top:10px;
+      right:80px;
+      top:30px;
       font-size: 0.85rem;
         padding: 0.3rem 0.5rem;
     }
