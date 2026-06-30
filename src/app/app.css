@@ -295,7 +295,9 @@ buttonCerrarSession:hover {
 /* En celulares chicos, si ves que no hay espacio físico al lado del logo, 
        podés achicar la fuente o incluso ocultar los segundos para ahorrar espacio: */
     .navbar-clock {
-        font-size: 0.85rem;
+      position:relative;
+      right:20px;
+      font-size: 0.85rem;
         padding: 0.3rem 0.5rem;
     }
 
