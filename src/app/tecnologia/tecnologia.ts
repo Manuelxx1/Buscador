@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ngOnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tecnologia',
@@ -6,6 +6,22 @@ import { Component } from '@angular/core';
   templateUrl: './tecnologia.html',
   styleUrl: './tecnologia.css'
 })
+
+  
 export class Tecnologia {
+resultadosDeBusqueda:any[] = [];
+  keywordParaBuscar:string="tecnologia";
+
+  ngOnInit() {
+  // DISPARAMOS la búsqueda real en la base de datos con la palabra completa
+  this.miServicio.searchProducts(this.keywordParaBuscar).subscribe({
+    next: data => {
+      // Guardamos TODOS los artículos que tengan esa keyword en el array general
+      this.resultadosDeBusqueda = data;
+      //this.resultadosobtenidos=true;
+          //this.cargandobuscarcontenido=false;
+    }
+  });
+}
 
 }
