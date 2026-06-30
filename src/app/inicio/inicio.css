@@ -1,0 +1,121 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.home-header {
+    margin-bottom: 2.5rem;
+    border-left: 5px solid #007bff;
+    padding-left: 1rem;
+}
+
+.home-header h2 {
+    font-size: 2rem;
+    color: #212529;
+    margin: 0 0 0.5rem 0;
+}
+
+.home-header p {
+    color: #6c757d;
+    margin: 0;
+}
+
+/* --- Grilla Responsiva (La Magia) --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Tarjeta de Noticia --- */
+.news-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen / Contenedor visual */
+.card-image {
+    position: relative;
+    background-color: #e9ecef;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    font-size: 3.5rem;
+}
+
+/* Etiquetas de categoría superiores */
+.category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.tag-tech { background-color: #dc3545; }
+.tag-ia { background-color: #6f42c1; }
+.tag-economia { background-color: #28a745; }
+
+/* Cuerpo de la tarjeta */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Hace que todas las tarjetas tengan la misma altura interna */
+}
+
+.card-date {
+    font-size: 0.8rem;
+    color: #868e96;
+    margin-bottom: 0.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    color: #212529;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.4;
+}
+
+.card-content p {
+    color: #495057;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1; /* Empuja el botón siempre hacia el fondo de la tarjeta */
+}
+
+/* Botón/Enlace de lectura */
+.read-more-btn {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
