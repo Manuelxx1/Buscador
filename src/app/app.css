@@ -20,6 +20,34 @@
   }
 
 
+/* Contenedor que agrupa clima y reloj */
+.weather-navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espacio de separación entre el clima y el reloj */
+}
+
+/* Estilo del reloj digital */
+.navbar-clock {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #495057; /* Cambialo según el tema claro/oscuro de tu portal */
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para que los números no "bailen" al cambiar */
+    background-color: #f1f3f5;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.clock-icon {
+    font-style: normal;
+}
+
+
+
+
 .logo {
   font-size: 1.5em;
   font-weight: bold;
@@ -264,7 +292,14 @@ buttonCerrarSession:hover {
   gap: 8px;
 }
 
+/* En celulares chicos, si ves que no hay espacio físico al lado del logo, 
+       podés achicar la fuente o incluso ocultar los segundos para ahorrar espacio: */
+    .navbar-clock {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
+    }
 
+  
   /*
   Por defecto, Angular tiene un sistema de "encapsulamiento de estilos". 
   Esto significa que el CSS que escribes para la navbar
