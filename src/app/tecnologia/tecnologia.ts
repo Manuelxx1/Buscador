@@ -1,9 +1,11 @@
 import { Component,OnInit} from '@angular/core';
 import { Busquedaservice } from '../busquedaservice';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tecnologia',
-  imports: [],
+  imports: [CommonModule,RouterLink ],
   templateUrl: './tecnologia.html',
   styleUrl: './tecnologia.css'
 })
