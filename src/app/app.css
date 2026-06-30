@@ -273,6 +273,29 @@ buttonCerrarSession:hover {
   }
 
 
+.whatsapp-float-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
+
+    .whatsapp-float-icon {
+        width: 50px;
+  height: 50px;
+     /* Esto escala el ícono sin cambiar su resolución*/
+  /*transform: scale(1.5);*/ /* 1.5 = 150% del tamaño original */
+  margin-left: 8px; /* espacio entre texto e ícono */
+  top:10px;
+}
+
+
+
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
 /* Estilos propios de la Navbar */
