@@ -1,4 +1,5 @@
 import { Component,OnInit} from '@angular/core';
+import { Busquedaservice } from './busquedaservice';
 
 @Component({
   selector: 'app-tecnologia',
@@ -11,6 +12,11 @@ import { Component,OnInit} from '@angular/core';
 export class Tecnologia {
 resultadosDeBusqueda:any[] = [];
   keywordParaBuscar:string="tecnologia";
+
+  
+
+        constructor(private miServicio: Busquedaservice){
+      }
 
   ngOnInit() {
   // DISPARAMOS la búsqueda real en la base de datos con la palabra completa
