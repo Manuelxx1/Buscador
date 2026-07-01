@@ -8,8 +8,8 @@
     <section class="news-grid">
     <article class="news-card">
       
-<ul class="results-list">
-  <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
+
+  <div *ngFor="let product of resultadosDeBusqueda" class="result-item">
       <div class="card-image">
         <span class="category tag-tech">{{ product.category }}</span>
     <img [src]="product.imageUrl" alt="{{ product.title }}" class="image-placeholder"/>
@@ -25,8 +25,8 @@
         porque en la base ya se le agrego junto a la ruta-->
     <a routerLink="{{product.angularRoute}}" class="read-more-btn">Leer noticia completa → </a> 
       </div>
-  </li>
-</ul>
+  </div>
+
       
         
       
