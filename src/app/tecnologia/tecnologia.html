@@ -8,12 +8,13 @@
     <section class="news-grid">
     <article class="news-card">
       <div class="card-image">
+        <span class="category tag-tech">{{ product.category }}</span>
 <ul class="results-list">
   <li *ngFor="let product of resultadosDeBusqueda" class="result-item">
       <img [src]="product.imageUrl" alt="{{ product.title }}" class="image-placeholder"/>
       <div class="card-content">
-        <span class="category tag-tech">{{ product.category }}</span>
-        <span class="card-date"></span>
+        
+        <span class="card-date">fecha</span>
         <h4>{{ product.title }}</h4>
         <p>{{ product.leadText }}</p>
         
