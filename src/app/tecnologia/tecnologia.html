@@ -15,8 +15,13 @@
     <img [src]="product.imageUrl" alt="{{ product.title }}" class="image-placeholder"/>
       </div>
         <div class="card-content">
-        
-        <span class="card-date">fecha</span>
+  <span class="card-date">Publicado el: {{ product.fechaCreacion | date:'dd/MM/yyyy HH:mm' }}</span>
+  
+  <span *ngIf="product.fechaActualizacion > product.fechaCreacion" class="tag-actualizado">
+    (Actualizado el: {{ product.fechaActualizacion | date:'dd/MM/yyyy HH:mm' }})
+  </span>
+          </div>
+          </span>
         <h4>{{ product.title }}</h4>
         <p>{{ product.leadText }}</p>
         
