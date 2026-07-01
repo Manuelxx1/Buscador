@@ -14,7 +14,7 @@ import { Comentarios } from '../../../comentarios/comentarios';
 export class CiberSeguridad1 
 {
 
-  resultadosDeBusqueda:any[] = [];
+  resultadosDeBusqueda:any;
   keywordParaBuscar:number=2;
 
   constructor(private miServicio: Busquedaservice){
@@ -24,7 +24,7 @@ export class CiberSeguridad1
   // DISPARAMOS la búsqueda real en la base de datos con la palabra completa
   this.miServicio.searchArticulosPorId(this.keywordParaBuscar).subscribe({
     next: data => {
-      // Guardamos TODOS los artículos que tengan esa keyword en el array general
+      // Ahora data no es una lista, es el artículo directo
       this.resultadosDeBusqueda = data;
       //this.resultadosobtenidos=true;
           //this.cargandobuscarcontenido=false;
