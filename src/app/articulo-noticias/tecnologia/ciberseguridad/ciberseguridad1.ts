@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Busquedaservice } from '../busquedaservice';
+import { Busquedaservice } from '../../../busquedaservice';
 
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,7 @@ import { Comentarios } from '../../../comentarios/comentarios';
 
 @Component({
   selector: 'app-ciberseguridad1',
-  imports: [Comentarios],
+  imports: [CommonModule,Comentarios],
   templateUrl: './ciberseguridad1.html',
   styleUrl: './ciberseguridad1.css'
 })
