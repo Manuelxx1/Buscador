@@ -21,7 +21,7 @@
     (Actualizado el: {{ product.fechaActualizacion | date:'dd/MM/yyyy HH:mm' }})
   </span>
           </div>
-          </span>
+          
         <h4>{{ product.title }}</h4>
         <p>{{ product.leadText }}</p>
         
@@ -29,12 +29,7 @@
         <!--no se coloca la barra al inicio de routerLink 
         porque en la base ya se le agrego junto a la ruta-->
     <a routerLink="{{product.angularRoute}}" class="read-more-btn">Leer noticia completa → </a> 
-      </div>
   </div>
-
-      
-        
-      
     </article>
     </section>
   </main>
