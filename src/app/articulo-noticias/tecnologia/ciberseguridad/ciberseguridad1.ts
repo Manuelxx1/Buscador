@@ -22,7 +22,7 @@ export class CiberSeguridad1
 
   ngOnInit() {
   // DISPARAMOS la búsqueda real en la base de datos con la palabra completa
-  this.miServicio.searchProducts(this.keywordParaBuscar).subscribe({
+  this.miServicio.searchArticulosPorId(this.keywordParaBuscar).subscribe({
     next: data => {
       // Guardamos TODOS los artículos que tengan esa keyword en el array general
       this.resultadosDeBusqueda = data;
