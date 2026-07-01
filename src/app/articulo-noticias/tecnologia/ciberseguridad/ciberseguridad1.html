@@ -3,28 +3,27 @@
 <div class="container">
     
     <main>
-        <article>
+        <article *ngIf="resultadosDeBusqueda" >
           
       
-          <!-- Quitamos el *ngFor y usamos el operador a salvo de nulos de Angular (?.)
-          para que no tire error mientras la petición HTTP está viajando 
+          <!-- Quitamos el *ngFor y 
           también usamos un *ngIf para mostrar el bloque solo cuando llegue la data -->
-<div *ngIf="resultadosDeBusqueda" class="result-item">
+<div class="result-item">
   <span class="category">Tecnología</span>
-  <span class="category">{{ resultadosDeBusqueda?.category }}</span>
-  <h1>{{ resultadosDeBusqueda?.title }}</h1>
+  <span class="category">{{ resultadosDeBusqueda.category }}</span>
+  <h1>{{ resultadosDeBusqueda.title }}</h1>
   
-  <p class="lead">{{ resultadosDeBusqueda?.leadText }}</p>
+  <p class="lead">{{ resultadosDeBusqueda.leadText }}</p>
   
   <div class="meta-info">
       <span>Por <strong>Sofía Mancini</strong></span>
-      <span class="card-date">Publicado el: {{ resultadosDeBusqueda?.fechaCreacion | date:'dd/MM/yyyy HH:mm' }}</span>
+      <span class="card-date">Publicado el: {{ resultadosDeBusqueda.fechaCreacion | date:'dd/MM/yyyy HH:mm' }}</span>
       
-      <span *ngIf="resultadosDeBusqueda?.fechaActualizacion > resultadosDeBusqueda?.fechaCreacion" class="tag-actualizado">
-        (Actualizado el: {{ resultadosDeBusqueda?.fechaActualizacion | date:'dd/MM/yyyy HH:mm' }})
+      <span *ngIf="resultadosDeBusqueda.fechaActualizacion > resultadosDeBusqueda.fechaCreacion" class="tag-actualizado">
+        (Actualizado el: {{ resultadosDeBusqueda.fechaActualizacion | date:'dd/MM/yyyy HH:mm' }})
       </span>           
   </div>
-  <img [src]="resultadosDeBusqueda?.imageUrl" alt="{{ resultadosDeBusqueda?.title }}" class="main-img"/>
+  <img [src]="resultadosDeBusqueda.imageUrl" alt="{{ resultadosDeBusqueda.title }}" class="main-img"/>
   
   <!-- El resto del cuerpo fijo de tu artículo sigue igual... -->
 </div>
