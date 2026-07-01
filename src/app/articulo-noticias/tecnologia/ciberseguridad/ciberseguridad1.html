@@ -4,17 +4,27 @@
     
     <main>
         <article>
-            <span class="category">Tecnología</span><span class="category">CiberSeguridad</span>
-            <h1>Alerta global por una vulnerabilidad crítica que afecta a millones de routers domésticos</h1>
+          
             
-            <p class="lead">Expertos en seguridad informática instalan a los usuarios a actualizar sus dispositivos tras detectarse un fallo que permite el control remoto de las conexiones hogareñas..</p>
+          
+          
+      
+          <div *ngFor="let product of resultadosDeBusqueda" class="result-item">
+          <span class="category">Tecnología</span><span class="category">{{ product.category }}</span>
+            <h1>{{ product.title }}</h1>
+            
+            <p class="lead">{{ product.leadText }}</p>
             
             <div class="meta-info">
                 <span>Por <strong>Sofía Mancini</strong></span>
-                <span>Publicado el 16 de Junio de 2026</span>
+<span class="card-date">Publicado el: {{ product.fechaCreacion | date:'dd/MM/yyyy HH:mm' }}</span>
+  
+  <span *ngIf="product.fechaActualizacion > product.fechaCreacion" class="tag-actualizado">
+    (Actualizado el: {{ product.fechaActualizacion | date:'dd/MM/yyyy HH:mm' }})
+  </span>           
             </div>
-
-            <img src="https://picsum.photos/800/451" alt="Expertos en seguridad informática instalan a los usuarios a actualizar sus dispositivos" class="main-img">
+<img [src]="product.imageUrl" alt="{{ product.title }}" class="main-img"/>
+            
             <p class="caption">Expertos en seguridad informática instalan a los usuarios a actualizar sus dispositivos. / Foto: Archivo.</p>
 
             <div class="article-body">
@@ -24,6 +34,7 @@
                 
                 <p>Los principales fabricantes ya comenzaron a lanzar parches de emergencia. Se recomienda a los usuarios ingresar al panel de configuración de sus routers, verificar las actualizaciones disponibles y, como medida provisoria, desactivar la opción de "Gestión Remota" desde el exterior.</p>
             </div>
+          </div>
         </article>
 
         <hr style="margin-top: 2rem; border: 1px solid #eee;">
