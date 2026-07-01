@@ -117,8 +117,24 @@ getSugerenciasKeywords(term: string): Observable<string[]> {
     return this.http.get<string[]>(`https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/sugerencias?q=${term}`);
 
 }
+
+
+
+  //para traer datos que le corresponden a cada artículo html buscando por id 
   
-  
+  private apiUrlBuscadorId = 'https://portfoliowebbackendkoyeb-1-ulka.onrender.com/api/noticias/buscarporid';
+
+    //1. Método para buscar productos por término en el buscador principal 
+  searchArticulosPorId(term: string | number): Observable<any[]> {
+ 
+   
+    //el nombre del parámetro debe coincidir con lo que espera 
+    //el endpoint en @RequestParam("q") para definir la ruta correcta 
+    //sino lanza un error técnico (400 Bad Request o un MissingServletRequestParameterException) 
+    //porque no encuentra el parámetro obligatorio q, 
+    //haciendo que Angular salte directo a la función error: err => { ... }.
+    return this.http.get<any[]>(`${this.apiUrlBuscadorId}?q=${term}`);
+  }
   
   
   //formulario login método
